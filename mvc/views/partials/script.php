@@ -1,0 +1,10 @@
+<script src="/vendor/js/bootstrap.min.js"></script>
+<script src="/vendor/js/jquery.min.js"></script>
+<script src="/vendor/js/jquery.lazy.min.js"></script>
+<script src="/vendor/js/fancybox.js"></script>
+<script src="/vendor/js/carousel.js"></script>
+<script src="/vendor/js/carousel.thumbs.js"></script>
+<script src="/vendor/js/jquery.toc.min.js"></script>
+<script src="/vendor/js/slick.min.js"></script>
+<script src="/vendor/js/sticky-kit.min.js"></script>
+<script src="/js/script.js"></script>
