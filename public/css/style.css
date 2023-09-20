@@ -1,0 +1,341 @@
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (max-width: 991px) {
+  h1 {
+    font-size: 48px;
+    line-height: normal;
+  }
+}
+@media (max-width: 575px) {
+  h1 {
+    font-size: 32px;
+    line-height: normal;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (max-width: 991px) {
+  h2 {
+    font-size: 36px;
+    line-height: normal;
+  }
+}
+@media (max-width: 575px) {
+  h2 {
+    font-size: 28px;
+    line-height: normal;
+  }
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (max-width: 991px) {
+  h3 {
+    font-size: 32px;
+    line-height: normal;
+  }
+}
+@media (max-width: 575px) {
+  h3 {
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+
+p, ul, li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 0;
+}
+@media (max-width: 575px) {
+  p, ul, li {
+    font-size: 14px;
+  }
+}
+
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ping */
+.ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+.cta {
+  position: fixed;
+  bottom: 100px;
+  left: 30px;
+  z-index: 999;
+}
+@media (max-width: 424px) {
+  .cta {
+    left: 20px;
+  }
+}
+.cta i {
+  color: white;
+}
+.cta #ctaCollapse {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+.cta > button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: green;
+  border: none;
+  border-radius: 100%;
+  line-height: 50px;
+  display: block;
+  overflow: hidden;
+}
+.cta > button > i {
+  position: relative;
+  z-index: 2;
+  font-size: 24px;
+  font-weight: bold;
+}
+.cta > button > div {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: green;
+  transition: 0.5s;
+}
+.cta > button > div::after, .cta > button > div::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+}
+.cta > button > div::before {
+  border-radius: 45%;
+  background: blue;
+  animation: animate 5s linear infinite;
+}
+.cta > button > div::after {
+  border-radius: 40%;
+  background: blue;
+  animation: animate 10s linear infinite;
+}
+.cta > button:hover > div {
+  top: -150px;
+}
+.cta__btn__bg__messenger, .cta__btn__bg__zalo, .cta__btn__bg__phone {
+  left: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (max-width: 424px) {
+  .cta__btn__bg__messenger, .cta__btn__bg__zalo, .cta__btn__bg__phone {
+    height: 40px;
+    width: 40px;
+  }
+}
+.cta__btn__bg__messenger::before, .cta__btn__bg__zalo::before, .cta__btn__bg__phone::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  animation: ping 2s 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@media (max-width: 424px) {
+  .cta__btn__bg__messenger::before, .cta__btn__bg__zalo::before, .cta__btn__bg__phone::before {
+    height: 40px;
+    width: 40px;
+  }
+}
+.cta__btn__bg__messenger::after, .cta__btn__bg__zalo::after, .cta__btn__bg__phone::after {
+  content: "";
+  height: 50px;
+  width: 50px;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 66px;
+  border-radius: 100%;
+  animation: ping 2s 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@media (max-width: 424px) {
+  .cta__btn__bg__messenger::after, .cta__btn__bg__zalo::after, .cta__btn__bg__phone::after {
+    height: 40px;
+    width: 40px;
+  }
+}
+.cta__btn__bg__phone {
+  background-color: #2E894D;
+  cursor: pointer;
+  /* top: 50px; */
+}
+.cta__btn__bg__phone::before {
+  background-color: #2E894D;
+}
+.cta__btn__bg__phone::after {
+  background-color: #2E894D;
+}
+.cta__btn__bg__phone i {
+  font-size: 20px;
+}
+.cta__btn__bg__zalo {
+  background-color: #015CE0;
+  /*  top: -22px; */
+  /*    &::after {
+         background-color: #015CE0;
+         content: "";
+     } */
+}
+@media (max-width: 424px) {
+  .cta__btn__bg__zalo {
+    top: -6px;
+  }
+}
+.cta__btn__bg__zalo::before {
+  background-color: #015CE0;
+}
+.cta__btn__bg__zalo i {
+  font-size: 26px;
+}
+.cta__btn__bg__messenger {
+  background-color: #00B2FF;
+  top: -95px;
+}
+@media (max-width: 424px) {
+  .cta__btn__bg__messenger {
+    top: -60px;
+  }
+}
+.cta__btn__bg__messenger::before {
+  background-color: #00B2FF;
+}
+.cta__btn__bg__messenger i {
+  font-size: 26px;
+}
+.cta__btn__more {
+  position: absolute;
+  bottom: 0;
+  left: 80px;
+  width: 260px;
+  background-color: #fff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: bottom 0.2s 0.2s, right 0.2s 0.2s, transform 0.2s 0.4s;
+}
+@media (max-width: 424px) {
+  .cta__btn__more {
+    left: 60px;
+  }
+}
+@media (max-width: 360px) {
+  .cta__btn__more {
+    width: 65vw;
+  }
+}
+.cta__btn__more::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: -14px;
+  border-top: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(90deg);
+}
+.cta__btn__more li a {
+  padding: 10px;
+  transition: background-color 0.5s;
+  color: #808080;
+}
+.cta__btn__more li a:hover {
+  color: #808080 !important;
+  background-color: #dce7e0;
+}
+.cta__btn__more li:last-child a {
+  border-radius: 0 0 8px 8px;
+}
+.cta__btn__more--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background-color: #2E894D;
+  color: #fff;
+  padding: 12px;
+  border-radius: 7px 7px 0 0;
+}
+.cta__btn__more--header p {
+  text-align: unset;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+@media (max-width: 575px) {
+  .cta__btn__more--header {
+    padding: 8px 15px;
+  }
+}
+.cta__btn__more--header .btn-close {
+  font-size: 14px;
+}
+.cta__btn__more i {
+  color: #2E894D;
+  font-size: 18px;
+}
+@media (max-width: 575px) {
+  .cta__btn__more i {
+    font-size: 14px;
+  }
+}
+.cta__btn__more.ctaMore {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: bottom 0.2s, right 0.2s, transform 0.2s;
+}
+
+/*# sourceMappingURL=style.css.map */

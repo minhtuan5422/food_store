@@ -5,8 +5,8 @@ class HomeModel extends DB {
     }
 
     public function SinhVien() {
-        $sql = "SELECT * FROM student";
-        return mysqli_query($this->conn, $sql);
+       /*  $sql = "SELECT * FROM student";
+        return mysqli_query($this->conn, $sql); */
     }
 }
 ?>

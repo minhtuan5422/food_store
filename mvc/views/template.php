@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pageTitle; ?></title>
+    <?php require_once 'partials/styles.php' ?>
 </head>
 
 <body>
     <?php require_once "./mvc/views/partials/header.php"?>
     <?php $content; ?>
     <?php require_once "./mvc/views/partials/header.php"?>
+
+    <?php require_once 'partials/script.php' ?>
 </body>
 </html>
