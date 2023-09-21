@@ -338,4 +338,15 @@ ul, ol {
   transition: bottom 0.2s, right 0.2s, transform 0.2s;
 }
 
+.header__top {
+  background: #EDF2EE;
+}
+.header__top--flex {
+  padding: 12px 0;
+}
+.header__top--flex--maps {
+  text-decoration: none;
+  color: #2B572E;
+}
+
 /*# sourceMappingURL=style.css.map */

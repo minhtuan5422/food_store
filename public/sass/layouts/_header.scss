@@ -1,0 +1,14 @@
+.header {
+    &__top {
+        background: #EDF2EE;
+
+        &--flex {
+            padding: 12px 0;
+            
+            &--maps {
+                text-decoration: none;
+                color: $green-gray-scale-700;
+            }
+        }
+    }
+}
