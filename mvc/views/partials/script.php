@@ -1,4 +1,4 @@
-<script src="public/vendor/js/bootstrap.min.js"></script>
+<script src="public/vendor/js/bootstrap.bundle.min.js"></script>
 <script src="public/vendor/js/jquery.min.js"></script>
 <script src="public/vendor/js/jquery.lazy.min.js"></script>
 <script src="public/vendor/js/fancybox.js"></script>

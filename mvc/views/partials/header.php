@@ -6,14 +6,23 @@
         </a>
 
         <div class="header-expands__action">
-            
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Normal</a></li>
+              <li><a class="dropdown-item active" href="#">Active</a></li>
+              <li><a class="dropdown-item disabled" href="#">Disabled</a></li>
+            </ul>
+          </div>
         </div>
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-xl">
         <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-    
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
