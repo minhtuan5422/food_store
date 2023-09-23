@@ -11,7 +11,7 @@
     <?php require_once "./mvc/views/partials/header.php"?>
     <?php $content; ?>
     <?php require_once "./mvc/views/partials/header.php"?>
-
+    
     <?php require_once 'partials/script.php' ?>
 </body>
 </html>

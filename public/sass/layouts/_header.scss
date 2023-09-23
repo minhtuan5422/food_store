@@ -3,11 +3,176 @@
         background: #EDF2EE;
 
         &--flex {
-            padding: 12px 0;
+            padding-top: 12px;
+            padding-bottom: 12px;
             
             &--maps {
+                display: flex;
+                align-items: center;
+                gap: 8px;
                 text-decoration: none;
                 color: $green-gray-scale-700;
+
+                &>i {
+                    width: 15px;
+                    height: 18px;
+                }
+
+                &>span {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 130%; 
+                }
+            }
+
+            &--action {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                &>select {
+                    background: #EDF2EE;
+                    color: $green-gray-scale-700;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 130%;
+                    
+                    &:focus {
+                        outline: none;
+                    }
+
+                    option {
+                        &:active {
+                            background: none;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar {
+        height: 78px;
+        box-shadow: 0px 1px 0px 0px #E5E5E5;
+
+        &-collapse {
+            max-width: fit-content;
+        }
+
+        &-nav {
+            display: flex;
+            align-items: flex-start;
+            gap: 27px;
+            
+            .nav-item {
+                
+                .nav-link {
+                    display: flex;
+                    background-color: transparent;
+                    padding: 0;
+                    font-size: 14px;
+                    color: $gray-scale-gray-500;
+                    font-weight: 500;
+                    
+                    &:hover {
+                        color: $primary-color;
+                    }
+
+                    &:hover .dropdown-menu {
+                        display: block;
+                    }
+
+                    .icon-chevron-right {
+                        transform: rotate(90deg);
+                    }
+                   
+                }
+
+                .dropdown:hover .dropdown-menu {
+                    display: block;
+                }
+
+                .dropdown-menu {
+                    box-shadow: 0px 0px 10px #ddd;
+
+                    .dropdown-item {
+                        font-size: 14px;
+                        color: $gray-scale-gray-500;
+                        font-weight: 500;
+    
+                        &:hover {
+                            color: $primary-color;
+                        }
+    
+                        &:active {
+                            background: $primary-color;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-brand {
+            &>img {
+                aspect-ratio: 183/38;
+            }
+        }
+
+        .navbar__icon {
+            display: flex;
+            gap: 40px;
+        }
+
+        &__contact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: $gray-scale-gray-900;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary-color;
+            }
+
+            &>i {
+                font-size: 20px;  
+
+            }
+        }
+
+        &__action {
+            gap: 20px;
+
+            a {
+                color: $green-gray-scale-700;
+                text-decoration: none;
+                
+                &>i {
+                  font-size: 20px;  
+
+                  &:hover {
+                    color: $primary-color;
+                  }
+                }
+            }
+            
+            &--expands {
+                
+                &--btn {
+                    background-color: inherit;
+
+                    &>i {
+                        color: $green-gray-scale-700;
+                        font-size: 20px;  
+
+                        &:hover {
+                            color: $primary-color;
+                          }
+                    }
+                }
             }
         }
     }
