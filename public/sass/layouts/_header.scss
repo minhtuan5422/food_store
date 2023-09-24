@@ -13,6 +13,10 @@
                 text-decoration: none;
                 color: $green-gray-scale-700;
 
+                &:hover {
+                    color: $primary-color;
+                }
+
                 &>i {
                     width: 15px;
                     height: 18px;
@@ -59,15 +63,49 @@
 
         &-collapse {
             max-width: fit-content;
+
+            @include max-width-1200 {
+                position: absolute;
+                transform: translateX(-5%);
+                height: 100vh;
+                background-color: $white;
+                margin-top: 50%;
+            }
+        }
+
+        .res-none {
+            @include max-width-576 {
+                display: block;
+                width: 100vh;
+                margin-top: 1rem;
+                padding-left: 5%;
+                text-decoration: none;
+
+                i {
+                    color: $text;
+                }
+
+            }
         }
 
         &-nav {
             display: flex;
             align-items: flex-start;
             gap: 27px;
+
+            @include max-width-1200 {
+                width: 100vh;
+                gap: 1rem;
+                padding-left: 5%;
+            }
             
             .nav-item {
-                
+
+                @include max-width-1200 {
+                    width: 100%;
+                    padding: 12px 0;
+                }
+
                 .nav-link {
                     display: flex;
                     background-color: transparent;
@@ -80,27 +118,27 @@
                         color: $primary-color;
                     }
 
-                    &:hover .dropdown-menu {
-                        display: block;
-                    }
-
                     .icon-chevron-right {
                         transform: rotate(90deg);
                     }
                    
                 }
 
-                .dropdown:hover .dropdown-menu {
-                    display: block;
-                }
-
                 .dropdown-menu {
                     box-shadow: 0px 0px 10px #ddd;
+
+                    @include max-width-1200 {
+                        box-shadow: none;
+                    }
 
                     .dropdown-item {
                         font-size: 14px;
                         color: $gray-scale-gray-500;
                         font-weight: 500;
+
+                        @include max-width-1200 {
+                            padding: 12px;
+                        }
     
                         &:hover {
                             color: $primary-color;
@@ -132,6 +170,10 @@
             gap: 8px;
             color: $gray-scale-gray-900;
             text-decoration: none;
+
+            @include max-width-992 {
+                display: none;
+            }
 
             &:hover {
                 color: $primary-color;
@@ -172,6 +214,50 @@
                             color: $primary-color;
                           }
                     }
+                }
+                .modal {
+
+                    &-content {
+                        border: none;
+
+                        .modal-header {
+                            .btn-close:focus {
+                                box-shadow: none;
+                            }
+                        }
+    
+                        .modal__form {
+                            &--inp {
+                                background: $white;
+                                width: 85%;
+                                padding: 10px 24px;
+                                border-top-left-radius: 46px;
+                                border-bottom-left-radius: 46px;
+                                border: 1px solid #E6E6E6;
+                                font-family: Poppins;
+                                font-size: 14px;
+                                font-weight: 400;
+    
+                                &:focus {
+                                    outline: none;
+                                    border: 1px solid $primary-color;
+                                }
+                            }
+    
+                            &--submit {
+                                background-color: $primary-color;
+                                color: $white;
+                                width: 15%;
+                                border-top-right-radius: 46px;
+                                border-bottom-right-radius: 46px;
+    
+                                &:hover {
+                                    opacity: .8;
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         }
