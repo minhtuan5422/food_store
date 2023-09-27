@@ -9,8 +9,12 @@
 
 <body>
     <?php require_once "./mvc/views/partials/header.php"?>
-    <?php $content; ?>
-    <?php require_once "./mvc/views/partials/header.php"?>
+    <?php
+        if(isset($content)) {
+            echo $content;
+        }
+    ?>
+    <?php require_once "./mvc/views/partials/footer.php"?>
     
     <?php require_once 'partials/script.php' ?>
 </body>
