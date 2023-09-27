@@ -57,6 +57,12 @@ $width-360: 360px;
     }
 }
 
+@mixin max-width-1440 {
+    @media (max-width: #{$width-1440}) {
+        @content;
+    }
+}
+
 @mixin max-width-1400 {
     @media (max-width: #{$width-1400 - 1px}) {
         @content;

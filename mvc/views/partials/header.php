@@ -109,30 +109,58 @@
                </a>
    
                <div class="navbar__action--expands">
-                  <button type="button" class="navbar__action--expands--btn border-0" data-bs-toggle="modal" data-bs-target="#header-search">
+                  <button type="button" class="navbar__action--expands--btn js-btn-cart border-0" data-bs-toggle="modal" data-bs-target="#header-cart">
                      <i class="icon-shopping-cart"></i>
                   </button>
+                  
                   <!-- The Modal -->
-                  <div class="modal fade" id="header-search">
-                     <div class="modal-dialog">
-                        <div class="modal-content">
-   
+                  <div class="modal modal-cart fade" id="header-cart">
+                     <div class="modal-dialog modal-offcanvas">
+                        <div class="modal-offcanvas__content modal-content">
                            <!-- Modal Header -->
-                           <div class="modal-header">
-                              <h4 class="modal-title">Modal Heading</h4>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                           <div class="modal-offcanvas__content--header modal-header border-0">
+                              <h4 class="modal-title">Shopping Card <span>(2)</span></h4>
+                              <button type="button" class="modal-offcanvas__content--header--close btn-close" data-bs-dismiss="modal"></button>
                            </div>
    
                            <!-- Modal body -->
-                           <div class="modal-body">
-                              Modal body..
+                           <div class="modal-offcanvas__content--body modal-body">
+                              <?php for($i =0 ; $i < 2; $i++) { ?>
+                              <div class="modal-offcanvas__content--item d-flex align-items-center">
+                                 <div class="modal-offcanvas__content--item--img">
+                                    <img src=<?php echo IMG_PATH . "offcanvas-item.png"?> alt="" srcset="">
+                                 </div>
+
+                                 <div class="d-flex justify-content-between w-100">
+                                    <div class="modal-offcanvas__content--item--info">
+                                       <p class="modal-offcanvas__content--item--name">Fresh Indian Orange</p>
+                                       <p class="modal-offcanvas__content--item--text"><span>3kg</span>x <strong>12.00</strong></p>
+                                    </div>
+   
+                                    <button class="modal-offcanvas__content--item--action border-0 bg-white">
+                                       <i class="icon-plus"></i>
+                                    </button>
+                                 </div>
+                              </div>
+
+                              <div class="modal-offcanvas__content--body--divider"></div>
+                              <?php } ?>
                            </div>
    
                            <!-- Modal footer -->
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                           <div class="modal-offcanvas__content--footer modal-footer border-0">
+                              <div class="w-100">
+                                 <div class="modal-offcanvas__content--footer--wrap d-flex justify-content-between">
+                                    <p class="modal-offcanvas__content--footer--info d-flex gap-2"><span>2</span>Products</p>
+                                    <p class="fw-bold">$26.00</p>
+                                 </div>
+                                 
+                                 <div class="modal-offcanvas__content--footer--link d-block">
+                                    <a href="#" class="w-100">Checkout</a>
+                                    <a href="#" class="w-100">Go To Cart</a>
+                                 </div>
+                              </div>
                            </div>
-   
                         </div>
                      </div>
                   </div>
