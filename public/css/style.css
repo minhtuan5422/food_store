@@ -670,5 +670,79 @@ ul, ol {
     opacity: 0;
   }
 }
+.footer {
+  background: url("http://localhost/food_store/public/imgs/Footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: fit-content;
+  padding-top: 80px;
+  color: #999;
+  font-style: normal;
+}
+.footer__company--logo > img {
+  aspect-ratio: 183/38;
+}
+.footer__company--desc {
+  max-width: 300px;
+  margin: 16px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer__company--action a {
+  text-decoration: none;
+  color: #999;
+}
+.footer__company--action a i {
+  padding: 11px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+.footer__company--action a i:hover {
+  background-color: #00B207;
+  color: #fff;
+  border-radius: 100%;
+}
+.footer__link {
+  margin-bottom: 60px;
+}
+.footer__link--title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.footer__link--divider {
+  background-color: #00B207;
+  width: 24px;
+  height: 2px;
+  margin: 12px 0;
+}
+.footer__link--list {
+  display: flex;
+  padding-top: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.footer__link--list--item {
+  cursor: pointer;
+}
+.footer__link--list--item:hover {
+  color: #00B207;
+}
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  box-shadow: 0px -1px 0px 0px #333;
+}
+@media (max-width: 424px) {
+  .footer__copyright {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

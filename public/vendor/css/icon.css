@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('http://localhost/food_store/public/vendor/fonts/icomoon.eot?10e1ew');
-  src:  url('http://localhost/food_store/public/vendor/fonts/icomoon.eot?10e1ew#iefix') format('embedded-opentype'),
-    url('http://localhost/food_store/public/vendor/fonts/icomoon.ttf?10e1ew') format('truetype'),
-    url('http://localhost/food_store/public/vendor/fonts/icomoon.woff?10e1ew') format('woff'),
-    url('http://localhost/food_store/public/vendor/fonts/icomoon.svg?10e1ew#icomoon') format('svg');
+  src:  url('http://localhost/food_store/public/vendor/fonts/icomoon.eot?x1zly1');
+  src:  url('http://localhost/food_store/public/vendor/fonts/icomoon.eot?x1zly1#iefix') format('embedded-opentype'),
+    url('http://localhost/food_store/public/vendor/fonts/icomoon.ttf?x1zly1') format('truetype'),
+    url('http://localhost/food_store/public/vendor/fonts/icomoon.woff?x1zly1') format('woff'),
+    url('http://localhost/food_store/public/vendor/fonts/icomoon.svg?x1zly1#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-facebook:before {
+  content: "\e92b";
+}
+.icon-heart1:before {
+  content: "\e92c";
+}
+.icon-instagram:before {
+  content: "\e92d";
+}
 .icon-arrow-right:before {
   content: "\e906";
 }
@@ -263,24 +272,6 @@
   margin-left: -1em;
   color: rgb(26, 26, 26);
 }
-.icon-facebook .path1:before {
-  content: "\e92b";
-  color: rgb(255, 255, 255);
-}
-.icon-facebook .path2:before {
-  content: "\e92c";
-  margin-left: -1em;
-  color: rgb(26, 26, 26);
-}
-.icon-instagram .path1:before {
-  content: "\e92f";
-  color: rgb(255, 255, 255);
-}
-.icon-instagram .path2:before {
-  content: "\e930";
-  margin-left: -1em;
-  color: rgb(26, 26, 26);
-}
 .icon-leaf .path1:before {
   content: "\e931";
   color: rgb(255, 255, 255);
@@ -393,15 +384,6 @@
 }
 .icon-starts .path2:before {
   content: "\e94e";
-  margin-left: -1em;
-  color: rgb(26, 26, 26);
-}
-.icon-twitter .path1:before {
-  content: "\e94f";
-  color: rgb(255, 255, 255);
-}
-.icon-twitter .path2:before {
-  content: "\e950";
   margin-left: -1em;
   color: rgb(26, 26, 26);
 }
