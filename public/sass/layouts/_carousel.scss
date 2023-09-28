@@ -1,0 +1,103 @@
+.slick {
+    &-track {
+        margin-left: initial;
+        margin-right: initial;
+    }
+    
+    &-dotted {
+        margin-bottom: 0 !important;
+        .slick-dots {
+            bottom: 16px;
+            li,
+            button {
+                width: 12px;
+                height: 12px;
+                @include max-width-576 {
+                    width: 16px !important;
+                }
+            }
+        
+            li {
+                transition: all 0.75s;
+                @include max-width-576 {
+                    margin: 0 4px !important;
+                }
+        
+                button:before {
+                    position: absolute;
+                    font-size: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                    background-color: white;
+                    opacity: 1 !important;
+                }
+        
+                &.slick-active {
+                    color: $primary-color !important;
+        
+                    button:before {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        
+        }
+    }
+    
+    &-arrow {
+        &.slick {
+            &-prev, &-next {
+                z-index: 1000;
+                position: absolute;
+                top: calc(50% - 30px);
+                transform: translateY(-50%);
+                width: 45px;
+                height: 45px;
+                background-color: white !important;
+                border-radius: 100%;
+                transition: all 0.35s;
+
+                &:hover{
+                    background-color: $primary-color !important;
+                    &:before {
+                        color: white;
+                    }
+                }
+                &:before {
+                    content: "\e906";
+                    font-family: "icomoon" !important;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    display: block;
+                    font-size: 1rem;
+                    color: $gray-scale-gray-900;
+                    transition: all 0.35s;
+                }
+            }
+            &-prev {
+                left: 120px;
+                &:before {
+                    transform: rotate(180deg);
+                }
+            }
+        
+            &-next {
+                right: 120px;
+            }
+        
+            &-disabled{
+                cursor: default;
+                background-color: transparent !important;
+                &::before {
+                    color: transparent !important;
+                }
+            }
+        }
+    }
+}

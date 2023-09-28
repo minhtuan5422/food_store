@@ -1,0 +1,76 @@
+.slider {
+    &-single {
+        max-height: 640px;
+
+        .slider__content {
+            width: 596px;
+            height: 376px;
+            right: 0;
+            padding: 155px 0 109px;
+
+            &--welcome {
+                color: $primary-color;
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            &--sale {
+                margin: 28px 0 32px;
+                
+                &--info {
+                    color: $gray-scale-gray-900;
+                    font-size: 32px;
+                    font-weight: 400;
+
+                    &>span {
+                        color: $branding-warning;
+                        font-weight: 600;
+                    }
+                }
+
+                &--detail {
+                    color: $text;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+
+            &--link {
+                position: relative;
+                background-color: $primary-color;
+                display: inline-flex;
+                padding: 16px 40px;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                border-radius: 53px;
+                color:$white;
+                font-weight: 600;
+                text-decoration: none;
+                outline: none;
+                overflow: hidden;
+                z-index: 1;
+
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    background-color: transparent;
+                    position: absolute;
+                    top: -50%;
+                    bottom: -50%;
+                    width: 20px;
+                    transform: translate3d(-525%, 0, 0) rotate(35deg);
+                }
+            
+                &:hover::after {
+                    transition: transform 0.5s ease-in-out;
+                    transform: translate3d(700%, 0, 0) rotate(35deg);
+                    background-color: #fff;
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+
+}

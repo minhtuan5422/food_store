@@ -63,7 +63,7 @@
         </div>
 
         <div class="footer__copyright">
-            <p>Ecobazar eCommerce © 2021. All Rights Reserved</p>
+            <p>Ecobazar eCommerce © 2021. All Rights Reserved Tuấn</p>
             <img src=<?php echo IMG_PATH . "payment.png";?> alt="" srcset="">
         </div>
     </div>
