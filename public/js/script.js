@@ -6,7 +6,133 @@ $(document).ready(function() {
             autoplaySpeed: 2000,
             infinity: true
         }
-    )
+    );
+
+    if ($(window).width() < 1024) {
+        carousel('featured__policy',
+            [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 425,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                }
+            ],
+        )
+    }
+
+    carousel('top-categories__item', 
+        [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            }
+        ], 
+        
+        {
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            infinity: true,
+            slidesToShow: 6,
+            slidesToScroll: 3
+        }   
+    );
+
+    carousel('best-seller__products', 
+        [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            }
+        ], 
+        
+        {
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            infinity: true,
+            slidesToShow: 5,
+            slidesToScroll: 3
+        }   
+    );
+
+    carousel('latest-article__wrapper', 
+        [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            }
+        ], 
+        
+        {
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            infinity: true,
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }   
+    );
 
     if ($(window).width() < 525) {
         const iconAction = $('.res-none');

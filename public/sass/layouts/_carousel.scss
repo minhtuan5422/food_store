@@ -101,3 +101,24 @@
         }
     }
 }
+
+.best-seller__products,
+.top-categories {
+    .slick {
+        &-arrow {
+            &.slick {
+                &-prev, &-next {
+                    transform: translateY(0);
+                }
+
+                &-prev {
+                    left: -60px;
+                } 
+    
+                &-next {
+                    right: -60px;
+                }
+            }
+        }
+    }
+}
