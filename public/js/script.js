@@ -2,7 +2,7 @@ $(document).ready(function() {
     carousel('slider-single',
         [], {
             dots: true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2000,
             infinity: true
         }
@@ -63,7 +63,7 @@ $(document).ready(function() {
         
         {
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             infinity: true,
             slidesToShow: 6,
@@ -98,7 +98,7 @@ $(document).ready(function() {
         
         {
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             infinity: true,
             slidesToShow: 5,
@@ -109,10 +109,59 @@ $(document).ready(function() {
     carousel('latest-article__wrapper', 
         [
             {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            }
+        ], 
+        
+        {
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            infinity: true,
+            slidesToShow: 3,
+            slidesToScroll: 2
+        }   
+    );
+
+    carousel('feedbacks__content--body', 
+        [
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            }
+        ], 
+        
+        {
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            infinity: true,
+            slidesToShow: 3,
+            slidesToScroll: 2
+        }   
+    );
+
+    carousel('company__logo', 
+        [
+            {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                 },
             },
             {
@@ -126,11 +175,11 @@ $(document).ready(function() {
         
         {
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             infinity: true,
-            slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToShow: 6,
+            slidesToScroll: 3
         }   
     );
 

@@ -102,6 +102,7 @@
     }
 }
 
+.latest-article__wrapper,
 .best-seller__products,
 .top-categories {
     .slick {
@@ -117,6 +118,26 @@
     
                 &-next {
                     right: -60px;
+                }
+            }
+        }
+    }
+}
+
+.feedbacks__content--body {
+    .slick {
+        &-arrow {
+            &.slick {
+                &-prev, &-next {
+                    top: -15%;
+                }
+
+                &-prev {
+                    left: 91%;
+                } 
+    
+                &-next {
+                    right: 1rem;
                 }
             }
         }

@@ -1,6 +1,5 @@
 .article-item {
-    max-width: calc(376px + (24px * 2));
-    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.08);
+    margin: 0 12px;
     cursor: pointer;
 
     &:hover .article-item__body--title {
@@ -16,6 +15,7 @@
         border-radius: 8px 8px 0px 0px;
 
         &--img {
+            width: 100%;
             aspect-ratio: 424/324;
             object-fit: cover;
             transition: all 0.2s linear;
