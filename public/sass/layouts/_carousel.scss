@@ -8,12 +8,13 @@
         margin-bottom: 0 !important;
         .slick-dots {
             bottom: 16px;
+
             li,
             button {
                 width: 12px;
                 height: 12px;
                 @include max-width-576 {
-                    width: 16px !important;
+                    width: 12px !important;
                 }
             }
         
@@ -48,7 +49,7 @@
     &-arrow {
         &.slick {
             &-prev, &-next {
-                z-index: 1000;
+                z-index: 50;
                 position: absolute;
                 top: calc(50% - 30px);
                 transform: translateY(-50%);
@@ -82,6 +83,10 @@
             }
             &-prev {
                 left: 120px;
+                @include max-width-1200 {
+                    left: 30px;
+                }
+
                 &:before {
                     transform: rotate(180deg);
                 }
@@ -89,6 +94,9 @@
         
             &-next {
                 right: 120px;
+                @include max-width-1200 {
+                    right: 30px;
+                }
             }
         
             &-disabled{
@@ -102,10 +110,33 @@
     }
 }
 
+.featured__policy {
+
+    &--box {
+        @include max-width-1200 {
+            display: flex !important;
+        }
+    }
+}
+
+.top-categories__item {
+    .slick-dots {
+        bottom: -60px !important;
+    }
+}
+
+.feedbacks__content--body,
+.latest-article__wrapper {
+    .slick-dots {
+        bottom: -30px !important;
+    }
+}
+
+
 .latest-article__wrapper,
 .best-seller__products,
 .top-categories {
-    .slick {
+    .slick { 
         &-arrow {
             &.slick {
                 &-prev, &-next {
@@ -113,11 +144,15 @@
                 }
 
                 &-prev {
-                    left: -60px;
+                    left: -1rem;
                 } 
     
                 &-next {
-                    right: -60px;
+                    right: -1rem;
+
+                    @include max-width-576 {
+                        right: -0.5rem;
+                    }
                 }
             }
         }
@@ -133,11 +168,17 @@
                 }
 
                 &-prev {
-                    left: 91%;
+                    left: 91%; 
+                    @include max-width-1200 {
+                        left: 89%; 
+                    }
                 } 
     
                 &-next {
                     right: 1rem;
+                    @include max-width-1200 {
+                        right: 0; 
+                    }
                 }
             }
         }

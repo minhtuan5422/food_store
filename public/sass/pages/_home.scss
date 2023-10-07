@@ -7,6 +7,11 @@
             height: 640px;
             background-repeat: repeat;
             background-size: cover;
+            object-fit: cover;
+
+            @include max-width-576 {
+                height: 576px;
+            }
         }
 
         .slider__content {
@@ -14,6 +19,12 @@
             height: 376px;
             right: 0;
             padding: 155px 0 109px;
+
+            @include max-width-992 {
+                width: auto;
+                width: auto;
+                padding: 155px 1.5rem 109px;
+            }
 
             &--welcome {
                 color: $primary-color;
@@ -157,6 +168,12 @@
                 }
             }
         }
+
+        &--carousel {
+            .product-card {
+                margin: 0 12px;
+            }
+        }
     }
 }
 
@@ -214,6 +231,14 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 600px;
+    line-height: 5;
+
+    @include max-width-576 {
+        height: fit-content;
+        line-height: auto;
+        padding-bottom: 80px;
+    }
+
 
     #leaves {
         position:relative;
@@ -431,7 +456,11 @@
         align-items: center;
         transition: 0.5s;
         transition-delay: 0.5s;
-        margin-top: calc(350px / 4);
+        margin-top: 5%;
+
+        @include max-width-576 {
+            display: none;
+        }
 
         &:hover {
             width: 600px;
@@ -463,6 +492,11 @@
                 filter: drop-shadow(0 0 10px $green) drop-shadow(0 0 60px $green);
                 transition: 0.5s;
                 transition-delay: 0.75s, 1s;
+
+                @include max-width-992 {
+                    width: 400px;
+                    height: 400px;
+                }
             }
 
             .logo {
@@ -546,6 +580,7 @@
             .slider__content--link {
                 position: relative;
                 width: fit-content;
+                max-height: 45px;
                 background-color: $white;
                 color: $primary-color;
                 outline: none;
@@ -581,15 +616,12 @@
         }
     }
 
-    .col-5 {
-        margin-top: calc((600px - (174px * 2 + 24px)) / 3.5);
-    }
-
     &__right {
 
         &--box {
             background: rgba(255, 255, 255, 0.07);
             width: 100%;
+            height: 100%;
             display: flex;
             padding: 40px 0px;
             flex-direction: column;
@@ -600,6 +632,10 @@
                 color: $primary-color;
                 font-size: 56px;
                 font-weight: 300;
+
+                @include max-width-992 {
+                    font-size: 40px;
+                }
             }
 
             &--detail {
@@ -607,6 +643,10 @@
                 text-align: center;
                 font-size: 18px;
                 font-weight: 400;
+
+                @include max-width-1200 {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -688,6 +728,10 @@
 
         &--second {
             background-image: url($img-url + "Banner-2.png");
+
+            @include max-width-576 {
+                margin-top: 24px;
+            }
         }
     }
 
@@ -711,12 +755,13 @@
         }
 
         &--news {
-            position: relative;
+            background-image: url($img-url + "hot-sale.png");
+            background-repeat: no-repeat;
+            background-size: cover;
             text-align: center;
 
-            &--img {
-                position: absolute; 
-                z-index: -1;
+            @include max-width-576 {
+                padding-bottom: 50px;
             }
 
             p {
@@ -767,6 +812,13 @@
                 }
             }
         }
+    
+        &--res {
+            @include max-width-992 {
+                margin-top: 50px;
+            }
+        }
+
     }
 
     &__products {

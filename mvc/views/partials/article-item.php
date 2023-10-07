@@ -8,7 +8,7 @@
     </div>
 
     <div class="article-item__body">
-        <div class="article-item__body--info d-flex align-items-center gap-4">
+        <div class="article-item__body--info d-flex align-items-center">
             <div class="article-item__body--info--detail d-flex gap-2 align-items-center">
                 <i class="icon-tag"></i>
                 <p><?php echo $category ?></p>

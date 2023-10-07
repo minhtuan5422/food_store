@@ -87,14 +87,15 @@ ob_start();
                 </a>
             </div>
 
-            <div class="row">
+            <div class="featured__products--carousel">
                 <?php for ($j = 0; $j < 4; $j++) : ?>
-                    <div class="col-6 col-md-4 col-lg-3">
+                    <div class="slick-slide">
                         <?php include "./mvc/views/partials/product-card.php" ?>
                     </div>
                 <?php endfor ?>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -192,7 +193,7 @@ ob_start();
 
     <div class="container-xl">
         <div class="row">
-            <div class="col-7">
+            <div class="col-sm-7">
                 <div class="card ms-5">
                     <div class="circle">
                         <img src=<?php echo IMG_PATH . "book-cover.jpg" ?> class="logo">
@@ -215,7 +216,7 @@ ob_start();
                 </div>
             </div>
 
-            <div class="col-5">
+            <div class="col-sm-5">
                 <div class="row">
                     <div class="why-choose__right col-6">
                         <div class="why-choose__right--box">
@@ -256,7 +257,7 @@ ob_start();
     <div class="container-xl">
         <div class="best-seller__banner">
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="best-seller__banner--item">
                         <div class="best-seller__banner--item--info">
                             <p>100% Organic</p>
@@ -270,7 +271,7 @@ ob_start();
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="best-seller__banner--item best-seller__banner--second">
                         <div class="best-seller__banner--item--info">
                             <p>sale off the week</p>
@@ -325,7 +326,7 @@ ob_start();
 
         <div class="best-seller__rank">
             <div class="row">
-                <div class="col-lg-3 best-seller__rank--col">
+                <div class="col-md-6 col-lg-3 best-seller__rank--col">
                     <p class="best-seller__rank--col--title">Hot Deals</p>
                     <?php
                     $name = "Chanise Cabbage";
@@ -336,7 +337,7 @@ ob_start();
                     ?>
                 </div>
 
-                <div class="col-lg-3 best-seller__rank--col">
+                <div class="col-md-6 col-lg-3 best-seller__rank--col">
                     <p class="best-seller__rank--col--title">Best Seller</p>
                     <?php
                     $name = "Chanise Cabbage";
@@ -347,7 +348,7 @@ ob_start();
                     ?>
                 </div>
 
-                <div class="col-lg-3 best-seller__rank--col">
+                <div class="col-md-6 col-lg-3 best-seller__rank--col best-seller__rank--res">
                     <p class="best-seller__rank--col--title">Top Rated</p>
                     <?php
                     $name = "Chanise Cabbage";
@@ -358,8 +359,7 @@ ob_start();
                     ?>
                 </div>
 
-                <div class="col-lg-3 best-seller__rank--col best-seller__rank--news">
-                    <img src=<?php echo IMG_PATH . "hot-sale.png" ?> class="best-seller__rank--news--img" alt="" srcset="">
+                <div class="col-md-6 col-lg-3 best-seller__rank--col best-seller__rank--news best-seller__rank--res">
                     <p>HOt Sale</p>
                     <h5><span class="fw-bold">Save 37%</span> on Every Order</h5>
                     <div class="d-flex justify-content-center">

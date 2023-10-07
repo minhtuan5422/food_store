@@ -54,6 +54,11 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 150%;
+            gap: 1.5rem;
+
+            @include max-width-992 {
+                gap: 0.5rem;
+            }
 
             &--detail {
 
