@@ -212,10 +212,6 @@
         width:100%;
         text-align: right;
 
-        @include max-width-425 {
-            margin-top: -60px;
-        }
-
         &>i {
             display: inline-block;
             width: 300px;

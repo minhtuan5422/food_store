@@ -685,7 +685,8 @@ ul, ol {
 }
 .header .navbar-collapse {
   max-width: fit-content;
-  transition: all 0.3s ease;
+  animation: fromLeft 0.6s ease;
+  transition: all;
 }
 @media (max-width: 1199px) {
   .header .navbar-collapse {
@@ -744,7 +745,6 @@ ul, ol {
 .header .navbar-nav .nav-item .dropdown-menu {
   background-color: #fff;
   box-shadow: 0px 0px 10px #ddd;
-  transition: all 0.3s linear;
 }
 @media (max-width: 1199px) {
   .header .navbar-nav .nav-item .dropdown-menu {
@@ -756,6 +756,8 @@ ul, ol {
   font-size: 14px;
   color: #808080;
   font-weight: 500;
+  animation: fromTop 0.6s ease;
+  transition: all;
 }
 @media (max-width: 1199px) {
   .header .navbar-nav .nav-item .dropdown-menu .dropdown-item {
@@ -946,6 +948,22 @@ ul, ol {
   opacity: 0.8;
 }
 
+@keyframes fromLeft {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fromTop {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 @keyframes fromRight {
   0% {
     transform: translateX(100%);
@@ -1469,11 +1487,6 @@ ul, ol {
   right: 0;
   width: 100%;
   text-align: right;
-}
-@media (max-width: 424px) {
-  .why-choose #leaves {
-    margin-top: -60px;
-  }
 }
 .why-choose #leaves > i {
   display: inline-block;
