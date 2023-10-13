@@ -14,8 +14,8 @@ h1 {
 
 h2 {
     font-size: 48px;
-    font-weight: 500;
-    line-height: 150%;
+    font-weight: 600;
+    line-height: 120%;
     @include max-width-992{
         font-size: 36px;
         line-height: normal;

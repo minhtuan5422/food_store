@@ -219,6 +219,33 @@ $(document).ready(function () {
         autoplaySpeed: 2500,
       }
     );
+
+    carousel(
+      "about-team__members",
+      [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+
+      {
+        autoplay: false,
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        autoplaySpeed: 2500,
+      }
+    );
   });
 
   if ($(window).width() < 525) {

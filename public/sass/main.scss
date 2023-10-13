@@ -4,6 +4,7 @@
 @import "base/fontface";
 @import "base/reset";
 @import "base/typography";
+@import "components/button";
 @import "components/cta";
 @import "components/product-card";
 @import "components/product-review";
@@ -12,4 +13,6 @@
 @import "layouts/footer";
 @import "layouts/carousel";
 @import "layouts/feedbacks";
+@import "layouts/breadcrumb";
 @import "pages/home";
+@import "pages/about";

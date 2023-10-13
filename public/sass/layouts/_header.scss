@@ -64,10 +64,10 @@
         
         &-collapse {
             max-width: fit-content;
-            height: 100vh;
             transition: all 0.3s ease;
-
+            
             @include max-width-1200 {
+                height: 100vh;
                 position: absolute;
                 transform: translateX(-5%);
                 background-color: #EDF2EE;

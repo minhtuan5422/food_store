@@ -16,7 +16,7 @@ ob_start();
                         <h5 class="slider__content--sale--info">Sale up to <span>30% OFF</span></h5>
                         <p class="slider__content--sale--detail">Free shipping on all your order. we deliver, you enjoy</p>
                     </div>
-                    <a href="#" class="slider__content--link">Shop now
+                    <a href="#" class="btn-primary">Shop now
                         <i class="icon-arrow-right"></i>
                     </a>
                 </div>
@@ -399,53 +399,7 @@ ob_start();
 </section>
 
 <?php include "./mvc/views/partials/feedbacks.php" ?>
-
-<section class="company">
-    <div class="container-xl">
-        <div class="company__logo">
-            <?php for ($i = 1; $i <= 6; $i++) : ?>
-                <div class="company__logo--img">
-                    <img src=<?php echo IMG_PATH . "company-" . $i . ".png" ?> alt="">
-                </div>
-            <?php endfor; ?>
-        </div>
-
-        <div class="company__info">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="company__info--box">
-                        <i class="icon-location2"></i>
-                        <div class="company__info--box--detail">
-                            <p>Our Location</p>
-                            <p class="company__info--box--detail--text">1901 Thornridge Cir. Shiloh, Washington DC 20020, United States</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="company__info--box">
-                        <i class="icon-phone-call"></i>
-                        <div class="company__info--box--detail">
-                            <p>Call Us 24/7</p>
-                            <p class="company__info--box--detail--num">(303) 555-0105</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="company__info--box">
-                        <i class="icon-mail"></i>
-                        <div class="company__info--box--detail">
-                            <p>Our Location</p>
-                            <div class="company__info--box--detail--action">
-                                <input type="text" placeholder="Your email address">
-                                <button>Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include "./mvc/views/partials/company.php" ?>
 
 <?php
 $content = ob_get_contents();

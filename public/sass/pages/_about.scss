@@ -1,0 +1,189 @@
+.about {
+    &-us {
+        padding: 80px 0;
+    
+        &__content {
+            padding: 96px 0;
+
+            @include max-width-1400 {
+                padding: 0;
+            }
+    
+            h1 {
+                max-width: 607px;
+            }
+    
+            p {
+                margin-top: 32px;
+                max-width: 590px;
+                color: $gray-scale-gray-600;
+                font-size: 18px;
+            }
+        }
+    
+        &-img {
+            @include max-width-1400 {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &-me {
+        background-image: url($img-url + "about-banner.png");
+        background-size: cover;
+
+        &-img {
+            aspect-ratio: 745/685;
+            height: 685px;
+            margin-left: -15%;
+
+            @include max-width-576 {
+                width: 100%;
+                object-fit: cover;
+                margin-left: 0;
+            }
+        }
+
+        &__content {
+            padding-top: 80px;
+
+            &--text {
+
+                h1 {
+                    max-width: 607px;
+                }
+    
+                p {
+                    margin-top: 20px;
+                    max-width: 570px;
+                    color: $gray-scale-gray-500;
+                }
+            }
+
+            .row {
+                margin-top: 32px;
+
+                @include max-width-576 {
+                    margin-bottom: 50px;
+                }
+            }
+
+            &--col {
+                gap: 16px;
+                
+                &--icon {
+                    
+                    &>i {
+                        background: $bg-icon;
+                        padding: 16px;
+                        border-radius: 50%;
+                        color: $primary-color;
+                        font-size: 40px;
+                    }
+                }
+
+                p:first-child {
+                    color: $gray-scale-gray-900;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                p:last-child {
+                    margin-top: 8px;
+                    color: $gray-scale-gray-500;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+
+            .res-col {
+                @include max-width-576 {
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+
+    &-enjoy {
+        padding-top: 80px;
+
+        @include max-width-1200 {
+            padding-bottom: 60px;
+        }
+
+        &__content {
+            padding-top: 80px;
+            
+            &--desc {
+                margin-top: 24px;
+                margin-bottom: 20px;
+                color: $gray-scale-gray-600;
+                font-weight: 400;
+            }
+
+            &--feature {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 32px;
+
+                i {
+                    background: $bg-icon;
+                    padding: 4px;
+                    color: $green;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &__img {
+            overflow-x: hidden;
+            &>img {
+                width: 895px;
+                height: 606px;
+            }
+        }
+    }
+
+    &-team {
+        background: linear-gradient(180deg, #F2F2F2 0%, #FFF 100%);
+        padding: 80px 0;
+        
+        &__title {
+            text-align: center;
+
+            &>h2 {
+                color: $gray-scale-gray-900;
+            }
+
+            &>p {
+                max-width: 640px;
+                margin-top: 12px;
+                margin: auto;
+                color: $gray-scale-gray-600;
+            }
+        }
+
+        &__members {
+            margin-top: 50px;
+
+            .card {
+                margin: 0 12px;
+
+                &-title {
+                    color: $gray-scale-gray-900;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                &-text {
+                    color: $gray-scale-gray-500;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

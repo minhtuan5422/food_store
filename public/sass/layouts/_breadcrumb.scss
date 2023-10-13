@@ -1,0 +1,38 @@
+.breadcrumb{
+    height: 120px;
+    background-image: url($img-url + "breadcrumbs.png");
+    padding: 48px 0;
+    margin: 0px;
+
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    li,
+    a {
+        color: $text;
+    }
+    li{
+        display: inline;
+        i {
+            font-size: 24px;
+            vertical-align: middle;
+        }
+        .icon-chevron-right {
+            margin: 0 4px;
+            color: $text;
+        }
+        &.active {
+            font-weight: 600;
+            color: $primary-color;
+        }
+    }
+
+    li:last-child{
+        .icon-chevron-right {
+            display: none !important;
+        }
+    }
+}
