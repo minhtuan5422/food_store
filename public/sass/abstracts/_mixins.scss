@@ -190,3 +190,24 @@ $width-360: 360px;
     -o-transform: $settings;
     -ms-transform: $settings;
 }
+
+@mixin styleButtonCollapse {
+    &--expands {
+        background-color: $white;
+        margin-bottom: 10px;
+
+        &>p {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 150%;
+        }
+
+        &>i {
+            color: $gray-scale-gray-900;
+            font-weight: bold;
+            transform: rotate(-90deg);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+    }
+}

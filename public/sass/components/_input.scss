@@ -1,0 +1,130 @@
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: $primary-color;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+}
+  
+/* Track: webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #E6E6E6;
+    border-radius: 16px;
+}
+
+/* Track: Mozilla Firefox */
+input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #E6E6E6;
+    border-radius: 16px;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid $primary-color;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px $primary-color;
+}
+
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid $primary-color;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px $primary-color;
+}
+
+input[type="checkbox"]:checked {
+    position: relative;
+    background: $primary-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"] {
+    position: relative;
+}
+
+input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 6px;
+    height: 12px;
+    border: solid #FFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translate(-50%, -50%);
+}
+
+input[type="checkbox"]:checked::after {
+    display: block;
+}

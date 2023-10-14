@@ -253,6 +253,10 @@ $(document).ready(function () {
     iconAction.show();
     $(".navbar-collapse").append(iconAction);
   }
+
+  rotateIconCollapse("product__sidebar--category--expands", "product__sidebar--category--icon");
+  rotateIconCollapse("product__sidebar--price--expands", "product__sidebar--price--icon");
+  rotateIconCollapse("product__sidebar--rating--expands", "product__sidebar--rating--icon");
 });
 
 // Carousel initial
@@ -288,7 +292,6 @@ if (!isTouchDevice) {
 }
 
 /* Modal/Offcanvas Handler */
-
 const closeOffcanvas = $(".modal-offcanvas__content--header--close");
 closeOffcanvas.click(function () {
   $(".modal-offcanvas").css("animation", "backRight 0.4s ease");
@@ -301,3 +304,14 @@ $(".js-btn-cart").click(function () {
 $(".modal-cart").click(function () {
   $(".modal-offcanvas").css("animation", "backRight 0.4s ease");
 });
+
+/* Handle rotate icon sidebar */
+function rotateIconCollapse(button, icon) {
+  var clickCount = 0;
+
+  $("." + button).click(function() {
+    clickCount++;
+    let rotateDegree = clickCount % 2 === 0 ? 270 : 90;
+    $("." + icon).css("transform", "rotate(" + rotateDegree + "deg)");
+  });
+}
