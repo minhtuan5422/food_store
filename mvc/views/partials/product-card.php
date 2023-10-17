@@ -11,7 +11,7 @@
     <div class="product-card__body">
         <p class="product-card__body--name">Chanise Cabbage</p>
 
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="product-card__body--content justify-content-between align-items-center">
             <p class="product-card__body--price">$14.99<span class="ms-1">$20.99</span></p>
             <button type="button" class="product-card__body--btn d-flex flex-column-reverse align-items-center" data-bs-toggle="modal" data-bs-target="#myModal">
                 <i class="icon-shopping-cart"></i>

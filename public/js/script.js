@@ -254,6 +254,10 @@ $(document).ready(function () {
     $(".navbar-collapse").append(iconAction);
   }
 
+  $('.js-action-filter').click(function() {
+    $('.filter-body').append($('.product__sidebar--category'));
+  })
+
   rotateIconCollapse("product__sidebar--category--expands", "product__sidebar--category--icon");
   rotateIconCollapse("product__sidebar--price--expands", "product__sidebar--price--icon");
   rotateIconCollapse("product__sidebar--rating--expands", "product__sidebar--rating--icon");

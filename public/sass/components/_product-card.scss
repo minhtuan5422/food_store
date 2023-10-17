@@ -56,6 +56,14 @@
             font-weight: 400;
         }
 
+        &--content {
+            display: flex;
+
+            @include max-width-360 {
+                display: block;
+            }
+        }
+
         &--price {
             color: $gray-scale-gray-900;
             font-weight: 500;
@@ -72,6 +80,10 @@
             border: none;
             border-radius: 50%;
             transition: all 0.4s ease;
+
+            @include max-width-360 {
+               margin: 12px 0;
+            }
 
             &:hover {
                 background-color: $primary-color;

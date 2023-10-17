@@ -164,7 +164,88 @@ ob_start();
                 </div>
             </div>
 
-            <div class="col-sm-9"></div>
+            <div class="col-sm-9">
+                <div class="product__filter align-items-center justify-content-between">
+                    <div class="res-product__filter align-items-center">
+                        <div class="res-sidebar-action">
+                            <button type="button" class="btn-primary product__sidebar--action js-action-filter" data-bs-toggle="modal" data-bs-target="#filterModal">
+                                <span>Filter</span>
+                                <i class="icon-filter2"></i>
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="filterModal">
+                                <div class="modal-dialog position-absolute m-0">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <!-- Modal body -->
+                                        <div class="modal-body filter-body"></div>
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="product__filter--label">Sort by:</p>
+                        <select name="" class="product__filter--action">
+                            <option value="">Latest</option>
+                            <option value="">A -> Z</option>
+                            <option value="">Z -> A</option>
+                            <option value="">Price from high to low</option>
+                            <option value="">Price from low to high</option>
+                        </select>
+                    </div>
+                    <p class="product__filter--result"><span>52</span> Results Found</p>
+                </div>
+
+                <div class="product__list">
+                    <div class="row">
+                        <?php for ($j = 0; $j < 15; $j++) : ?>
+                            <div class="col-6 col-sm-4 mb-4">
+                                <?php include "./mvc/views/partials/product-card.php" ?>
+                            </div>
+                        <?php endfor ?>
+                        <?php include "./mvc/views/partials/pagination.php" ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product__footer">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>Subcribe our Newsletter</p>
+                    <p>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
+                        Phasellus imperdiet elit eu magna.</p>
+                </div>
+                <div class="col-sm-5 d-flex flex-column justify-content-center">
+                    <div class="product__footer--email">
+                        <input type="text" placeholder="Your email address">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#">
+                        <i class="icon-facebook"></i>
+                    </a>
+                    <a href="#">
+                        <i class="icon-youtube"></i>
+                    </a>
+                    <a href="#">
+                        <i class="icon-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="icon-twitter"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

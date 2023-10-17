@@ -1,0 +1,78 @@
+nav[aria-label="pagination"] {
+    .pagination {
+        .page-item {
+            &.active {
+                .page-link {
+                    background-color: $primary-color !important;
+                    color: white;
+
+                    &:hover {
+                        color: white !important;
+                    }
+                }
+            }
+            &:hover {
+                .page-link {
+                    color: $primary-color !important;
+                }
+            }
+
+            &:has(i) {
+
+                &:first-child .page-link {
+                    margin-right: 12px;
+                    transform: rotate(180deg);
+                }
+                &:last-child .page-link {
+                    margin-left: 12px;
+                }
+            }
+        }
+
+        .page-icon > a {
+            background: #F2F2F2;
+            border-radius: 500px;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+
+            &:hover i {
+                color: $white;
+            }
+        }
+
+        .page-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 130px;
+            padding: 4px;
+            line-height: 20px;
+            font-weight: 500;
+            color: black;
+            background-color: transparent;
+            transition: 0.4s;
+
+            i {
+                display: block;
+                font-size: 14px;
+                color: black;
+                background-color: transparent;
+                transition: 0.4s;
+            }
+
+            .rotate90 {
+                transform: rotate(180deg);
+            }
+
+            .rotate90:before,
+            .rotate-90:before {
+                font-size: 24px;
+            }
+        }
+    }
+}
