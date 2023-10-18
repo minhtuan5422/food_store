@@ -81,12 +81,12 @@ $(document).ready(function () {
           },
         },
         {
-         breakpoint: 425,
-         settings: {
-           slidesToShow: 1,
-           slidesToScroll: 1,
-         },
-       }
+          breakpoint: 425,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
       ],
 
       {
@@ -254,13 +254,68 @@ $(document).ready(function () {
     $(".navbar-collapse").append(iconAction);
   }
 
-  $('.js-action-filter').click(function() {
-    $('.filter-body').append($('.product__sidebar--category'));
-  })
+  $(".js-action-filter").click(function () {
+    $(".filter-body").append($(".product__sidebar--category"));
+  });
 
-  rotateIconCollapse("product__sidebar--category--expands", "product__sidebar--category--icon");
-  rotateIconCollapse("product__sidebar--price--expands", "product__sidebar--price--icon");
-  rotateIconCollapse("product__sidebar--rating--expands", "product__sidebar--rating--icon");
+  rotateIconCollapse(
+    "product__sidebar--category--expands",
+    "product__sidebar--category--icon"
+  );
+  rotateIconCollapse(
+    "product__sidebar--price--expands",
+    "product__sidebar--price--icon"
+  );
+  rotateIconCollapse(
+    "product__sidebar--rating--expands",
+    "product__sidebar--rating--icon"
+  );
+
+  /* Custom Product Detail Image */
+  $h_slider_options = {
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 6,
+    galleryMargin: 10,
+    thumbMargin: 10,
+  };
+
+  $v_slider_options = {
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 6,
+    galleryMargin: 10,
+    thumbMargin: 10,
+    vertical: true,
+  };
+
+  h_slider = $("#lightSlider").lightSlider($h_slider_options);
+  v_slider = $("#lightSliderVertical").lightSlider($v_slider_options);
+  $selector = '#lightSlider li:not(".clone") a';
+  $selector += ',#lightSliderVertical li:not(".clone") a';
+
+  $().fancybox({
+    selector: $selector,
+    backFocus: false,
+    buttons: [
+      "slideShow",
+      "share",
+      "zoom",
+      "fullScreen",
+      "thumbs",
+      "download",
+      "close",
+    ],
+  });
+});
+
+$(window).resize(function () {
+  slider.destroy();
+  h_slider = $("#ocassions-slider").lightSlider(h_slider_options);
 });
 
 // Carousel initial
@@ -313,7 +368,7 @@ $(".modal-cart").click(function () {
 function rotateIconCollapse(button, icon) {
   var clickCount = 0;
 
-  $("." + button).click(function() {
+  $("." + button).click(function () {
     clickCount++;
     let rotateDegree = clickCount % 2 === 0 ? 270 : 90;
     $("." + icon).css("transform", "rotate(" + rotateDegree + "deg)");

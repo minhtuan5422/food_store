@@ -2,6 +2,7 @@
 <script src="public/vendor/js/jquery.min.js"></script>
 <script src="public/vendor/js/jquery.lazy.min.js"></script>
 <script src="public/vendor/js/fancybox.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js'></script>
 <script src="public/vendor/js/carousel.js"></script>
 <script src="public/vendor/js/carousel.thumbs.js"></script>
 <script src="public/vendor/js/jquery.toc.min.js"></script>
