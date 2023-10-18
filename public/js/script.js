@@ -374,3 +374,20 @@ function rotateIconCollapse(button, icon) {
     $("." + icon).css("transform", "rotate(" + rotateDegree + "deg)");
   });
 }
+
+// tabs
+const tabLinks = $(".tablinks");
+const tabContent = $(".tabcontent");
+
+tabLinks.on("click", openTabs);
+
+function openTabs(e) {
+  var btnTarget = $(e.currentTarget);
+  var country = btnTarget.data("country");
+
+  tabContent.removeClass("active");
+  tabLinks.removeClass("active");
+
+  $("#" + country).addClass("active");
+  btnTarget.addClass("active");
+}
