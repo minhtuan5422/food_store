@@ -633,6 +633,12 @@
             line-height: 26px;
         }
     }
+
+    .footer-child {
+        .row {
+            margin: 0;
+        }
+    }
 }
 
 @keyframes section {

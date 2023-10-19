@@ -209,6 +209,8 @@ ob_start();
             </div>
         </section>
     </div>
+
+    <?php require_once "./mvc/views/partials/footer-child.php"?>
 </div>
 
 <?php
