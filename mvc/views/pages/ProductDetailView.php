@@ -63,12 +63,12 @@ ob_start();
                     </div>
 
                     <div class="product-detail__right--body">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="product-detail__right--body--label align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                                 <p>Brand:</p>
                                 <img src=<?php echo IMG_PATH . "brand.svg" ?> class="ms-2" alt="brand" />
                             </div>
-                            <div class="d-flex align-items-center gap-2">
+                            <div class="product-detail__right--body--share d-flex align-items-center gap-2">
                                 <p>Share item:</p>
                                 <div class="product-detail__right--body--link">
                                     <a href=""><i class="icon-facebook"></i></a>
@@ -87,7 +87,7 @@ ob_start();
                     </div>
 
                     <div class="product-detail__right--action">
-                        <div class="d-flex align-items-center">
+                        <div class="product-detail__right--action--flex align-items-center">
                             <div class="product-detail__right--action--dispatch d-flex align-items-center">
                                 <button class="product-detail__right--action--btn">-</button>
                                 <input type="text" class="product-detail__right--action--quantity" value="5" readonly>
@@ -114,43 +114,98 @@ ob_start();
             <div class="content">
                 <!-- Tab links -->
                 <div class="tabs">
-                    <button class="tablinks active" data-country="London">
-                        <p data-title="London">London</p>
+                    <button class="tablinks active" data-section="descriptions">
+                        <p data-title="Descriptions">Descriptions</p>
                     </button>
-                    <button class="tablinks" data-country="Paris">
-                        <p data-title="Paris">Paris</p>
+                    <button class="tablinks" data-section="information">
+                        <p data-title="Information">Additional Information</p>
                     </button>
-                    <button class="tablinks" data-country="Barcelona">
-                        <p data-title="Barcelona">Barcelona</p>
-                    </button>
-                    <button class="tablinks" data-country="Madrid">
-                        <p data-title="Madrid">Madrid</p>
+                    <button class="tablinks" data-section="feedback">
+                        <p data-title="Feedback">Customer Feedback</p>
                     </button>
                 </div>
 
                 <!-- Tab content -->
                 <div class="wrapper_tabcontent">
-                    <div id="London" class="tabcontent active">
-                        <h3>London</h3>
-                        <p>London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London. </p>
-                    </div>
+                    <div id="descriptions" class="tabcontent active">
+                        <h3>Descriptions</h3>
+                        <p>
+                            Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at
+                            mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus,
+                            nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin.
+                            Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum
+                            arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi
+                            urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis
+                            enim. Aliquam id mi quam. Phasellus nec fringilla elit.
 
-                    <div id="Paris" class="tabcontent">
-                        <h3>Paris</h3>
-                        <p>Paris is in the Paris department of the Paris-Isle-of-France region The French historic, political and economic capital, with a population of only 2.5 million is located in the northern part of France. One of the most beautiful cities in the world. Home to historical monuments such as Notre Dame, the Eiffel tower (320m), Bastille, Louvre and many more. </p>
-                    </div>
-
-                    <div id="Barcelona" class="tabcontent">
-                        <h3>Barcelona</h3>
-                        <p>Barcelona has been an urban laboratory since the high Medieval Ages. A place of diversity, a backdrop for a multiplicity of social and cultural processes on multiple scales that reflect different ways of constructing the future, a city with a long experience of urban life and social innovations. </p>
-                    </div>
-
-                    <div id="Madrid" class="tabcontent">
-                        <h3>Madrid</h3>
-                        <p>Madrid is in the middle of Spain, in the Community of Madrid. The Community is a large area that includes the city as well as small towns and villages outside the city. 7 million people live in the Community. More than 3 million live in the city itself.
+                            Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus
+                            faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi
+                            eget nulla. Proin luctus elementum neque et pharetra.
                         </p>
                     </div>
+
+                    <div id="information" class="tabcontent">
+                        <h3>Information</h3>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <p>Weight:</p>
+                                <p>Color:</p>
+                                <p>Type:</p>
+                                <p>Category:</p>
+                                <p>Stock Status:</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>03</p>
+                                <p>Green</p>
+                                <p>Organic</p>
+                                <p>Vegetables</p>
+                                <p>Available (5,413)</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <iframe width="536" height="300" src="https://www.youtube.com/embed/yZqe48siHf8?si=i6SNW9m5f-J34LVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="feedback" class="tabcontent">
+                        <h3>Feedback</h3>
+                        <div class="feedbacks-wraper">
+                            <?php for ($i = 0; $i < 3; $i++) : ?>
+                            <div class="customer-feedbacks">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="customer-feedbacks__header d-flex align-items-center gap-3">
+                                        <img src=<?php echo IMG_PATH . "about-avt1.png" ?> class="customer-feedbacks__header--img" alt="avatar">
+                                        <div class="">
+                                            <p class="customer-feedbacks__header--name">Kristin Watson</p>
+                                            <div class="d-flex">
+                                                <?php for ($j = 0; $j < 5; $j++) : ?>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M8.27563 11.9209L11.4281 13.9179C11.8311 14.1729 12.3311 13.7934 12.2116 13.3229L11.3011 9.74042C11.2754 9.64063 11.2784 9.53561 11.3097 9.43743C11.341 9.33925 11.3994 9.2519 11.4781 9.18542L14.3051 6.83292C14.6761 6.52392 14.4851 5.90742 14.0076 5.87642L10.3161 5.63642C10.2167 5.62937 10.1214 5.59424 10.0412 5.53511C9.961 5.47598 9.89925 5.39528 9.86313 5.30242L8.48613 1.83542C8.44864 1.73689 8.38208 1.65209 8.29528 1.59225C8.20849 1.53241 8.10555 1.50037 8.00013 1.50037C7.89471 1.50037 7.79177 1.53241 7.70498 1.59225C7.61818 1.65209 7.55163 1.73689 7.51413 1.83542L6.13713 5.30242C6.10109 5.39538 6.03937 5.47618 5.95916 5.5354C5.87896 5.59462 5.78358 5.62983 5.68413 5.63692L1.99263 5.87692C1.51563 5.90742 1.32363 6.52392 1.69513 6.83292L4.52213 9.18592C4.60079 9.25236 4.65911 9.33962 4.69042 9.4377C4.72173 9.53578 4.72475 9.64071 4.69913 9.74042L3.85513 13.0629C3.71163 13.6274 4.31213 14.0829 4.79513 13.7764L7.72513 11.9209C7.80748 11.8686 7.90305 11.8408 8.00063 11.8408C8.09822 11.8408 8.19378 11.8686 8.27613 11.9209H8.27563Z" fill="#FF8A00" />
+                                                    </svg>
+                                                <?php endfor ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="customer-feedbacks__header--time">2 min ago</p>
+                                </div>
+                                <p class="customer-feedbacks__content">Duis at ullamcorper nulla, eu dictum eros.</p>
+                            </div>
+                            <?php endfor ?>
+                        </div>
+                        <button class="customer-feedbacks__load">Load More</button>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="product-detail__footer">
+            <h5 class="text-center">Related Products</h5>
+            <div class="featured__products--carousel">
+                <?php for ($j = 0; $j < 4; $j++) : ?>
+                    <div class="slick-slide">
+                        <?php include "./mvc/views/partials/product-card.php" ?>
+                    </div>
+                <?php endfor ?>
             </div>
         </section>
     </div>

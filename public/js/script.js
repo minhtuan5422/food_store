@@ -383,11 +383,11 @@ tabLinks.on("click", openTabs);
 
 function openTabs(e) {
   var btnTarget = $(e.currentTarget);
-  var country = btnTarget.data("country");
+  var section = btnTarget.data("section");
 
   tabContent.removeClass("active");
   tabLinks.removeClass("active");
 
-  $("#" + country).addClass("active");
+  $("#" + section).addClass("active");
   btnTarget.addClass("active");
 }
