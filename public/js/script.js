@@ -254,6 +254,12 @@ $(document).ready(function () {
     $(".navbar-collapse").append(iconAction);
   }
 
+  if ($(window).width() < 992) {
+    $(".js-action-gallery").click(function () {
+      $(".filter-body").append($(".js-add-modal"));
+    });
+  }
+
   $(".js-action-filter").click(function () {
     $(".filter-body").append($(".product__sidebar--category"));
   });

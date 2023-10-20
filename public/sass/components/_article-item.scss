@@ -15,7 +15,6 @@
         border-radius: 8px 8px 0px 0px;
 
         &--img {
-            width: 100%;
             aspect-ratio: 424/324;
             object-fit: cover;
             transition: all 0.2s linear;
@@ -55,6 +54,7 @@
             font-weight: 400;
             line-height: 150%;
             gap: 1.5rem;
+            flex-wrap: wrap;
 
             @include max-width-992 {
                 gap: 0.5rem;
@@ -74,6 +74,10 @@
             color: $gray-scale-gray-900;
             font-size: 18px;
             font-weight: 500;
+
+            @include max-width-992 {
+                @include webkit-box(2);
+            }
         }
 
         &--link {
@@ -82,9 +86,10 @@
             align-items: center;
             gap: 12px;
             color: $primary-color;
+            transition: all 0.2s ease-in-out;
             
             &:hover {
-                border-bottom: 1px solid $primary-color;
+                gap: 16px;
             }
         }
     }
