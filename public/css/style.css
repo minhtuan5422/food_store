@@ -3867,4 +3867,110 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   color: #00B207;
 }
 
+.checkout .row {
+  padding-top: 32px;
+  margin-bottom: 80px;
+}
+.checkout .col-lg-8 * > label {
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 400;
+}
+.checkout .col-lg-8 textarea,
+.checkout .col-lg-8 * > input {
+  width: 100%;
+  background: white;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  font-weight: 400;
+  color: #999;
+  outline: none;
+}
+.checkout__info {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+}
+.checkout__info--title {
+  color: #1A1A1A;
+  font-size: 24px;
+  font-weight: 500;
+}
+.checkout__info--form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+.checkout__info--form--double {
+  width: 100%;
+  display: flex;
+  flex: 1 1;
+  gap: 16px;
+}
+.checkout__notes {
+  border-bottom: 0;
+}
+.checkout__summary {
+  background: white;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+.checkout__summary--order--title {
+  color: #1A1A1A;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.checkout__summary--order--list--item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.checkout__summary--order--list--item img {
+  width: 60px;
+  height: 60px;
+}
+.checkout__summary--order--list--item p {
+  color: #1A1A1A;
+}
+.checkout__summary--order--list p {
+  font-size: 14px;
+}
+.checkout__summary--order--list p:last-child {
+  font-weight: 500;
+}
+.checkout__summary--order--info {
+  padding: 12px 0px;
+}
+.checkout__summary--order--info p {
+  font-size: 14px;
+}
+.checkout__summary--order--info p:first-child {
+  color: #4D4D4D;
+}
+.checkout__summary--order--info--subtotal {
+  font-weight: 500;
+}
+.checkout__summary--order--info--total {
+  font-size: 18px;
+  font-weight: 600;
+}
+.checkout__summary--payment--title {
+  color: #1A1A1A;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.checkout__summary--payment--options {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */

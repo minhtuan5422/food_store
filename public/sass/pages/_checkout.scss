@@ -1,0 +1,136 @@
+.checkout {
+    .row {
+        padding-top: 32px;
+        margin-bottom: 80px;
+    }
+
+    .col-lg-8 {
+        * > label {
+            color: $gray-scale-gray-900;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        textarea,
+        * > input {
+            width: 100%;
+            background: white;
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid #e6e6e6;
+            font-weight: 400;
+            color: $gray-scale-gray-400;
+            outline: none;
+        }
+    }
+
+    &__info {
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+
+        &--title {
+            color: $gray-scale-gray-900;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        &--form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+
+            &--double {
+                width: 100%;
+                display: flex;
+                flex: 1 1;
+                gap: 16px;
+            }
+        }
+    }
+
+    &__notes {
+        border-bottom: 0;
+    }
+
+    &__summary {
+        background: white;
+        display: flex;
+        padding: 24px;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 8px;
+        border: 1px solid #e6e6e6;
+
+        &--order {
+            &--title {
+                color: $gray-scale-gray-900;
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 12px;
+            }
+
+            &--list {
+                &--item {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    p {
+                        color: $gray-scale-gray-900;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                p:last-child {
+                    font-weight: 500;
+                }
+            }
+
+            &--info {
+                padding: 12px 0px;
+
+                p {
+                    font-size: 14px;
+                }
+
+                p:first-child {
+                    color: $gray-scale-gray-700;
+                }
+
+                &--subtotal {
+                    font-weight: 500;
+                }
+
+                &--total {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &--payment {
+            &--title {
+                color: $gray-scale-gray-900;
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 16px;
+            }
+
+            &--options {
+                display: inline-flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+}

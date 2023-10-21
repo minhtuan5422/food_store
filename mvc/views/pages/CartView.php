@@ -1,9 +1,8 @@
 <?php
-$pageTitle = "About";
+$pageTitle = "Cart";
 ob_start();
+require_once "./mvc/views/partials/breadcrumb.php"
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="cart">
     <div class="container-xl">
