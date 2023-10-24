@@ -46,6 +46,16 @@
                 display: flex;
                 flex: 1 1;
                 gap: 16px;
+
+                @include max-width-768 {
+                    display: block;
+                }
+
+                &--more {
+                    @include max-width-768 {
+                        margin-top: 16px;
+                    }
+                }
             }
         }
     }

@@ -3906,6 +3906,16 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   flex: 1 1;
   gap: 16px;
 }
+@media (max-width: 767px) {
+  .checkout__info--form--double {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .checkout__info--form--double--more {
+    margin-top: 16px;
+  }
+}
 .checkout__notes {
   border-bottom: 0;
 }

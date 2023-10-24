@@ -16,7 +16,7 @@ require_once "./mvc/views/partials/breadcrumb.php"
                                 <label for="checkout-fullName">Full name</label>
                                 <input type="text" id="checkout-fullName" placeholder="Your full name" required>
                             </div>
-                            <div class="w-100 d-flex flex-column gap-2">
+                            <div class="checkout__info--form--double--more w-100 d-flex flex-column gap-2">
                                 <label for="checkout-company">Company Name (optional)</label>
                                 <input type="text" id="checkout-company" placeholder="Your Company name">
                             </div>
