@@ -4,8 +4,7 @@
     left: -9999px;
 }
 [type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
-{
+[type="radio"]:not(:checked) + label {
     position: relative;
     padding-left: 28px;
     cursor: pointer;
@@ -15,7 +14,7 @@
 }
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -27,7 +26,7 @@
 }
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
-    content: '';
+    content: "";
     width: 12px;
     height: 12px;
     background: $primary-color;
@@ -52,7 +51,7 @@
 input[type="range"] {
     /* removing default appearance */
     -webkit-appearance: none;
-    appearance: none; 
+    appearance: none;
     /* creating a custom design */
     width: 100%;
     cursor: pointer;
@@ -61,17 +60,17 @@ input[type="range"] {
     overflow: hidden;
     border-radius: 16px;
 }
-  
+
 /* Track: webkit browsers */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #E6E6E6;
+    background: #e6e6e6;
     border-radius: 16px;
 }
 
 /* Track: Mozilla Firefox */
 input[type="range"]::-moz-range-track {
     height: 15px;
-    background: #E6E6E6;
+    background: #e6e6e6;
     border-radius: 16px;
 }
 
@@ -79,7 +78,7 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-webkit-slider-thumb {
     /* removing default appearance */
     -webkit-appearance: none;
-    appearance: none; 
+    appearance: none;
     /* creating a custom design */
     height: 15px;
     width: 15px;
@@ -89,7 +88,6 @@ input[type="range"]::-webkit-slider-thumb {
     /*  slider progress trick  */
     box-shadow: -407px 0 0 400px $primary-color;
 }
-
 
 /* Thumb: Firefox */
 input[type="range"]::-moz-range-thumb {
@@ -102,29 +100,31 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: -407px 0 0 400px $primary-color;
 }
 
-input[type="checkbox"]:checked {
-    position: relative;
-    background: $primary-color;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
+.product {
+    input[type="checkbox"]:checked {
+        position: relative;
+        background: $primary-color;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
 
-input[type="checkbox"] {
-    position: relative;
-}
+    input[type="checkbox"] {
+        position: relative;
+    }
 
-input[type="checkbox"]::after {
-    content: '';
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 6px;
-    height: 12px;
-    border: solid #FFF;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg) translate(-50%, -50%);
-}
+    input[type="checkbox"]::after {
+        content: "";
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        width: 6px;
+        height: 12px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
 
-input[type="checkbox"]:checked::after {
-    display: block;
+    input[type="checkbox"]:checked::after {
+        display: block;
+    }
 }

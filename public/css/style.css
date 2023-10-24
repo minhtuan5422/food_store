@@ -218,14 +218,14 @@ input[type=range] {
 
 /* Track: webkit browsers */
 input[type=range]::-webkit-slider-runnable-track {
-  background: #E6E6E6;
+  background: #e6e6e6;
   border-radius: 16px;
 }
 
 /* Track: Mozilla Firefox */
 input[type=range]::-moz-range-track {
   height: 15px;
-  background: #E6E6E6;
+  background: #e6e6e6;
   border-radius: 16px;
 }
 
@@ -255,30 +255,27 @@ input[type=range]::-moz-range-thumb {
   box-shadow: -407px 0 0 400px #00B207;
 }
 
-input[type=checkbox]:checked {
+.product input[type=checkbox]:checked {
   position: relative;
   background: #00B207;
   cursor: pointer;
   -webkit-appearance: none;
 }
-
-input[type=checkbox] {
+.product input[type=checkbox] {
   position: relative;
 }
-
-input[type=checkbox]::after {
+.product input[type=checkbox]::after {
   content: "";
   position: absolute;
   right: 50%;
   top: 50%;
   width: 6px;
   height: 12px;
-  border: solid #FFF;
+  border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) translate(-50%, -50%);
 }
-
-input[type=checkbox]:checked::after {
+.product input[type=checkbox]:checked::after {
   display: block;
 }
 
@@ -3971,6 +3968,90 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   display: inline-flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.login {
+  background-color: white;
+}
+.login__dialog {
+  width: 520px;
+  background: white;
+  padding: 24px 24px 32px 24px;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0px 0px 56px 0px rgba(0, 38, 3, 0.08);
+  margin: auto;
+  margin-top: 80px;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .login__dialog {
+    width: 100%;
+  }
+}
+.login__dialog form h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.login__dialog form input[type=text] {
+  background: white;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  color: #999;
+  font-weight: 400;
+  outline: none;
+}
+.login__dialog--password button {
+  right: 16px;
+  top: 14px;
+}
+.login__dialog--password button:hover {
+  opacity: 0.8;
+}
+.login__dialog--password button > i {
+  font-size: 20px;
+}
+.login__dialog--link, .login__dialog--forget,
+.login__dialog label {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+}
+.login__dialog--forget {
+  margin-left: 0;
+}
+.login__dialog--forget:hover {
+  color: #EA4B48;
+}
+.login__dialog--link {
+  margin-left: 0;
+}
+.login__dialog--link > a {
+  font-weight: 500;
+  color: #1A1A1A;
+}
+.login__dialog--link > a:hover {
+  color: #2C742F;
+}
+.login__dialog--submit {
+  width: 100%;
+  background: #00B207;
+  margin: 20px 0;
+  padding: 14px 32px;
+  border: 1px solid #00B207;
+  border-radius: 43px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.login__dialog--submit:hover {
+  color: #00B207;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
