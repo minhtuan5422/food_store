@@ -26,6 +26,12 @@ $(document).ready(function () {
   }
 
   $(window).on("load", function () {
+    /* Handle tab user dashboard */
+    let tabContent = $(".user__content");
+    for (let i = 1; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+
     carousel(
       "top-categories__item",
       [
@@ -317,6 +323,7 @@ $(document).ready(function () {
       "close",
     ],
   });
+
 });
 
 $(window).resize(function () {
@@ -396,4 +403,12 @@ function openTabs(e) {
 
   $("#" + section).addClass("active");
   btnTarget.addClass("active");
+}
+
+//Vertical tabs
+function openUserDashboard(evt, viewName) {
+  $(".user__content").hide();
+  $(".user__tab--link").removeClass("active");
+  $("#" + viewName).show();
+  $(evt.currentTarget).addClass("active");
 }

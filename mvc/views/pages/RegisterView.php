@@ -12,13 +12,13 @@ ob_start();
                 <h5>Create Account</h5>
                 <input type="text" name="" id="" placeholder="Email">
                 <div class="w-100 mt-3 login__dialog--password position-relative">
-                    <input type="text" name="" id="" placeholder="Password">
+                    <input type="password" name="" id="" placeholder="Password">
                     <button class="border-0 p-0 bg-white position-absolute">
                         <i class="icon-eye"></i>
                     </button>
                 </div>
                 <div class="w-100 mt-3 login__dialog--password position-relative">
-                    <input type="text" name="" id="" placeholder="Confirm Password">
+                    <input type="password" name="" id="" placeholder="Confirm Password">
                     <button class="border-0 p-0 bg-white position-absolute">
                         <i class="icon-eye"></i>
                     </button>
