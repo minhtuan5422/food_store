@@ -217,6 +217,7 @@ require_once "./mvc/views/partials/breadcrumb.php";
         </div>
     </div>
 
+    <?php include "./mvc/views/partials/product-quick-view.php"?>
     <?php require_once "./mvc/views/partials/footer-child.php"?>
 </div>
 

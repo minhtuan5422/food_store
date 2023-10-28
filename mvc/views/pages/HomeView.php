@@ -399,6 +399,7 @@ ob_start();
     </div>
 </section>
 
+<?php include "./mvc/views/partials/product-quick-view.php"?>
 <?php include "./mvc/views/partials/feedbacks.php" ?>
 <?php include "./mvc/views/partials/company.php" ?>
 
