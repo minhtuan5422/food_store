@@ -75,7 +75,7 @@ ob_start();
                                         <th></th>
                                     </tr>
                                 </thead>
-    
+
                                 <tbody>
                                     <tr>
                                         <td>#738</td>
@@ -119,7 +119,7 @@ ob_start();
                                         <th></th>
                                     </tr>
                                 </thead>
-    
+
                                 <tbody>
                                     <?php for ($i = 0; $i < 12; $i++) : ?>
                                         <tr>
@@ -145,7 +145,121 @@ ob_start();
                 </div>
 
                 <div id="shoppingCart" class="user__content">
-                    <h3>Shopping Cart</h3>
+                    <div class="user__content--order">
+                        <div class="user__content--order--header d-flex align-items-center justify-content-between">
+                            <div class="header-flex align-items-center gap-4">
+                                <p>Order Details</p>
+                                <p class="user__content--order--header--detail">April 24, 2021</p>
+                                <p class="user__content--order--header--detail">3 Products</p>
+                            </div>
+                            <a href="#">Back to List</a>
+                        </div>
+
+                        <div class="user__content--order--detail">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="user__content--order--detail--info">
+                                        <p class="info-title">Billing Address</p>
+                                        <div class="info-body">
+                                            <p>Dainne Russell</p>
+                                            <p class="mt-2">4140 Parker Rd. Allentown, New Mexico 31134</p>
+                                            <div class="info-body__email">
+                                                <p>Email</p>
+                                                <p class="mt-1">dainne.ressell@gmail.com</p>
+                                            </div>
+                                            <div class="info-body__phone">
+                                                <p>Phone</p>
+                                                <p class="mt-1">(671) 555-0110</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="user__content--order--detail--total">
+                                        <div class="user__content--order--detail--total--header d-flex align-items-center justify-content-between">
+                                            <div class="header-title">
+                                                <p class="total-title">Order ID:</p>
+                                                <p>#4152</p>
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="4" height="20" viewBox="0 0 2 40" fill="none">
+                                                <path d="M1 0L1 40" stroke="#E6E6E6" />
+                                            </svg>
+                                            <div class="header-title">
+                                                <p class="total-title">Payment Method:</p>
+                                                <p>Paypal</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="user__content--order--detail--total--body">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <p>Subtotal:</p>
+                                                <p>$365.00</p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                                <p>Discount</p>
+                                                <p>20%</p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                                <p>Shipping</p>
+                                                <p>Free</p>
+                                            </div>
+                                            <div class="last-flex d-flex align-items-center justify-content-between mt-3">
+                                                <p>Total</p>
+                                                <p>$84.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user__content--order--detail--process">
+                                <div class="progress">
+                                    <div class="progress-bar" style="width:25%"></div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-2">
+                                    <p>Order received</p>
+                                    <p>Processing</p>
+                                    <p>On the way</p>
+                                    <p>Delivered</p>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive-sm">
+                                <table class="cart__table">
+                                    <thead class="rounded">
+                                        <tr>
+                                            <th class="cart__table--head">Product</th>
+                                            <th class="cart__table--head">price</th>
+                                            <th class="cart__table--head">Quantity</th>
+                                            <th class="cart__table--head">Subtotal</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="cart__table--body">
+                                            <td class="d-flex align-items-center gap-3">
+                                                <img src=<?php echo IMG_PATH . "product-img.png" ?> alt="product">
+                                                <p>Green Capsicum</p>
+                                            </td>
+                                            <td>$14.00</td>
+                                            <td>x5</td>
+                                            <td>$70.00</td>
+                                        </tr>
+                                        <tr class="cart__table--body">
+                                            <td class="d-flex align-items-center gap-3">
+                                                <img src=<?php echo IMG_PATH . "product-img.png" ?> alt="product">
+                                                <p>Green Capsicum</p>
+                                            </td>
+                                            <td>$14.00</td>
+                                            <td>x5</td>
+                                            <td>$70.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="settings" class="user__content">

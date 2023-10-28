@@ -169,6 +169,7 @@
                 @include max-width-360 {
                     width: 120px;
                     height: 38px;
+                    object-fit: scale-down;
                 }
             }
         }
