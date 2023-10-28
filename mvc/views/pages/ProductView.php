@@ -1,9 +1,9 @@
 <?php
-$pageTitle = "About";
+$pageTitle = "Shop";
 ob_start();
+$currentPage="Shop";
+require_once "./mvc/views/partials/breadcrumb.php";
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="product">
     <div class="container-xl">

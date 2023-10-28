@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Login";
 ob_start();
+$currentPage="Login";
+require_once "./mvc/views/partials/breadcrumb.php"
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="login">
     <div class="container-xl">
@@ -25,7 +25,10 @@ ob_start();
                     <a href="#" class="login__dialog--forget">Forget Password</a>
                 </div>
                 <button type="submit" class="login__dialog--submit">Login</button>
-                <p class="login__dialog--link">Don’t have account?<a href="#"> Register</a></p>
+                <p class="login__dialog--link">
+                    Don’t have account?
+                    <a href=<?php echo PUBLIC_URL . "register"?>> Register</a>
+                </p>
             </form>
         </div>
     </div>

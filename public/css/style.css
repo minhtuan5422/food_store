@@ -609,6 +609,10 @@ input[type=range]::-moz-range-thumb {
   color: #fff;
   border-color: #00B207;
 }
+.product-card__label a {
+  color: inherit;
+  margin-top: 8px;
+}
 .product-card__body {
   padding: 16px;
 }
@@ -1609,7 +1613,7 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   margin: 0 4px;
   color: #808080;
 }
-.breadcrumb li.active {
+.breadcrumb li .active {
   font-weight: 600;
   color: #00B207;
 }

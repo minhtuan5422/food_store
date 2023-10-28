@@ -67,6 +67,11 @@
                 border-color: $primary-color;
             }
         }
+
+        a {
+            color: inherit;
+            margin-top: 8px;
+        }
     }
 
     &__body {

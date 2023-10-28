@@ -9,10 +9,10 @@
                 <p class="footer__company--desc">Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</p>
 
                 <div class="footer__company--action d-flex align-items-center gap-2">
-                    <a href="#"><i class="icon-facebook"></i></a>
-                    <a href="#"><i class="icon-youtube"></i></a>
-                    <a href="#"><i class="icon-instagram"></i></a>
-                    <a href="#"><i class="icon-map"></i></a>
+                    <a href="https://www.facebook.com"><i class="icon-facebook"></i></a>
+                    <a href="https://www.youtube.com"><i class="icon-youtube"></i></a>
+                    <a href="https://www.instagram.com"><i class="icon-instagram"></i></a>
+                    <a href="https://www.google.com/maps"><i class="icon-map"></i></a>
                 </div>
             </div>
 

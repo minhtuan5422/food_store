@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Contact";
 ob_start();
+$currentPage="Contact";
+require_once "./mvc/views/partials/breadcrumb.php";
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="contact">
     <div class="container-xl">

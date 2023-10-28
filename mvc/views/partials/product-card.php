@@ -1,10 +1,12 @@
 <div class="product-card position-relative">
     <div class="product-card__top">
-        <img src=<?php echo IMG_PATH . "product-img.png" ?> class="product-card__top--img" alt="">
+        <a href=<?php echo PUBLIC_URL . "productdetail"?>>
+            <img src=<?php echo IMG_PATH . "product-img.png" ?> class="product-card__top--img" alt="">
+        </a>
     </div>
 
     <div class="product-card__label position-absolute top-0 d-flex flex-column-reverse">
-        <i class="icon-eye"></i>
+        <a href="<?php echo PUBLIC_URL . "productdetail"?>"><i class="icon-eye"></i></a>
         <i class="icon-heart"></i>
     </div>
 

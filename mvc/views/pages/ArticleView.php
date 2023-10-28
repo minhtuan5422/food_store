@@ -1,9 +1,12 @@
 <?php
-$pageTitle = "About";
+$pageTitle = "Blog";
 ob_start();
 ?>
 
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
+<?php 
+$currentPage = "Blog";
+require_once "./mvc/views/partials/breadcrumb.php" 
+?>
 
 <div class="article">
     <div class="container-xl">

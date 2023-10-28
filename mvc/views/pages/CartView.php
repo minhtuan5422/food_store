@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Cart";
 ob_start();
+$currentPage="Cart";
 require_once "./mvc/views/partials/breadcrumb.php"
 ?>
 
@@ -63,7 +64,7 @@ require_once "./mvc/views/partials/breadcrumb.php"
                             </tr>
                             <tr>
                                 <td colspan="2" class="d-flex">
-                                    <a href="#" class="cart__table--body--btn">Return to shop</a>
+                                    <a href=<?php echo PUBLIC_URL . "product"?> class="cart__table--body--btn">Return to shop</a>
                                 </td>
                                 <td colspan="4">
                                     <button class="cart__table--body--btn btn-more">Update Cart</button>
@@ -97,7 +98,7 @@ require_once "./mvc/views/partials/breadcrumb.php"
                         <p class="cart__checkout--info">Total:</p>
                         <p class="cart__checkout--price">$84.00</p>
                     </div>
-                    <a href="#" class="cart__checkout--link">Proceed to checkout</a>
+                    <a href=<?php echo PUBLIC_URL . "checkout"?> class="cart__checkout--link">Proceed to checkout</a>
                 </div>
             </div>
         </div>

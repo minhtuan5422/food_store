@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Checkout";
 ob_start();
+$currentPage="Checkout";
 require_once "./mvc/views/partials/breadcrumb.php"
 ?>
 

@@ -3,7 +3,10 @@ $pageTitle = "About";
 ob_start();
 ?>
 
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
+<?php 
+$currentPage="About";
+require_once "./mvc/views/partials/breadcrumb.php" 
+?>
 
 <div class="about">
     <div class="about-us">
@@ -149,7 +152,7 @@ ob_start();
                                 <p>Maecenas ut nunc fringilla erat varius.</p>
                             </div>
                         </div>
-                        <a href="#" class="btn-primary">Shop now
+                        <a href=<?php echo PUBLIC_URL . "product"?> class="btn-primary">Shop now
                             <i class="icon-arrow-right"></i>
                         </a>
                     </div>

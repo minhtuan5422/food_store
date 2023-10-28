@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Login";
 ob_start();
+$currentPage = "Dashboard";
+require_once "./mvc/views/partials/breadcrumb.php"
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="user">
     <div class="container-xl">

@@ -30,15 +30,17 @@
             <div class="collapse navbar-collapse" id="header-navbar">
                <ul class="navbar-nav me-auto">
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Home</a>
+                     <a class="nav-link" href=<?php echo PUBLIC_URL . ""?>>Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">About Us</a>
+                     <a class="nav-link" href=<?php echo PUBLIC_URL . "about"?>>About Us</a>
                   </li>
                   <li class="nav-item dropdown">
-                     <a href="#" class="nav-link" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Shop</span>
-                        <p class="icon-chevron-right"></p>
+                     <a id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href=<?php echo PUBLIC_URL . "product"?> class="nav-link">
+                           <span>Shop</span>
+                           <p class="icon-chevron-right"></p>
+                        </a>
                      </a>
                      <ul class="dropdown-menu border-0 dropdown-expands" aria-labelledby="shopDropdown">
                         <li><a class="dropdown-item" href="#">Link 1</a></li>
@@ -48,9 +50,11 @@
                   </li>
    
                   <li class="nav-item dropdown">
-                     <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                        <span>Blog</span>
-                        <i class="icon-chevron-right"></i>
+                     <a data-bs-toggle="dropdown">
+                        <a href=<?php echo PUBLIC_URL . "article"?> class="nav-link">
+                           <span>Blog</span>
+                           <i class="icon-chevron-right"></i>
+                        </a>
                      </a>
                      <ul class="dropdown-menu border-0">
                         <li><a class="dropdown-item" href="#">Link 1</a></li>
@@ -60,7 +64,7 @@
                   </li>
    
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Contact</a>
+                     <a class="nav-link" href=<?php echo PUBLIC_URL . "contact"?>>Contact</a>
                   </li>
                </ul>
             </div>
@@ -156,8 +160,8 @@
                                  </div>
                                  
                                  <div class="modal-offcanvas__content--footer--link d-block">
-                                    <a href="#" class="w-100">Checkout</a>
-                                    <a href="#" class="w-100">Go To Cart</a>
+                                    <a href=<?php echo PUBLIC_URL . "checkout"?> class="w-100">Checkout</a>
+                                    <a href=<?php echo PUBLIC_URL . "cart"?> class="w-100">Go To Cart</a>
                                  </div>
                               </div>
                            </div>
@@ -166,7 +170,7 @@
                   </div>
                </div>
    
-               <a href="#" class="res-none">
+               <a href=<?php echo PUBLIC_URL . "login"?> class="res-none">
                   <i class="icon-user"></i>
                </a>
             </div>

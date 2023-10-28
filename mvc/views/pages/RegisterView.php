@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Login";
 ob_start();
+$currentPage = "Register";
+require_once "./mvc/views/partials/breadcrumb.php";
 ?>
-
-<?php require_once "./mvc/views/partials/breadcrumb.php" ?>
 
 <div class="login">
     <div class="container-xl">
@@ -28,7 +28,10 @@ ob_start();
                     <label for="rememberPassword">Accept all terms & Conditions</label>
                 </div>
                 <button type="submit" class="login__dialog--submit">Create Account</button>
-                <p class="login__dialog--link">Already have account<a href="#"> Login</a></p>
+                <p class="login__dialog--link">
+                    Already have account
+                    <a href=<?php echo PUBLIC_URL . "login"?>> Login</a>
+                </p>
             </form>
         </div>
     </div>
