@@ -13,6 +13,28 @@
         transform: scale(1.1);
     }
 
+    .modal-dialog {
+        max-width: 1320px;
+        max-height: 636px;
+        
+        @include max-width-992 {
+            max-width: 100%;
+            max-height: fit-content;
+        }
+
+        .product-detail__right--body--label {
+            @include max-width-992 {
+                display: block;
+            }
+        }
+
+        .product-detail__right--body--share {
+            @include max-width-992 {
+                margin-top: 20px;
+            }
+        }
+    }
+
     &__top {
         max-width: 302px;
         max-height: 302px;

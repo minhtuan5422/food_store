@@ -27,7 +27,7 @@
 
     &:hover::after {
         transition: transform 0.9s ease-in-out;
-        transform: translate3d(1100%, 0, 0) rotate(35deg);
+        transform: translate3d(1200%, 0, 0) rotate(35deg);
         background-color: #fff;
         opacity: 0.4;
     }
