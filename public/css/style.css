@@ -964,6 +964,9 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
     padding: 12px 0;
   }
 }
+.header .navbar-nav .nav-item:hover {
+  color: #00B207;
+}
 .header .navbar-nav .nav-item .nav-link {
   display: flex;
   background-color: transparent;
@@ -975,12 +978,14 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
 .header .navbar-nav .nav-item .nav-link:hover {
   color: #00B207;
 }
-.header .navbar-nav .nav-item .nav-link .icon-chevron-right {
+.header .navbar-nav .nav-item .icon-chevron-right {
   transform: rotate(90deg);
+  color: #808080;
 }
 .header .navbar-nav .nav-item .dropdown-menu {
   background-color: #fff;
   box-shadow: 0px 0px 10px #ddd;
+  transition: all 0.1s ease;
 }
 @media (max-width: 1199px) {
   .header .navbar-nav .nav-item .dropdown-menu {
@@ -992,7 +997,7 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   font-size: 14px;
   color: #808080;
   font-weight: 500;
-  animation: fromTop 0.6s ease;
+  animation: fromTop 0.4s ease;
   transition: all;
 }
 @media (max-width: 1199px) {

@@ -104,11 +104,14 @@
             }
             
             .nav-item {
-
                 @include max-width-1200 {
                     width: 100%;
                     padding: 12px 0;
                 }
+
+                &:hover {
+                    color: $primary-color;
+                }    
 
                 .nav-link {
                     display: flex;
@@ -117,21 +120,21 @@
                     font-size: 14px;
                     color: $text;
                     font-weight: 500;
-                    
+
                     &:hover {
                         color: $primary-color;
-                    }
+                    }   
+                }
 
-                    .icon-chevron-right {
-                        transform: rotate(90deg);
-                    }
-                   
+                .icon-chevron-right {
+                    transform: rotate(90deg);
+                    color: $text;
                 }
 
                 .dropdown-menu {
                     background-color: $white;
                     box-shadow: 0px 0px 10px #ddd;
-                   
+                    transition: all 0.1s ease;
 
                     @include max-width-1200 {
                         background: transparent;
@@ -142,7 +145,7 @@
                         font-size: 14px;
                         color: $text;
                         font-weight: 500;
-                        animation: fromTop 0.6s ease;
+                        animation: fromTop 0.4s ease;
                         transition: all;
 
                         @include max-width-1200 {
