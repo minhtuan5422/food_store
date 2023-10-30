@@ -283,6 +283,11 @@ $(document).ready(function () {
     "product__sidebar--rating--icon"
   );
 
+  rotateIconCollapseTab(
+    "tab__product--expand",
+    "tab__product--icon"
+  );
+
   /* Custom Product Detail Image */
   $h_slider_options = {
     gallery: true,
@@ -383,6 +388,16 @@ function rotateIconCollapse(button, icon) {
   $("." + button).click(function () {
     clickCount++;
     let rotateDegree = clickCount % 2 === 0 ? 270 : 90;
+    $("." + icon).css("transform", "rotate(" + rotateDegree + "deg)");
+  });
+}
+
+function rotateIconCollapseTab(button, icon) {
+  var clickCount = 0;
+
+  $("." + button).click(function () {
+    clickCount++;
+    let rotateDegree = clickCount % 2 === 0 ? 90 : 270;
     $("." + icon).css("transform", "rotate(" + rotateDegree + "deg)");
   });
 }

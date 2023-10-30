@@ -8,5 +8,9 @@ class Controller {
     public function view($view, $data=[]) {
         require_once "./mvc/views/pages/". $view .".php";
     }
+
+    public function admin($admin, $data=[]) {
+        require_once "./mvc/views/admin/". $admin .".php";
+    }
 }
 ?>
