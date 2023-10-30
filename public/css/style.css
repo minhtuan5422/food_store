@@ -1068,6 +1068,9 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
 .header .navbar__action--expands--btn > i:hover {
   color: #00B207;
 }
+.header .navbar__action--expands .modal-dialog {
+  max-width: 500px;
+}
 .header .navbar__action--expands .modal-offcanvas {
   position: absolute;
   width: 100%;

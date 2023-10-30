@@ -234,6 +234,10 @@
                     }
                 }
                 .modal {
+
+                    &-dialog {
+                        max-width: 500px;
+                    }
                     
                     &-offcanvas {
                         position: absolute;

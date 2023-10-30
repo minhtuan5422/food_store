@@ -51,7 +51,7 @@
 
                   <li class="nav-item dropdown">
                      <div class="d-flex">
-                        <a href=<?php echo PUBLIC_URL . "article" ?> class="nav-link" data-bs-toggle="dropdown">Blog</a>
+                        <a href=<?php echo PUBLIC_URL . "article" ?> class="nav-link">Blog</a>
                         <button class="icon-chevron-right border-0 bg-transparent" data-bs-toggle="collapse" data-bs-target="#blogDropdown"></button>
                      </div>
                      <ul id="blogDropdown" class="dropdown-menu border-0">
