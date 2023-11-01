@@ -15,7 +15,7 @@ ob_start();
                 <i class="icon-grid"></i>
                 <span>Dashboard</span>
             </button>
-           <div class="tab__product">
+            <div class="tab__product">
                 <button data-bs-toggle="collapse" data-bs-target="#tabProduct" class="tab__product--expand d-flex align-items-center justify-content-between w-100 border-0">
                     <div class="d-flex align-items-center gap-2">
                         <i class="icon-align-justify"></i>
@@ -27,7 +27,7 @@ ob_start();
                     <button class="user__tab--link user__tab--product" onclick="openUserDashboard(event, 'productListManagement')">Product List</button>
                     <button class="user__tab--link user__tab--product" onclick="openUserDashboard(event, 'productCategoryManagement')">Product Category</button>
                 </div>
-           </div>
+            </div>
             <button class="user__tab--link" onclick="openUserDashboard(event, 'orderManagement')">
                 <i class="icon-shopping-cart"></i>
                 <span>Orders</span>
@@ -60,6 +60,48 @@ ob_start();
     </div>
 
     <div class="admin__content">
+        <div class="admin__content--header">
+            <div class="d-flex align-items-center gap-4">
+                <div class="dropdown dropdown-menu-end">
+                    <button type="button" class="icon-search border-0 bg-white" data-bs-toggle="dropdown"></button>
+                    <div class="dropdown-menu mt-2">
+                        <form class="admin__content--header--search d-flex">
+                            <input type="text" class="admin__content--header--search" placeholder="Search...">
+                            <button type="submit" class="icon-search"></button>
+                        </form>
+                    </div>
+                </div>
+                <button class="border-0 bg-transparent">
+                    <i class="icon-bell1"></i>
+                </button>
+            </div>
+            <div class="admin__content--header--divider"></div>
+            <div class="admin__content--header--info d-flex align-items-center gap-3">
+                <img src=<?php echo IMG_PATH . "about-avt1.png" ?> alt="avatar">
+                <div class="admin__content--header--info--detail">
+                    <p>Jay Hargudson</p>
+                    <p>Manager</p>
+                </div>
+                <div class="dropdown dropdown-menu-end">
+                    <button type="button" class="icon-chevron-right bg-white border-0 rotate-90" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu mt-1">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="icon-spinner"></i>
+                                <span class="ms-2">Back to website</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="icon-enter"></i>
+                                <span class="ms-2">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="container-xl">
             <div id="dashboard" class="user__content">
                 <h3>London</h3>
