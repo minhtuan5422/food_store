@@ -1,4 +1,55 @@
+var timeLabels = [
+  "Tháng 1",
+  "Tháng 2",
+  "Tháng 3",
+  "Tháng 4",
+  "Tháng 5",
+  "Tháng 6",
+  "Tháng 7",
+  "Tháng 8",
+  "Tháng 9",
+  "Tháng 10",
+  "Tháng 11",
+  "Tháng 12",
+];
+var revenueData = [1000, 1500, 1200, 1800, 2000, 1600,1000, 1500, 1200, 1800, 2000, 1600];
+var salesData = [50, 70, 60, 80, 90, 75, 50, 70, 60, 80, 90, 75];
+
 $(document).ready(function () {
+  /* Create chart */
+  var ctx = $("#myChart");
+  var myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: timeLabels,
+      datasets: [
+        {
+          label: "Doanh thu",
+          data: revenueData,
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+        },
+        {
+          label: "Bán hàng",
+          data: salesData,
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  /* Slick slider */
   carousel("slider-single", [], {
     dots: true,
     autoplay: true,
@@ -283,10 +334,7 @@ $(document).ready(function () {
     "product__sidebar--rating--icon"
   );
 
-  rotateIconCollapseTab(
-    "tab__product--expand",
-    "tab__product--icon"
-  );
+  rotateIconCollapseTab("tab__product--expand", "tab__product--icon");
 
   /* Custom Product Detail Image */
   $h_slider_options = {

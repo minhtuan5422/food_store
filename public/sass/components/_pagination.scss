@@ -3,7 +3,7 @@ nav[aria-label="pagination"] {
         .page-item {
             &.active {
                 .page-link {
-                    background-color: $primary-color !important;
+                    background-color: $primary-color;
                     color: white;
 
                     &:hover {
@@ -13,7 +13,7 @@ nav[aria-label="pagination"] {
             }
             &:hover {
                 .page-link {
-                    color: $primary-color !important;
+                    color: $primary-color;
                 }
             }
 

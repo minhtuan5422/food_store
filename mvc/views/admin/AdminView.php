@@ -104,8 +104,7 @@ ob_start();
 
         <div class="container-xl">
             <div id="dashboard" class="user__content">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
+                <?php require_once './mvc/views/admin/body/dashboard.php'?>
             </div>
 
             <div id="productListManagement" class="user__content">

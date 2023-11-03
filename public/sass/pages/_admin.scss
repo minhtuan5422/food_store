@@ -3,7 +3,6 @@
 
     &__sidebar {
         width: 264px;
-        height: 100vh;
         background: white;
         padding: 24px 18px 32px 18px;
         border-right: 1px solid #f0f1f3;
@@ -106,20 +105,6 @@
             border-bottom: 1px solid #f0f1f3;
             box-shadow: 0px 4px 30px 0px rgba(131, 98, 234, 0.05);
 
-            &--dropdown {
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    right: 50%;
-                    bottom: -1.5rem;
-                    transform: translateX(50%);
-                    border-width: 12px;
-                    border-style: solid;
-                    border-color: transparent transparent #ffffff transparent;
-                  }
-            }
-
             &--search {
                 padding: 4px 12px;
 
@@ -192,6 +177,263 @@
                     transform: rotate(90deg);
                     color: $black-black-500;
                     font-size: 20px;
+                }
+            }
+        }
+
+        &--dashboard {
+            margin: 32px 0;
+
+            &--header {
+                .button-group {
+                    background: white;
+                    border-radius: 8px;
+                    border: 1px solid#e0e2e7;
+                    padding: 4px;
+
+                    .active {
+                        background-color: #dedefa;
+                        color: $admin-color;
+                    }
+
+                    button {
+                        background: inherit;
+                        padding: 6px 12px;
+                        border: none;
+                        border-radius: 8px;
+                        transition: all 0.1s linear;
+
+                        &:hover {
+                            background-color: #dedefa;
+                            color: $admin-color;
+                        }
+                    }
+                }
+
+                form {
+                    input,
+                    button {
+                        padding: 10px 14px;
+                    }
+
+                    input[type="date"] {
+                        background-color: white;
+                        border: 1px solid #e0e2e7;
+                        border-radius: 8px;
+                    }
+
+                    button[type="submit"] {
+                        background-color: $admin-color;
+                        gap: 4px;
+                        color: white;
+                        border-radius: 8px;
+                        padding: 10px 14px;
+                        border-color: $admin-color;
+
+                        &:hover {
+                            background-color: white;
+                            color: $admin-color;
+                        }
+                    }
+                }
+            }
+
+            &--cols {
+                margin-top: 24px;
+
+                &--box {
+                    background: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    border: 1px solid #e0e2e7;
+                    box-shadow: 0px 1.5px 2px 0px rgba(16, 24, 40, 0.1);
+
+                    div:first-child {
+                        width: fit-content;
+                        padding: 8px;
+                        border-radius: 100px;
+                    }
+
+                    div:last-child {
+                        font-weight: 500;
+
+                        p:first-child {
+                            color: $black-black-500;
+                        }
+
+                        p:last-child {
+                            color: $black-black-700;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .box-first {
+                    background: #dedefa;
+                    border: 4px solid #efeffd;
+                }
+
+                .box-second {
+                    background: #cfe7dc;
+                    border: 4px solid #e7f4ee;
+                }
+
+                .box-third {
+                    background: #fcdad7;
+                    border: 4px solid #feedec;
+                }
+
+                .box-fourth {
+                    background: #fae1cf;
+                    border: 4px solid #fdf1e8;
+                }
+            }
+
+            &--chart {
+                margin: 24px 0;
+            }
+
+            .pagination {
+                justify-content: end !important;
+
+                .active {
+                    .page-link {
+                        background-color: $admin-color !important;
+                    }
+                }
+
+                .page-icon > a:hover {
+                    background-color: $admin-color !important;
+                }
+
+                .page-item:hover {
+                    .page-link {
+                        color: $admin-color !important;
+                    }
+                }
+
+                .page-link {
+                    border-radius: 8px !important;
+
+                    &:hover {
+                        color: $admin-color;
+                    }
+                }
+            }
+
+            &--selling {
+                .user__content--order--header,
+                table {
+                    text-align: center;
+                    border: 1px solid #f0f1f3;
+
+                    th,
+                    td {
+                        padding: 18px 22px;
+                    }
+
+                    th {
+                        background-color: #f9f9fc;
+                        color: $black-black-700;
+                        font-weight: 500;
+                        font-size: 16px;
+                        text-transform: none;
+
+                        &:first-child {
+                            text-align: left;
+                        }
+                    }
+
+                    td {
+                        color: $black-black-500;
+                        font-size: 14px;
+                        font-weight: 500;
+                        img {
+                            width: 44px;
+                            height: 44px;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    td:last-child {
+                        display: table-cell;
+                        padding: 18px 22px;
+                    }
+
+                    .processing,
+                    .cancelled,
+                    .published {
+                        width: fit-content;
+                        margin: auto;
+                        padding: 4px 12px;
+                        border-radius: 100px;
+                        font-weight: 600;
+                    }
+
+                    .published {
+                        background-color: #e7f4ee;
+                        color: #0d894f;
+                    }
+
+                    .cancelled {
+                        background-color: #feedec;
+                        color: #f04438;
+                    }
+
+                    .processing {
+                        background-color: #fdf1e8;
+                        color: #e46a11;
+                    }
+                }
+
+                &--filter {
+                    background: white;
+                    display: flex;
+                    padding: 10px 14px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 8px;
+                    border: 1px solid #e0e2e7;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $black-black-500;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background: $black-black-500;
+                        color: white;
+                    }
+
+                    & > i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            &--orders {
+                margin-top: 24px;
+
+                .see-more {
+                    background-color: $admin-color;
+                    border-radius: 8px;
+                    color: white;
+                    border: 1px solid $admin-color;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: white;
+                        color: $admin-color;
+                    }
+                }
+
+                .action-btn {
+                    font-size: 20px;
+                    color: #667085;
+
+                    &:hover {
+                        color: $admin-color;
+                    }
                 }
             }
         }
