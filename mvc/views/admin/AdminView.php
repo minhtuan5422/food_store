@@ -104,11 +104,15 @@ ob_start();
 
         <div class="container-xl">
             <div id="dashboard" class="user__content">
-                <?php require_once './mvc/views/admin/body/dashboard.php'?>
+                <?php require_once './mvc/views/admin/body/dashboard.php' ?>
             </div>
 
             <div id="productListManagement" class="user__content">
-                <h3>productListManagement</h3>
+                <?php require_once './mvc/views/admin/body/products-list.php' ?>
+            </div>
+
+            <div id="addProduct" class="user__content">
+                <?php require_once './mvc/views/admin/body/product-add.php' ?>
             </div>
 
             <div id="productCategoryManagement" class="user__content">
