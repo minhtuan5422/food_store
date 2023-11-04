@@ -531,17 +531,72 @@
             &__header {
                 button:first-child {
                     background: white;
-                    color: #858D9D;
-                    border-color: #858D9D;
+                    color: #858d9d;
+                    border-color: #858d9d;
                     transition: all 0.2s ease;
 
                     &:hover {
-                        background: #858D9D;
+                        background: #858d9d;
                         color: white;
                     }
 
                     & > i {
                         transform: rotate(45deg);
+                    }
+                }
+            }
+
+            &__body {
+                margin-top: 24px;
+
+                .info-title {
+                    color: $black-black-800;
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-align: left;
+                }
+
+                select,
+                input,
+                textarea {
+                    background: #f9f9fc;
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    border: 1px solid #e0e2e7;
+                    outline: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                &--info {
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    margin-bottom: 24px;
+                    padding: 24px;
+                    border: 1px solid #e0e2e7;
+                    border-radius: 8px;
+                    box-shadow: 0px 1.5px 2px 0px rgba(16, 24, 40, 0.1);
+                }
+
+            }
+        }
+
+        #removeConfirm {
+            .modal-dialog {
+                max-width: fit-content;
+
+                .icon-info {
+                    font-size: 48px;
+                }
+
+                button:last-child {
+                    background-color: $admin-color;
+                    color: white;
+
+                    &:hover {
+                        opacity: 0.9;
                     }
                 }
             }

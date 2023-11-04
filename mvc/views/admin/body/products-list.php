@@ -68,27 +68,41 @@
                                     <p>Published</p>
                                 </td>
                                 <td>
-                                    <div class="d-flex gap-2 align-items-center">
-                                        <a href="#" class="ms-4 action-btn me-1">
-                                            <i class="icon-eye"></i>
-                                        </a>
-                                        <button class="border-0 bg-white action-btn">
+                                    <div class="d-flex align-items-center">
+                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#productDetailManagement">
                                             <i class="icon-edit"></i>
                                         </button>
-                                        <button class="border-0 bg-white action-btn">
+                                        <?php include "./mvc/views/admin/body/product-detail.php" ?>
+                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#removeConfirm">
                                             <i class="icon-bin"></i>
                                         </button>
+                                        <!-- Confirm Modal -->
+                                        <div class="modal fade" id="removeConfirm">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <i class="icon-info"></i>
+                                                        <p class="mt-2 mb-4">Are you sure you want to delete?</p>
+                                                        <div class="d-flex gap-4">
+                                                            <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">No</button>
+                                                            <button class="btn w-100">Yes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </td>
-                            </tr>
-                        <?php endfor ?>
-                    </tbody>
-                </table>
             </div>
-        </div>
-
-        <div class="my-4">
-            <?php include "./mvc/views/partials/pagination.php" ?>
+            </td>
+            </tr>
+        <?php endfor ?>
+        </tbody>
+        </table>
         </div>
     </div>
+
+    <div class="my-4">
+        <?php include "./mvc/views/partials/pagination.php" ?>
+    </div>
+</div>
 </div>
