@@ -3,10 +3,27 @@
         <div class="admin__content--products--header">
             <div class="d-flex align-items-center justify-content-between">
                 <p class="admin__content--products--header--title">Categories</p>
-                <button class="admin__content--products--header--add user__tab--link">
+                <button class="admin__content--products--header--add user__tab--link" data-bs-toggle="modal" data-bs-target="#addProductCategory">
                     <i class="icon-plus"></i>
                     <span>Add Category</span>
                 </button>
+                <!-- Modal Add Category -->
+                <div id="addProductCategory" class="modal fade">
+                    <div class="product-category-add product-add modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="product-add__body modal-body">
+                                <div class="d-flex gap-3 align-items-center mb-3">
+                                    <label>Category name</label>
+                                    <input type="text" placeholder="Enter category name">
+                                </div>
+                                <div class="d-flex gap-4">
+                                    <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">No</button>
+                                    <button class="btn w-100">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="d-flex align-items-center justify-content-between">
                 <div class="admin__content--products--header--search d-flex gap-1">
@@ -41,16 +58,16 @@
                                 <td>Vegetable</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#productDetailManagement">
+                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#addProductCategory">
                                             <i class="icon-edit"></i>
                                         </button>
                                         <?php include "./mvc/views/admin/body/product-detail.php" ?>
-                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#removeConfirm">
+                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#removeProductCategory">
                                             <i class="icon-bin"></i>
                                         </button>
                                         <!-- Confirm Modal -->
-                                        <div class="modal fade" id="removeConfirm">
-                                            <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal fade" id="removeProductCategory">
+                                            <div class="product-category-add modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
                                                         <i class="icon-info"></i>

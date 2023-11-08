@@ -5115,6 +5115,17 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   border-radius: 8px;
   box-shadow: 0px 1.5px 2px 0px rgba(16, 24, 40, 0.1);
 }
+.admin__content .product-category-add {
+  width: fit-content;
+  margin: auto;
+}
+.admin__content .product-category-add button:last-child {
+  background: #5C59E8;
+  color: white;
+}
+.admin__content .product-category-add button:last-child:hover {
+  opacity: 0.9;
+}
 .admin__content #removeConfirm .modal-dialog {
   max-width: fit-content;
 }

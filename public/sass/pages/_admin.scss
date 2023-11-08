@@ -603,6 +603,20 @@
             }
         }
 
+        .product-category-add {
+            width: fit-content;
+            margin: auto;
+
+            button:last-child {
+                background: $admin-color;
+                color: white;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+
         #removeConfirm {
             .modal-dialog {
                 max-width: fit-content;
