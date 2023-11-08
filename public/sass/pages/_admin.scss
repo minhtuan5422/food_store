@@ -525,6 +525,18 @@
             }
         }
 
+        &--products--category {
+            table {
+                th:first-child {
+                    text-align: center;
+                }
+
+                td:last-child {
+                    display: inline-flex;
+                }
+            }
+        }
+
         .product-add {
             margin: 32px 0 24px 0;
 

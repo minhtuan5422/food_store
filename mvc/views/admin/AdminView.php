@@ -116,15 +116,15 @@ ob_start();
             </div>
 
             <div id="productCategoryManagement" class="user__content">
-                <h3>productCategoryManagement</h3>
+                <?php require_once './mvc/views/admin/body/product-category.php' ?>
             </div>
 
             <div id="orderManagement" class="user__content">
-                <h3>orderManagement</h3>
+                <?php require_once './mvc/views/admin/body/order-mng.php' ?>
             </div>
 
             <div id="userManagement" class="user__content">
-                <h3>userManagement</h3>
+                <?php require_once './mvc/views/admin/body/user-mng.php' ?>
             </div>
 
             <div id="accountManagement" class="user__content">
@@ -132,7 +132,7 @@ ob_start();
             </div>
 
             <div id="articleManagement" class="user__content">
-                <h3>articleManagement</h3>
+                <?php require_once './mvc/views/admin/body/article-mng.php' ?>
             </div>
 
             <div id="providerManagement" class="user__content">

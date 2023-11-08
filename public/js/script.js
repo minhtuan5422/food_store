@@ -362,20 +362,6 @@ $(document).ready(function () {
   v_slider = $("#lightSliderVertical").lightSlider($v_slider_options);
   $selector = '#lightSlider li:not(".clone") a';
   $selector += ',#lightSliderVertical li:not(".clone") a';
-
-  $().fancybox({
-    selector: $selector,
-    backFocus: false,
-    buttons: [
-      "slideShow",
-      "share",
-      "zoom",
-      "fullScreen",
-      "thumbs",
-      "download",
-      "close",
-    ],
-  });
 });
 
 $(window).resize(function () {

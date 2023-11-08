@@ -5056,6 +5056,12 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   color: #dedefa;
   border-color: #5C59E8;
 }
+.admin__content--products--category table th:first-child {
+  text-align: center;
+}
+.admin__content--products--category table td:last-child {
+  display: inline-flex;
+}
 .admin__content .product-add {
   margin: 32px 0 24px 0;
 }
