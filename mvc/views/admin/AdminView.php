@@ -128,7 +128,7 @@ ob_start();
             </div>
 
             <div id="accountManagement" class="user__content">
-                <h3>accountManagement</h3>
+                <?php require_once './mvc/views/admin/body/account-mng.php' ?>
             </div>
 
             <div id="articleManagement" class="user__content">
@@ -136,9 +136,9 @@ ob_start();
             </div>
 
             <div id="providerManagement" class="user__content">
-                <h3>providerManagement</h3>
+                <?php require_once './mvc/views/admin/body/supplier-mng.php' ?>
             </div>
-
+            
             <div id="sellerManagement" class="user__content">
                 <h3>sellerManagement</h3>
             </div>

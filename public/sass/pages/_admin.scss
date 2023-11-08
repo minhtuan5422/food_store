@@ -29,6 +29,10 @@
         }
     }
 
+    label {
+        text-align: left !important;
+    }
+
     &__sidebar {
         width: 264px;
         background: white;
@@ -565,6 +569,10 @@
                     color: $black-black-800;
                     font-size: 18px;
                     font-weight: 500;
+                    text-align: left;
+                }
+
+                label {
                     text-align: left;
                 }
 

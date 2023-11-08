@@ -62,12 +62,10 @@
                                 </td>
                                 <td>
                                     <div class="d-flex gap-2 align-items-center">
-                                        <a href="#" class="ms-4 action-btn">
-                                            <i class="icon-eye"></i>
-                                        </a>
-                                        <button class="border-0 bg-white action-btn">
+                                        <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#orderDetailManagement">
                                             <i class="icon-edit"></i>
                                         </button>
+                                        <?php require_once "./mvc/views/admin/body/order-detail.php" ?>
                                     </div>
                                 </td>
                             </tr>

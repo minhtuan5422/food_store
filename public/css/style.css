@@ -4643,6 +4643,9 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
 .admin .pagination .page-link:hover {
   color: #5C59E8;
 }
+.admin label {
+  text-align: left !important;
+}
 .admin__sidebar {
   width: 264px;
   background: white;
@@ -5085,6 +5088,9 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   color: #1A1C21;
   font-size: 18px;
   font-weight: 500;
+  text-align: left;
+}
+.admin__content .product-add__body label {
   text-align: left;
 }
 .admin__content .product-add__body select,
