@@ -127,6 +127,10 @@ ob_start();
                 <?php require_once './mvc/views/admin/body/user-mng.php' ?>
             </div>
 
+            <div id="userDetailManagement" class="user__content">
+                <?php require_once './mvc/views/admin/body/user-detail.php' ?>
+            </div>
+
             <div id="accountManagement" class="user__content">
                 <?php require_once './mvc/views/admin/body/account-mng.php' ?>
             </div>

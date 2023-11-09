@@ -59,10 +59,10 @@
                                 </td>
                                 <td>29 Dec 2022</td>
                                 <td>
-                                    <div class="d-flex gap-2 align-items-center">
-                                        <a href="#" class="ms-4 action-btn">
+                                    <div class="d-flex align-items-center">
+                                        <button class="user__tab--link border-0 bg-white action-btn" onclick="openUserDashboard(event, 'userDetailManagement')">
                                             <i class="icon-eye"></i>
-                                        </a>
+                                        </button>
                                         <button class="border-0 bg-white action-btn">
                                             <i class="icon-edit"></i>
                                         </button>

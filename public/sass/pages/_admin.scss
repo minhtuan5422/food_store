@@ -541,6 +541,25 @@
             }
         }
 
+        &--profile {
+            &--back {
+                position: relative;
+                width: fit-content;
+
+                &::before {
+                    position: absolute;
+                    transform: rotate(180deg);
+                    top: 35%;
+                    left: -10%;
+                }
+
+                &:hover {
+                    background: transparent;
+                    box-shadow: none;
+                }
+            }
+        }
+
         .product-add {
             margin: 32px 0 24px 0;
 

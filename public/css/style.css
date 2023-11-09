@@ -1,5 +1,5 @@
 * {
-  font-family: Poppins;
+  font-family: Inter;
   font-style: normal;
 }
 
@@ -5064,6 +5064,20 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
 }
 .admin__content--products--category table td:last-child {
   display: inline-flex;
+}
+.admin__content--profile--back {
+  position: relative;
+  width: fit-content;
+}
+.admin__content--profile--back::before {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 35%;
+  left: -10%;
+}
+.admin__content--profile--back:hover {
+  background: transparent;
+  box-shadow: none;
 }
 .admin__content .product-add {
   margin: 32px 0 24px 0;
