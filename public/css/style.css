@@ -4995,10 +4995,12 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   font-size: 24px;
   font-weight: 500;
 }
-.admin__content--products--header--add {
+.admin__content--products--header--add,
+.admin__content--products--header button[type=submit] {
   width: fit-content;
   background: #5C59E8;
   display: flex;
+  margin: 0;
   padding: 10px 14px;
   justify-content: center;
   align-items: center;
@@ -5010,7 +5012,8 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
   font-weight: 600;
   transition: all 0.2s ease;
 }
-.admin__content--products--header--add:hover {
+.admin__content--products--header--add:hover,
+.admin__content--products--header button[type=submit]:hover {
   background: white;
   color: #5C59E8;
   box-shadow: unset;

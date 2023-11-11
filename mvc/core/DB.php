@@ -1,18 +1,15 @@
 <?php
     class DB {
         public $conn;
-        protected $servername = 'localhost';
+        protected $host = 'localhost';
         protected $username = 'root';
         protected $password = '';
         protected $dbName = "food_store";
 
         function __construct() {
-            $this->conn = mysqli_connect($this->servername, $this->username, $this->password);
-            mysqli_select_db($this->conn, $this->dbName);
-            mysqli_query($this->conn, "SET NAMES 'utf8'");
-
-            if($this->conn->connect_error) {
-                die("Connection failed: " . $this->conn->connect_error);
+            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbName);
+            if ($this->conn->connect_error) {
+              die("Connection failed: " . $this->conn->connect_error);
             }
         }
 

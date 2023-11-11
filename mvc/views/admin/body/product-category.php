@@ -52,10 +52,12 @@
                     </thead>
 
                     <tbody>
-                        <?php for ($i = 0; $i < 10; $i++) : ?>
+                        <?php 
+                        foreach ($data['productCategories'] as $category) {
+                        ?>
                             <tr>
-                                <td>#1</td>
-                                <td>Vegetable</td>
+                                <td><?php echo "#" . $category['id_category']?></td>
+                                <td><?php echo $category['name']?></td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#addProductCategory">
@@ -83,7 +85,7 @@
                                     </div>
                                 </td>
                             </tr>
-                        <?php endfor ?>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
