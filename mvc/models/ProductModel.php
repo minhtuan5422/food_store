@@ -4,8 +4,17 @@
             parent::__construct();
         }
 
+        public function insert($table, $data) {
+            return parent::insert($table, $data);
+        }
+
         public function getProductCategory() {
             $sql = "SELECT * FROM category";
+            return $this->select($sql);
+        }
+
+        public function getProductBrand() {
+            $sql = "SELECT * FROM brand";
             return $this->select($sql);
         }
 
@@ -18,4 +27,3 @@
             return $this->select($sql);
         }
     }
-?>

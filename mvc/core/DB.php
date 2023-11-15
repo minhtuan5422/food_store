@@ -31,12 +31,13 @@
         public function insert($table, $data) {
             $keys = array_keys($data);
             $values = array_values($data);
-            $keys = array_map(array($this, "escape"), $keys);
-            $values = array_map(array($this, "escape"), $values);
+           /*  $keys = array_map(array($this, "escape"), $keys);
+            $values = array_map(array($this, "escape"), $values); */
             $keys = implode(",", $keys);
             $values = "'" . implode("','", $values) . "'";
             $sql = "INSERT INTO " . $table . " (" . $keys . ") VALUES (" . $values . ")";
-            $this->query($sql);
+            $query =  $this->query($sql);
+            return $query;
         }
 
         public function delete($table, $where) {
@@ -79,5 +80,9 @@
             $stmt->close();
           
             return $result;
+          }
+
+          public function close() {
+            $this->conn->close();
           }
     }

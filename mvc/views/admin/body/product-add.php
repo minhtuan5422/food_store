@@ -1,5 +1,5 @@
 <div class="container-xl">
-    <form method="GET" action="">
+    <form method="POST" enctype="multipart/form-data">
         <div class="product-add admin__content--products--header">
             <div class="product-add__header d-flex align-items-center justify-content-between">
                 <p class="admin__content--products--header--title">Add Product</p>
@@ -22,11 +22,11 @@
                             <p class="info-title">General Information</p>
                             <div class="d-flex flex-column gap-1">
                                 <label>Product Name</label>
-                                <input type="text" name="productName" placeholder="Type product name here. . .">
+                                <input type="text" name="productName" placeholder="Type product name here. . ." required>
                             </div>
                             <div class="d-flex flex-column gap-1">
                                 <label>Description</label>
-                                <textarea rows="6" col="80" name="productDescription" placeholder="Type product description here. . ."></textarea>
+                                <textarea rows="6" col="80" name="productDescription" placeholder="Type product description here. . ." required></textarea>
                             </div>
                         </div>
     
@@ -34,7 +34,7 @@
                             <p class="info-title">Media</p>
                             <div class="d-flex flex-column gap-1">
                                 <label>Avatar</label>
-                                <input type="file" name="productAvatar">
+                                <input type="file" name="productAvatar" required>
                             </div>
                             <div class="d-flex flex-column gap-1">
                                 <label>Images group</label>
@@ -46,7 +46,7 @@
                             <p class="info-title">Pricing</p>
                             <div class="d-flex flex-column gap-1">
                                 <label>Base price</label>
-                                <input type="text" name="productPrice" placeholder="Type base price here. . .">
+                                <input type="text" name="productPrice" placeholder="Type base price here. . ." required>
                             </div>
                             <div>
                                 <label>Discount Type</label>
@@ -74,20 +74,14 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column gap-1">
-                                        <label>Brand</label>
-                                        <input type="text" name="productBrand" placeholder="Type product brand here. . .">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="d-flex flex-column gap-1">
                                         <label>Weight</label>
-                                        <input type="text" name="productWeight" placeholder="Type product weight here. . .">
+                                        <input type="text" name="productWeight" placeholder="Type product weight here. . ." required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column gap-1">
                                         <label>Quantity</label>
-                                        <input type="text" name="productQuantity" placeholder="Type product quantity here. . .">
+                                        <input type="text" name="productQuantity" placeholder="Type product quantity here. . ." required>
                                     </div>
                                 </div>
                             </div>
@@ -95,19 +89,19 @@
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column gap-1">
                                         <label>Origin</label>
-                                        <input type="text" name="productOrigin" placeholder="Type product origin here. . .">
+                                        <input type="text" name="productOrigin" placeholder="Type product origin here. . ." required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column gap-1">
                                         <label>Date manufacture</label>
-                                        <input type="date" name="productDateManufacture" placeholder="Type product weight here. . .">
+                                        <input type="date" name="productDateManufacture" placeholder="Type product weight here. . ." required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column gap-1">
                                         <label>Date expiry</label>
-                                        <input type="date" name="productDateExpiry" placeholder="Type product quantity here. . .">
+                                        <input type="date" name="productDateExpiry" placeholder="Type product quantity here. . ." required>
                                     </div>
                                 </div>
                             </div>
@@ -119,24 +113,21 @@
                             <p class="info-title">Category</p>
                             <div>
                                 <label>Product Category</label>
-                                <select name="" id="" class="ms-2">
-                                    <option value="" selected>0%</option>
-                                    <option value="">15%</option>
-                                    <option value="">20%</option>
-                                    <option value="">25%</option>
-                                    <option value="">30%</option>
-                                    <option value="">35%</option>
+                                <select name="productCategory" id="" class="ms-2">
+                                    <?php foreach ($data['productCategories'] as $category) { ?>
+                                    <option value=<?php echo $category['id_category']?> selected><?php echo $category['name']?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
-    
                         <div class="product-add__body--info">
-                            <p class="info-title">Category</p>
+                            <p class="info-title">Brand</p>
                             <div>
-                                <label>Product Status</label>
-                                <select name="" id="" class="ms-2">
-                                    <option value="" selected>Publish</option>
-                                    <option value="">Draft</option>
+                                <label>Product Brand</label>
+                                <select name="productBrand" id="" class="ms-2">
+                                    <?php foreach ($data['productBrand'] as $brand) { ?>
+                                    <option value=<?php echo $brand['id_brand']?> selected><?php echo $brand['name']?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
