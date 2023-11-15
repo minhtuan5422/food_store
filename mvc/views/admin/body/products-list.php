@@ -43,11 +43,15 @@
                     </thead>
 
                     <tbody>
-                        <?php foreach($data['productList'] as $product) { ?>
+                        <?php 
+                        foreach($data['productList'] as $product) { 
+                            $pathUrl = "D:Projectsfood_storepublicimgs";
+                            $imageFileName = substr($product['img'], strlen($pathUrl));
+                        ?>
                             <tr>
                                 <td><?php echo "#" . $product['id_product']?></td>
                                 <td class="d-flex align-items-center gap-3">
-                                    <img src=<?php echo $product['img']?> alt="product">
+                                    <img src=<?php echo IMG_PATH . $imageFileName?> alt="product">
                                     <p><?php echo $product['product_name']?></p>
                                 </td>
                                 <td><?php echo $product['brand_name']?></td>

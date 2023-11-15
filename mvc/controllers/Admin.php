@@ -21,26 +21,32 @@ class Admin extends Controller {
 
     public function createProduct() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addProductBtn'])) {
-            $productData = [
-                'name' => $_POST['productName'],
-                'img' => $_POST['productAvatar'],
-                'price' => $_POST['productPrice'],
-                'quantity' => $_POST['productQuantity'],
-                'weight' => $_POST['productWeight'],
-                'id_category' => $_POST['productCategory'],
-                'id_brand' => $_POST['productBrand'],
-                'rate' => '0',
-                'create_date' => date('d/m/Y'), 
-            ];
+            $image = $_FILES['productAvatar']['name']; // Tên tệp tin hình ảnh tải lên
+            $image_temp = $_FILES['productAvatar']['tmp_name']; // Đường dẫn tạm thời của tệp tin hình ảnh
+            $targetDirectory = "D:\\Projects\\food_store\\public\\imgs\\"; // Đường dẫn tới thư mục lưu hình ảnh
+            $targetFile = $targetDirectory . basename($image);
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+            if (move_uploaded_file($image_temp, $targetFile)) {
+                $productData = [
+                    'name' => $_POST['productName'],
+                    'img' => $targetFile,
+                    'price' => $_POST['productPrice'],
+                    'quantity' => $_POST['productQuantity'],
+                    'weight' => $_POST['productWeight'],
+                    'id_category' => $_POST['productCategory'],
+                    'id_brand' => $_POST['productBrand'],
+                    'rate' => '0',
+                    'create_date' => date('d-m-Y'), 
+                ];
+            }
     
-            // Chèn dữ liệu vào bảng "product"
             $productAdded = $this->productModel->insert('product', $productData);
-    
+
             if ($productAdded) {
                 // Lấy ID cuối cùng sau khi chèn vào bảng "product"
                 $product_id = mysqli_insert_id($this->productModel->conn);
     
-                // Chèn dữ liệu vào bảng "product_detail"
                 $productDetailData = [
                     'id_product' => $product_id,
                     'description' => $_POST['productDescription'],
@@ -53,15 +59,12 @@ class Admin extends Controller {
     
                 // Kiểm tra nếu chèn vào bảng "product_detail" thành công
                 if ($productDetailId) {
-                    // Chuyển hướng người dùng đến trang hiển thị sản phẩm sau khi thêm thành công
                     header('Location: /food_store/admin');
                     exit();
                 } else {
-                    // Xử lý lỗi khi chèn vào bảng "product_detail"
                     echo "Lỗi khi chèn dữ liệu vào bảng product_detail.";
                 }
             } else {
-                // Xử lý lỗi khi chèn vào bảng "product"
                 echo "Lỗi khi chèn dữ liệu vào bảng product.";
             }
         }
