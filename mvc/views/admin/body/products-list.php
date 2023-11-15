@@ -69,7 +69,7 @@
                                 </td>
                                 <td>
                                     <?php 
-                                    $date = new DateTime($product['formatted_date']);
+                                    $date = new DateTime($product['create_date']);
                                     $formattedDate = $date->format('d/m/Y');
                                     echo $formattedDate;
                                     ?>

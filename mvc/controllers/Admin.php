@@ -25,7 +25,7 @@ class Admin extends Controller {
             $image_temp = $_FILES['productAvatar']['tmp_name']; // Đường dẫn tạm thời của tệp tin hình ảnh
             $targetDirectory = "D:\\Projects\\food_store\\public\\imgs\\"; // Đường dẫn tới thư mục lưu hình ảnh
             $targetFile = $targetDirectory . basename($image);
-            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $date = date('Y-m-d');
 
             if (move_uploaded_file($image_temp, $targetFile)) {
                 $productData = [
@@ -37,7 +37,7 @@ class Admin extends Controller {
                     'id_category' => $_POST['productCategory'],
                     'id_brand' => $_POST['productBrand'],
                     'rate' => '0',
-                    'create_date' => date('d-m-Y'), 
+                    'create_date' => $date, 
                 ];
             }
     
@@ -59,7 +59,7 @@ class Admin extends Controller {
     
                 // Kiểm tra nếu chèn vào bảng "product_detail" thành công
                 if ($productDetailId) {
-                    header('Location: /food_store/admin');
+                    echo "Add product successfully";
                     exit();
                 } else {
                     echo "Lỗi khi chèn dữ liệu vào bảng product_detail.";
