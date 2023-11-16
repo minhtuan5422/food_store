@@ -1,5 +1,5 @@
 <div class="container-xl">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" id="formAddProduct">
         <div class="product-add admin__content--products--header">
             <div class="product-add__header d-flex align-items-center justify-content-between">
                 <p class="admin__content--products--header--title">Add Product</p>
@@ -8,13 +8,27 @@
                         <i class="icon-plus rotate-90"></i>
                         <span>Cancel</span>
                     </button>
-                    <button type="submit" class="admin__content--products--header--add user__tab--link" name="addProductBtn" onclick="openUserDashboard(event, 'addProduct')">
+                    <button type="submit" class="admin__content--products--header--add" id="actionAddProduct" name="addProductBtn">
                         <i class="icon-plus"></i>
                         <span>Add Product</span>
                     </button>
+                    <div class="modal fade" id="addProductsSuccess">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <i class="icon-info"></i>
+                                    <p class="mt-2 mb-4">Are you sure you want to delete?</p>
+                                    <div class="d-flex gap-4">
+                                        <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">No</button>
+                                        <button class="btn w-100">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    
+
             <div class="product-add__body">
                 <div class="row">
                     <div class="col-md-9">
@@ -29,7 +43,7 @@
                                 <textarea rows="6" col="80" name="productDescription" placeholder="Type product description here. . ." required></textarea>
                             </div>
                         </div>
-    
+
                         <div class="product-add__body--info">
                             <p class="info-title">Media</p>
                             <div class="d-flex flex-column gap-1">
@@ -41,7 +55,7 @@
                                 <input type="file">
                             </div>
                         </div>
-    
+
                         <div class="product-add__body--info">
                             <p class="info-title">Pricing</p>
                             <div class="d-flex flex-column gap-1">
@@ -68,7 +82,7 @@
                                 </select>
                             </div>
                         </div>
-    
+
                         <div class="product-add__body--info">
                             <p class="info-title">Inventory</p>
                             <div class="row">
@@ -107,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-md-3">
                         <div class="product-add__body--info">
                             <p class="info-title">Category</p>
@@ -115,7 +129,7 @@
                                 <label>Product Category</label>
                                 <select name="productCategory" id="" class="ms-2">
                                     <?php foreach ($data['productCategories'] as $category) { ?>
-                                    <option value=<?php echo $category['id_category']?> selected><?php echo $category['name']?></option>
+                                        <option value=<?php echo $category['id_category'] ?> selected><?php echo $category['name'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -126,7 +140,7 @@
                                 <label>Product Brand</label>
                                 <select name="productBrand" id="" class="ms-2">
                                     <?php foreach ($data['productBrand'] as $brand) { ?>
-                                    <option value=<?php echo $brand['id_brand']?> selected><?php echo $brand['name']?></option>
+                                        <option value=<?php echo $brand['id_brand'] ?> selected><?php echo $brand['name'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

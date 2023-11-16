@@ -56,14 +56,14 @@ class Admin extends Controller {
                 ];
     
                 $productDetailId = $this->productModel->insert('product_detail', $productDetailData);
-    
+                return $productDetailId;
                 // Kiểm tra nếu chèn vào bảng "product_detail" thành công
-                if ($productDetailId) {
-                    echo "Add product successfully";
+                /* if ($productDetailId) {
+                    echo '<script>alert("Add product successfully!")</script>';
                     exit();
                 } else {
                     echo "Lỗi khi chèn dữ liệu vào bảng product_detail.";
-                }
+                } */
             } else {
                 echo "Lỗi khi chèn dữ liệu vào bảng product.";
             }
@@ -71,3 +71,5 @@ class Admin extends Controller {
     }
 }
 ?>
+
+

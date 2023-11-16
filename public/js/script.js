@@ -12,7 +12,9 @@ var timeLabels = [
   "Tháng 11",
   "Tháng 12",
 ];
-var revenueData = [1000, 1500, 1200, 1800, 2000, 1600,1000, 1500, 1200, 1800, 2000, 1600];
+var revenueData = [
+  1000, 1500, 1200, 1800, 2000, 1600, 1000, 1500, 1200, 1800, 2000, 1600,
+];
 var salesData = [50, 70, 60, 80, 90, 75, 50, 70, 60, 80, 90, 75];
 
 $(document).ready(function () {
@@ -362,6 +364,20 @@ $(document).ready(function () {
   v_slider = $("#lightSliderVertical").lightSlider($v_slider_options);
   $selector = '#lightSlider li:not(".clone") a';
   $selector += ',#lightSliderVertical li:not(".clone") a';
+
+  /* AJAX HANDLER */
+  $("#actionAddProduct").click(function () {
+    $.ajax({
+      url: "./mvc/controllers/Admin.php",
+      type: "POST",
+      success: function () {
+        alert("Product added successfully");
+      },
+      error: function () {
+        console.log("Product information invalid");
+      },
+    });
+  });
 });
 
 $(window).resize(function () {
