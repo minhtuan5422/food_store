@@ -11,27 +11,27 @@ require_once "./mvc/views/partials/breadcrumb.php"
             <div class="col-lg-3">
                 <div class="user__tab">
                     <p class="user__tab--title">Navigation</p>
-                    <button class="user__tab--link active" onclick="openUserDashboard(event, 'dashboard')">
+                    <button class="user__tab--link active" data-view="userDashboard">
                         <i class="icon-dashboard"></i>
                         <span>Dashboard</span>
                     </button>
-                    <button class="user__tab--link" onclick="openUserDashboard(event, 'orderHistory')">
+                    <button class="user__tab--link" data-view="orderHistory">
                         <i class="icon-repeat"></i>
                         <span>Order History</span>
                     </button>
-                    <button class="user__tab--link" onclick="openUserDashboard(event, 'wishlist')">
+                    <button class="user__tab--link" data-view="wishlist">
                         <i class="icon-heart"></i>
                         <span>Wishlist</span>
                     </button>
-                    <button class="user__tab--link" onclick="openUserDashboard(event, 'shoppingCart')">
+                    <button class="user__tab--link" data-view="shoppingCart">
                         <i class="icon-shopping-cart"></i>
                         <span>Shopping Cart</span>
                     </button>
-                    <button class="user__tab--link" onclick="openUserDashboard(event, 'settings')">
+                    <button class="user__tab--link" data-view="settings">
                         <i class="icon-control"></i>
                         <span>Settings</span>
                     </button>
-                    <button class="user__tab--link" onclick="openUserDashboard(event, 'logout')">
+                    <button class="user__tab--link" data-view="logout">
                         <i class="icon-enter"></i>
                         <span>Log-out</span>
                     </button>
@@ -39,7 +39,7 @@ require_once "./mvc/views/partials/breadcrumb.php"
             </div>
 
             <div class="col-lg-9">
-                <div id="dashboard" class="user__content">
+                <div id="userDashboard" class="user__content">
                     <div class="user__content--wrap justify-content-between">
                         <div class="user__content--profile">
                             <img src=<?php echo IMG_PATH . "about-avt3.png" ?> alt="avatar">

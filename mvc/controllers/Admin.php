@@ -5,6 +5,7 @@ class Admin extends Controller {
     function __construct() {
         $this->productModel = $this->model('ProductModel');
         $this->createProduct();
+        $this->deleteProduct();
     }
 
     public function show() {
@@ -56,17 +57,29 @@ class Admin extends Controller {
                 ];
     
                 $productDetailId = $this->productModel->insert('product_detail', $productDetailData);
-                return $productDetailId;
                 // Kiểm tra nếu chèn vào bảng "product_detail" thành công
-                /* if ($productDetailId) {
-                    echo '<script>alert("Add product successfully!")</script>';
-                    exit();
+                if ($productDetailId) {
+                    echo "
+                    <script>
+                        alert('Add product successfully');
+                    </script>
+                    ";
                 } else {
                     echo "Lỗi khi chèn dữ liệu vào bảng product_detail.";
-                } */
+                }
+                
+                return $productDetailId;
             } else {
                 echo "Lỗi khi chèn dữ liệu vào bảng product.";
             }
+        }
+    }
+
+    public function deleteProduct() {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $productId = $_POST["productId"];
+            $result =  $this->productModel->delete("product_detail", "id_product = '$productId'");
+            return $result;
         }
     }
 }

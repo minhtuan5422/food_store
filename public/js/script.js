@@ -366,15 +366,31 @@ $(document).ready(function () {
   $selector += ',#lightSliderVertical li:not(".clone") a';
 
   /* AJAX HANDLER */
-  $("#actionAddProduct").click(function () {
+  // Lắng nghe sự kiện click trên nút xóa của mỗi sản phẩm
+  $('.delete-product-btn').on('click', function() {
+    // Lấy id sản phẩm từ thuộc tính data-id của nút xóa
+    const productId = $(this).data('id');
+    
+    // Cập nhật giá trị của input hidden thành id sản phẩm
+    $('#hiddenProductId').val(productId);
+  });
+
+  $(".js-delete-product").click(function (e) {
+    e.preventDefault();
+    var productId = $('#hiddenProductId').val();
+    console.log(productId); // Kiểm tra giá trị của productId
+
     $.ajax({
       url: "./mvc/controllers/Admin.php",
       type: "POST",
+      data: { productId: productId },
       success: function () {
-        alert("Product added successfully");
+        alert("Product deleted successfully");
+        $(".modal-backdrop").hide();
+        $('#removeConfirm').hide();
       },
       error: function () {
-        console.log("Product information invalid");
+        console.log("Error when delete product!");
       },
     });
   });
@@ -467,12 +483,4 @@ function openTabs(e) {
 
   $("#" + section).addClass("active");
   btnTarget.addClass("active");
-}
-
-//Vertical tabs
-function openUserDashboard(evt, viewName) {
-  $(".user__content").hide();
-  $(".user__tab--link").removeClass("active");
-  $("#" + viewName).show();
-  $(evt.currentTarget).addClass("active");
 }

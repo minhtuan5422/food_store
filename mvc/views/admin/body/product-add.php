@@ -4,7 +4,7 @@
             <div class="product-add__header d-flex align-items-center justify-content-between">
                 <p class="admin__content--products--header--title">Add Product</p>
                 <div class="d-flex align-items-center gap-4">
-                    <button class="admin__content--products--header--add user__tab--link" onclick="openUserDashboard(event, 'productListManagement')">
+                    <button class="admin__content--products--header--add user__tab--link"data-view="productListManagement">
                         <i class="icon-plus rotate-90"></i>
                         <span>Cancel</span>
                     </button>
@@ -12,7 +12,7 @@
                         <i class="icon-plus"></i>
                         <span>Add Product</span>
                     </button>
-                    <div class="modal fade" id="addProductsSuccess">
+                    <!-- <div class="modal fade" id="addProductsSuccess">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

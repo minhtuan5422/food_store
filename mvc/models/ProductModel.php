@@ -7,6 +7,10 @@
         public function insert($table, $data) {
             return parent::insert($table, $data);
         }
+        
+        public function delete($table, $data) {
+            return parent::delete($table, $data);
+        }
 
         public function getProductCategory() {
             $sql = "SELECT * FROM category";

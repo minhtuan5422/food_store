@@ -11,7 +11,7 @@ ob_start();
         </div>
 
         <div class="tab">
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'dashboard')">
+            <button class="user__tab--link" data-view="dashboard">
                 <i class="icon-grid"></i>
                 <span>Dashboard</span>
             </button>
@@ -24,31 +24,31 @@ ob_start();
                     <i class="tab__product--icon icon-chevron-right"></i>
                 </button>
                 <div id="tabProduct" class="collapse">
-                    <button class="user__tab--link user__tab--product" onclick="openUserDashboard(event, 'productListManagement')">Product List</button>
-                    <button class="user__tab--link user__tab--product" onclick="openUserDashboard(event, 'productCategoryManagement')">Product Category</button>
+                    <button class="user__tab--link user__tab--product" data-view="productListManagement">Product List</button>
+                    <button class="user__tab--link user__tab--product" data-view="productCategoryManagement">Product Category</button>
                 </div>
             </div>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'orderManagement')">
+            <button class="user__tab--link" data-view="orderManagement">
                 <i class="icon-shopping-cart"></i>
                 <span>Orders</span>
             </button>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'userManagement')">
+            <button class="user__tab--link" data-view="userManagement">
                 <i class="icon-user"></i>
                 <span>User</span>
             </button>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'accountManagement')">
+            <button class="user__tab--link" data-view="accountManagement">
                 <i class="icon-lock"></i>
                 <span>Account</span>
             </button>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'articleManagement')">
+            <button class="user__tab--link" data-view="articleManagement">
                 <i class="icon-file-text"></i>
                 <span>Article</span>
             </button>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'providerManagement')">
+            <button class="user__tab--link" data-view="providerManagement">
                 <i class="icon-support_agent"></i>
                 <span>Provider</span>
             </button>
-            <button class="user__tab--link" onclick="openUserDashboard(event, 'sellerManagement')">
+            <button class="user__tab--link" data-view="sellerManagement">
                 <i class="icon-sale"></i>
                 <span>Seller</span>
             </button>
