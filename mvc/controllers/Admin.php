@@ -78,8 +78,8 @@ class Admin extends Controller {
     public function deleteProduct() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $productId = $_POST["productId"];
-            $result =  $this->productModel->delete("product_detail", "id_product = '$productId'");
-            return $result;
+            $this->productModel->delete("product_detail", "id_product = '$productId'");
+            $this->productModel->delete("product", "id_product = '$productId'");
         }
     }
 }

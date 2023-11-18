@@ -366,12 +366,8 @@ $(document).ready(function () {
   $selector += ',#lightSliderVertical li:not(".clone") a';
 
   /* AJAX HANDLER */
-  // Lắng nghe sự kiện click trên nút xóa của mỗi sản phẩm
   $('.delete-product-btn').on('click', function() {
-    // Lấy id sản phẩm từ thuộc tính data-id của nút xóa
     const productId = $(this).data('id');
-    
-    // Cập nhật giá trị của input hidden thành id sản phẩm
     $('#hiddenProductId').val(productId);
   });
 
