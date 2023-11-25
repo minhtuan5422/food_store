@@ -366,14 +366,14 @@ $(document).ready(function () {
   $selector += ',#lightSliderVertical li:not(".clone") a';
 
   /* AJAX HANDLER */
-  $('.delete-product-btn').on('click', function() {
-    const productId = $(this).data('id');
-    $('#hiddenProductId').val(productId);
+  $(".delete-product-btn").on("click", function () {
+    const productId = $(this).data("id");
+    $("#hiddenProductId").val(productId);
   });
 
   $(".js-delete-product").click(function (e) {
     e.preventDefault();
-    var productId = $('#hiddenProductId').val();
+    var productId = $("#hiddenProductId").val();
     console.log(productId); // Kiểm tra giá trị của productId
 
     $.ajax({
@@ -381,12 +381,35 @@ $(document).ready(function () {
       type: "POST",
       data: { productId: productId },
       success: function () {
-        alert("Product deleted successfully");
+        alert("Remove product successfully");
         $(".modal-backdrop").hide();
-        $('#removeConfirm').hide();
+        $("#removeConfirm").hide();
       },
       error: function () {
         console.log("Error when delete product!");
+      },
+    });
+  });
+
+  $(".update-product-btn").on("click", function () {
+    const productId = $(this).data("id");
+    $("#hiddenProductUpdateId").val(productId);
+  });
+
+  $(".js-update-product").click(function (e) {
+    e.preventDefault();
+    var productId = $("#hiddenProductUpdateId").val();
+    console.log(productId); // Kiểm tra giá trị của productId
+
+    $.ajax({
+      url: "./mvc/controllers/Admin.php",
+      type: "POST",
+      data: { productUpdateId: productId },
+      success: function () {
+        alert("Update product successfully");
+      },
+      error: function () {
+        console.log("Error when update product!");
       },
     });
   });

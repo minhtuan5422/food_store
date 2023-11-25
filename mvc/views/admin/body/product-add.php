@@ -12,20 +12,6 @@
                         <i class="icon-plus"></i>
                         <span>Add Product</span>
                     </button>
-                    <!-- <div class="modal fade" id="addProductsSuccess">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <i class="icon-info"></i>
-                                    <p class="mt-2 mb-4">Are you sure you want to delete?</p>
-                                    <div class="d-flex gap-4">
-                                        <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">No</button>
-                                        <button class="btn w-100">Yes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 

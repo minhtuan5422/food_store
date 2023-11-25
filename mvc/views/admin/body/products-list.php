@@ -79,7 +79,7 @@
                                 </td>
                                 <td>
                                 <div class="d-flex align-items-center">
-                                    <button class="border-0 bg-white action-btn" data-bs-toggle="modal" data-bs-target="#productDetailManagement">
+                                    <button class="border-0 bg-white action-btn update-product-btn" data-id="<?php echo $product['id_product']?>" data-bs-toggle="modal" data-bs-target="#productDetailManagement">
                                         <i class="icon-edit"></i>
                                     </button>
                                     <?php include "./mvc/views/admin/body/product-detail.php" ?>
