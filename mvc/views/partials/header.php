@@ -168,9 +168,41 @@
                   </div>
                </div>
 
-               <a href=<?php echo PUBLIC_URL . "login" ?> class="res-none">
-                  <i class="icon-user"></i>
-               </a>
+               <?php
+               if (!isset($_SESSION['email'])) {
+                  echo '<a href="' . PUBLIC_URL . 'login" class="res-none">
+                           <i class="icon-user"></i>
+                        </a>';
+               } else {
+                  echo '
+                  <div class="dropdown dropstart">
+                      <button class="res-none border-0 rounded-5 text-success" data-bs-toggle="dropdown">
+                          <i class="icon-user"></i>
+                      </button>
+                      <ul class="dropdown-menu mt-1">
+                          <li>
+                              <a class="dropdown-item d-flex align-items-center" href="' . PUBLIC_URL . 'admin' . '">
+                                  <i class="icon-spinner"></i>
+                                  <span class="ms-2">Back to Admin</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a class="dropdown-item d-flex align-items-center" href="' . PUBLIC_URL . 'userdashboard' . '">
+                                  <i class="icon-document-text"></i>
+                                  <span class="ms-2">Profile</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a class="dropdown-item d-flex align-items-center" href="#">
+                                  <i class="icon-enter"></i>
+                                  <span class="ms-2">Logout</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              ';
+               }
+               ?>
             </div>
          </div>
       </div>

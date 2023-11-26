@@ -77,28 +77,57 @@ ob_start();
             </div>
             <div class="admin__content--header--divider"></div>
             <div class="admin__content--header--info d-flex align-items-center gap-3">
-                <img src=<?php echo IMG_PATH . "about-avt1.png" ?> alt="avatar">
-                <div class="admin__content--header--info--detail">
-                    <p>Jay Hargudson</p>
-                    <p>Manager</p>
-                </div>
-                <div class="dropdown dropdown-menu-end">
-                    <button type="button" class="icon-chevron-right bg-white border-0 rotate-90" data-bs-toggle="dropdown"></button>
-                    <ul class="dropdown-menu mt-1">
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="icon-spinner"></i>
-                                <span class="ms-2">Back to website</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="icon-enter"></i>
-                                <span class="ms-2">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <?php
+                $db = new DB();
+                if (isset($_SESSION['email'])) :
+                    $email = $_SESSION['email'];
+                ?>
+                    <img src=
+                    <?php 
+                        $sql = "SELECT img_avatar FROM user
+                        JOIN account ON account.email = '$email'
+                        AND account.id_user = user.id_user";
+                        $image = $db->selectSingleItem($sql);
+                        echo $image[0] ? $image[0] : "https://cdn-icons-png.flaticon.com/512/3541/3541871.png";
+                    ?> alt="avatar">
+                    <div class="admin__content--header--info--detail">
+                        <p>
+                            <?php
+                            $sql = "SELECT name FROM user
+                            JOIN account ON account.email = '$email'
+                            AND account.id_user = user.id_user";
+                            $fullName = $db->selectSingleItem($sql);
+                            echo $fullName[0] ? $fullName[0] : $email;
+                            ?>
+                        </p>
+                        <p class="text-capitalize">
+                            <?php
+                            $sql = "SELECT name FROM role
+                            JOIN account ON account.email = '$email'
+                            AND account.id_role = role.id_role";
+                            $roleName = $db->selectSingleItem($sql);
+                            echo $roleName[0];
+                            ?>
+                        </p>
+                    <?php endif ?>
+                    </div>
+                    <div class="dropdown dropdown-menu-end">
+                        <button type="button" class="icon-chevron-right bg-white border-0 rotate-90" data-bs-toggle="dropdown"></button>
+                        <ul class="dropdown-menu mt-1">
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="<?php echo PUBLIC_URL ?>">
+                                    <i class="icon-spinner"></i>
+                                    <span class="ms-2">Back to website</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <i class="icon-enter"></i>
+                                    <span class="ms-2">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </div>
 
@@ -142,7 +171,7 @@ ob_start();
             <div id="providerManagement" class="user__content">
                 <?php require_once './mvc/views/admin/body/supplier-mng.php' ?>
             </div>
-            
+
             <div id="sellerManagement" class="user__content">
                 <h3>sellerManagement</h3>
             </div>

@@ -420,10 +420,10 @@ $(document).ready(function () {
       data: { email: email, password: password },
       dataType: "json",
       success: function (response) {
-        if (response.status === 'nvsuccess') {
+        if (response.status === 'admin') {
           alert("Nhân viên đăng nhập thành công!");
           window.location.href = "/admin";
-        } else if (response.status === 'khsuccess') {
+        } else if (response.status === 'staff') {
           alert("Khách hàng đăng nhập thành công!");
           window.location.href = "/";
         } else if (response.status === 'error') {
