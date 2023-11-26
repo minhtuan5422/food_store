@@ -10,8 +10,8 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="container-xl">
+                    <?php if($data['productUpdateSelected']) {?>
                     <form method="POST">
-                        <input type="hidden" id="hiddenProductUpdateId">
                         <div class="product-add admin__content--products--header">
                             <div class="product-add__header d-flex align-items-center justify-content-end">
                                 <div class="d-flex align-items-center gap-4">
@@ -30,11 +30,11 @@
                                             <p class="info-title">General Information</p>
                                             <div class="d-flex flex-column gap-1">
                                                 <label>Product Name</label>
-                                                <input type="text" value="<?php echo $product['product_name'] ?>" placeholder="Type product name here. . .">
+                                                <input type="text" name="editProductName" value="<?php echo $data['productUpdateSelected']['name']; ?>" placeholder="Type product name here. . .">
                                             </div>
                                             <div class="d-flex flex-column gap-1">
                                                 <label>Description</label>
-                                                <textarea rows="6" col="80" placeholder="Type product description here. . ."><?php echo $product['description'] ?></textarea>
+                                                <textarea rows="6" col="80" placeholder="Type product description here. . ."></textarea>
                                             </div>
                                         </div>
     
@@ -43,7 +43,7 @@
                                             <div class="d-flex flex-column gap-1">
                                                 <label>Avatar</label>
                                                 <input type="file">
-                                                <input type="text" value="<?php echo $product['img']; ?>" readonly>
+                                                <input type="text" readonly>
                                             </div>
                                             <div class="d-flex flex-column gap-1">
                                                 <label>Images group</label>
@@ -55,7 +55,7 @@
                                             <p class="info-title">Pricing</p>
                                             <div class="d-flex flex-column gap-1">
                                                 <label>Base price</label>
-                                                <input type="text" value="<?php echo $product['price'] ?>" placeholder="Type base price here. . .">
+                                                <input type="text" placeholder="Type base price here. . .">
                                             </div>
                                             <div>
                                                 <label>Discount Type</label>
@@ -84,19 +84,19 @@
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Brand</label>
-                                                        <input type="text" value="<?php echo $product['brand_name'] ?>" placeholder="Type product brand here. . .">
+                                                        <input type="text" placeholder="Type product brand here. . .">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Weight</label>
-                                                        <input type="text1" value="<?php echo $product['weight'] ?>" placeholder="Type product weight here. . .">
+                                                        <input type="text1" placeholder="Type product weight here. . .">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Quantity</label>
-                                                        <input type="text" value="<?php echo $product['quantity'] ?>" placeholder="Type product quantity here. . .">
+                                                        <input type="text" placeholder="Type product quantity here. . .">
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,19 +104,19 @@
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Origin</label>
-                                                        <input type="text" value="<?php echo $product['origin'] ?>" placeholder="Type product origin here. . .">
+                                                        <input type="text" placeholder="Type product origin here. . .">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Date manufacture</label>
-                                                        <input type="date" value="<?php echo $product['date_manufacture'] ?>" placeholder="Type product weight here. . .">
+                                                        <input type="date"  placeholder="Type product weight here. . .">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="d-flex flex-column gap-1">
                                                         <label>Date expiry</label>
-                                                        <input type="date" value="<?php echo $product['date_expiry'] ?>" placeholder="Type product quantity here. . .">
+                                                        <input type="date" placeholder="Type product quantity here. . .">
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,6 +142,7 @@
                             </div>
                         </div>
                     </form>
+                    <?php } ?>
                 </div>
             </div>
 

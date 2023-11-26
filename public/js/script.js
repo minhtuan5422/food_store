@@ -391,25 +391,48 @@ $(document).ready(function () {
     });
   });
 
-  $(".update-product-btn").on("click", function () {
-    const productId = $(this).data("id");
-    $("#hiddenProductUpdateId").val(productId);
-  });
-
-  $(".js-update-product").click(function (e) {
+  $(".update-product-btn").click(function (e) {
     e.preventDefault();
-    var productId = $("#hiddenProductUpdateId").val();
-    console.log(productId); // Kiểm tra giá trị của productId
+    const productId = $(this).data("id");
 
     $.ajax({
-      url: "./mvc/controllers/Admin.php",
+      url: "./mvc/models/ProductModel.php",
       type: "POST",
       data: { productUpdateId: productId },
       success: function () {
-        alert("Update product successfully");
+        console.log(productId);
       },
       error: function () {
-        console.log("Error when update product!");
+        console.log("Not found product ID");
+      },
+    });
+  });
+
+  $(".js-submit-login").click(function () {
+    var email = $(".js-email-login").val();
+    var password = $(".js-password-login").val();
+
+    console.log(email + password);
+
+    $.ajax({
+      url: "./mvc/controllers/Login.php",
+      type: "POST",
+      data: { email: email, password: password },
+      dataType: "json",
+      success: function (response) {
+        if (response.status === 'nvsuccess') {
+          alert("Nhân viên đăng nhập thành công!");
+          window.location.href = "/admin";
+        } else if (response.status === 'khsuccess') {
+          alert("Khách hàng đăng nhập thành công!");
+          window.location.href = "/";
+        } else if (response.status === 'error') {
+          alert("Tài khoản hoặc mật khẩu không chính xác!");
+          window.location.href = "/login";
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX Error: " + xhr.responseText);
       },
     });
   });

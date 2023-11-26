@@ -35,4 +35,16 @@
             ORDER BY product.id_product ASC";
             return $this->select($sql);
         }
+
+        public function getUpdateProductInfo()
+        {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $productId = $_POST['productUpdateId'];
+                $sql = "SELECT p.*, pdt.*
+                        FROM product AS p
+                        JOIN product_detail AS pdt ON p.id_product = pdt.id_product
+                        WHERE p.id_product = '$productId'";
+                return $this->selectSingleItem($sql);
+            }
+        }
     }

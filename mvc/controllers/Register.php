@@ -51,7 +51,8 @@ class Register extends Controller
                         'password' => $password,
                         'create_date' => $date,
                         'status' => 'active',
-                        'id_user' => $userId
+                        'id_user' => $userId,
+                        'id_role' => '4'
                     ];
                     $this->registerModel->insert('account', $accountData);
                     echo "

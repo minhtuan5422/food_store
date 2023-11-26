@@ -8,7 +8,6 @@ class Admin extends Controller
         $this->productModel = $this->model('ProductModel');
         $this->createProduct();
         $this->deleteProduct();
-        $this->updateProduct();
     }
 
     public function show()
@@ -16,11 +15,12 @@ class Admin extends Controller
         $productCategories = $this->productModel->getProductCategory();
         $productBrand = $this->productModel->getProductBrand();
         $productList = $this->productModel->getProductList();
-
+        $productUpdateInfo = $this->productModel->getUpdateProductInfo();
         $this->admin('AdminView', [
             'productCategories' => $productCategories,
             'productList' => $productList,
             'productBrand' =>  $productBrand,
+            'productUpdateSelected' => $productUpdateInfo
         ]);
     }
 
@@ -88,6 +88,8 @@ class Admin extends Controller
             $this->productModel->delete("product", "id_product = '$productId'");
         }
     }
+
+   
 
     public function updateProduct()
     {

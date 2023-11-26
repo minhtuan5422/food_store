@@ -1,18 +1,18 @@
 <?php
 $pageTitle = "Login";
 ob_start();
-$currentPage="Login";
+$currentPage = "Login";
 require_once "./mvc/views/partials/breadcrumb.php"
 ?>
 
 <div class="login">
     <div class="container-xl">
         <div class="login__dialog">
-            <form action="" method="post">
+            <form method="POST">
                 <h5>Sign In</h5>
-                <input type="text" name="" id="" placeholder="Email">
+                <input type="text" class="js-email-login" name="email" placeholder="Email">
                 <div class="w-100 mt-3 login__dialog--password position-relative">
-                    <input type="password" name="" id="" placeholder="Password">
+                    <input type="password" name="password" class="js-password-login" placeholder="Password">
                     <button class="border-0 p-0 bg-white position-absolute">
                         <i class="icon-eye"></i>
                     </button>
@@ -24,10 +24,10 @@ require_once "./mvc/views/partials/breadcrumb.php"
                     </div>
                     <a href="#" class="login__dialog--forget">Forget Password</a>
                 </div>
-                <button type="submit" class="login__dialog--submit">Login</button>
+                <button type="submit" class="login__dialog--submit js-submit-login">Login</button>
                 <p class="login__dialog--link">
-                    Don’t have account?
-                    <a href=<?php echo PUBLIC_URL . "register"?>> Register</a>
+                    Don’t have an account?
+                    <a href=<?php echo PUBLIC_URL . "register" ?>> Register</a>
                 </p>
             </form>
         </div>

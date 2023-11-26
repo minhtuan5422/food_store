@@ -20,6 +20,13 @@ class DB
         return $this->conn->query($sql);
     }
 
+    public function selectSingleItem($sql)
+    {
+        $result = $this->query($sql);
+        $row = mysqli_fetch_array($result);
+        return $row;
+    }
+
     public function select($sql)
     {
         $result = $this->query($sql);
