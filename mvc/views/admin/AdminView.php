@@ -121,7 +121,7 @@ ob_start();
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                <a class="dropdown-item d-flex align-items-center" href="./mvc/controllers/Logout.php">
                                     <i class="icon-enter"></i>
                                     <span class="ms-2">Logout</span>
                                 </a>
