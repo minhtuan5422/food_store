@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Shop";
 ob_start();
-$currentPage="Shop";
+$currentPage = "Shop";
 require_once "./mvc/views/partials/breadcrumb.php";
 ?>
 
@@ -200,16 +200,20 @@ require_once "./mvc/views/partials/breadcrumb.php";
                             <option value="">Price from low to high</option>
                         </select>
                     </div>
-                    <p class="product__filter--result"><span>52</span> Results Found</p>
+                    <p class="product__filter--result"><span><?php echo count($data['productList']) ?></span> Results Found</p>
                 </div>
 
                 <div class="product__list">
                     <div class="row">
-                        <?php for ($j = 0; $j < 15; $j++) : ?>
+                        <?php
+                        foreach ($data['productList'] as $product) :
+                            $pathUrl = "D:Projectsfood_storepublicimgs";
+                            $imageFileName = substr($product['img'], strlen($pathUrl));
+                        ?>
                             <div class="col-6 col-sm-4 mb-4">
                                 <?php include "./mvc/views/partials/product-card.php" ?>
                             </div>
-                        <?php endfor ?>
+                        <?php endforeach ?>
                         <?php include "./mvc/views/partials/pagination.php" ?>
                     </div>
                 </div>
@@ -217,8 +221,8 @@ require_once "./mvc/views/partials/breadcrumb.php";
         </div>
     </div>
 
-    <?php include "./mvc/views/partials/product-quick-view.php"?>
-    <?php require_once "./mvc/views/partials/footer-child.php"?>
+    <?php include "./mvc/views/partials/product-quick-view.php" ?>
+    <?php require_once "./mvc/views/partials/footer-child.php" ?>
 </div>
 
 <?php

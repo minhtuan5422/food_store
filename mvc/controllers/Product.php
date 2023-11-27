@@ -1,7 +1,12 @@
 <?php
 class Product extends Controller {
+    private $productModel;
     function show() {
-        $this->view('ProductView', []);
+        $this->productModel = $this->model('ProductModel');
+        $productList = $this->productModel->getProductList();
+        $this->view('ProductView', [
+            'productList' => $productList,
+        ]);
     }
 }
 ?>

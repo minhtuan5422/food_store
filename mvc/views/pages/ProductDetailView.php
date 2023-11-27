@@ -1,6 +1,23 @@
 <?php
 $pageTitle = "About";
 ob_start();
+// Giải mã tên sản phẩm
+$currentURL = $_SERVER['REQUEST_URI'];
+// Lấy phần path từ URL
+$path = parse_url($currentURL, PHP_URL_PATH);
+// Lấy phần cuối cùng của path (tức là tên file)
+$filename = basename($path);
+// Lấy số từ tên file
+$number = intval($filename);
+include "./mvc/models/ProductModel.php";
+$model = new ProductModel();
+$sql = "SELECT *, product.name as product_name, category.name as category_name, brand.name as brand_name, DATE_FORMAT(product.create_date, '%d/%m/%y') AS formatted_date
+        FROM product 
+        JOIN product_detail ON product.id_product = product_detail.id_product
+        JOIN category ON product.id_category = category.id_category
+        JOIN brand ON product.id_brand = brand.id_brand
+        WHERE product.id_product = '$number'";
+$getProductById = $model->select($sql);
 ?>
 
 <?php require_once "./mvc/views/partials/breadcrumb.php" ?>
@@ -44,11 +61,11 @@ ob_start();
                 <div class="product-detail__right">
                     <div class="product-detail__right--heading">
                         <div class="d-flex gap-2 align-items-center mb-3">
-                            <h4>Chinese Cabbage</h4>
+                            <h4><?php echo $getProductById[0]['product_name']?></h4>
                             <p class="product-detail__right--heading--label">In Stock</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <?php for ($i = 0; $i < 5; $i++) : ?>
+                            <?php for ($i = 0; $i < $getProductById[0]['rate']; $i++) : ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
                                     <path d="M9.31008 13.9111L12.8566 16.1577C13.31 16.4446 13.8725 16.0177 13.7381 15.4884L12.7138 11.4581C12.6848 11.3458 12.6882 11.2276 12.7234 11.1172C12.7586 11.0067 12.8243 10.9085 12.9129 10.8337L16.0933 8.18711C16.5106 7.83949 16.2958 7.14593 15.7586 7.11105L11.6056 6.84105C11.4938 6.83312 11.3866 6.79359 11.2964 6.72707C11.2061 6.66055 11.1367 6.56977 11.096 6.4653L9.5469 2.56493C9.50471 2.45408 9.42984 2.35867 9.33219 2.29136C9.23455 2.22404 9.11875 2.18799 9.00015 2.18799C8.88155 2.18799 8.76574 2.22404 8.6681 2.29136C8.57046 2.35867 8.49558 2.45408 8.4534 2.56493L6.90427 6.4653C6.86372 6.56988 6.79429 6.66077 6.70406 6.7274C6.61383 6.79402 6.50652 6.83364 6.39465 6.84161L2.24171 7.11161C1.70508 7.14593 1.48908 7.83949 1.90702 8.18711L5.0874 10.8342C5.17588 10.909 5.2415 11.0072 5.27673 11.1175C5.31195 11.2278 5.31534 11.3459 5.28652 11.4581L4.33702 15.1959C4.17558 15.8309 4.85115 16.3434 5.39452 15.9986L8.69077 13.9111C8.78342 13.8522 8.89093 13.8209 9.00071 13.8209C9.11049 13.8209 9.218 13.8522 9.31065 13.9111H9.31008Z" fill="#FF8A00" />
                                 </svg>
@@ -56,17 +73,17 @@ ob_start();
                             <p class="ms-1 product-detail__right--heading--review">4 Review</p>
                         </div>
                         <div class="ms-1 product-detail__right--heading--price">
-                            <p>$48.00</p>
-                            <p class="ms-1">$17.28</p>
+                            <p></p>
+                            <p class="ms-1"><?php echo number_format($getProductById[0]['price'], 0, ',', '.') . "đ" ?></p>
                             <p>64% Off</p>
                         </div>
                     </div>
 
                     <div class="product-detail__right--body">
                         <div class="product-detail__right--body--label align-items-center justify-content-between">
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center gap-1">
                                 <p>Brand:</p>
-                                <img src=<?php echo IMG_PATH . "brand.svg" ?> class="ms-2" alt="brand" />
+                                <p class="mt-0"><?php echo $getProductById[0]['category_name']?></p>
                             </div>
                             <div class="product-detail__right--body--share d-flex align-items-center gap-2">
                                 <p>Share item:</p>
@@ -79,11 +96,7 @@ ob_start();
                             </div>
                         </div>
 
-                        <p>
-                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                            himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla
-                            varius magna a consequat pulvinar.
-                        </p>
+                        <p><?php echo $getProductById[0]['description']?></p>
                     </div>
 
                     <div class="product-detail__right--action">
@@ -104,7 +117,7 @@ ob_start();
                     </div>
 
                     <div class="product-detail__right--footer">
-                        <p>Category: <span>Vegetables</span></p>
+                        <p>Category: <span><?php echo $getProductById[0]['category_name']?></span></p>
                     </div>
                 </div>
             </div>
@@ -129,37 +142,25 @@ ob_start();
                 <div class="wrapper_tabcontent">
                     <div id="descriptions" class="tabcontent active">
                         <h3>Descriptions</h3>
-                        <p>
-                            Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at
-                            mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus,
-                            nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin.
-                            Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum
-                            arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi
-                            urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis
-                            enim. Aliquam id mi quam. Phasellus nec fringilla elit.
-
-                            Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus
-                            faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi
-                            eget nulla. Proin luctus elementum neque et pharetra.
-                        </p>
+                        <p><?php echo $getProductById[0]['description']?></p>
                     </div>
 
                     <div id="information" class="tabcontent">
                         <h3>Information</h3>
                         <div class="row">
-                            <div class="col-sm-1">
+                            <div class="col-sm-2">
                                 <p>Weight:</p>
-                                <p>Color:</p>
-                                <p>Type:</p>
-                                <p>Category:</p>
+                                <p>Origin:</p>
+                                <p>Date manufacture</p>
+                                <p>Date expiry</p>
                                 <p>Stock Status:</p>
                             </div>
-                            <div class="col-sm-6">
-                                <p>03</p>
-                                <p>Green</p>
-                                <p>Organic</p>
-                                <p>Vegetables</p>
-                                <p>Available (5,413)</p>
+                            <div class="col-sm-5">
+                                <p><?php echo $getProductById[0]['weight'] . "kg"?></p>
+                                <p><?php echo $getProductById[0]['origin']?></p>
+                                <p><?php echo $getProductById[0]['date_manufacture']?></p>
+                                <p><?php echo $getProductById[0]['date_expiry']?></p>
+                                <p><?php echo $getProductById[0]['quantity']?></p>
                             </div>
                             <div class="col-sm-5">
                                 <iframe width="536" height="300" src="https://www.youtube.com/embed/yZqe48siHf8?si=i6SNW9m5f-J34LVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,13 +1,12 @@
 <?php
 class Home extends Controller {
+    private $productModel;
     function Show() {
-        $content = $this->model("HomeModel");
-        $this->view("HomeView", []);
-    }
-    
-    function SayHi() {
-        $teo = $this->model("HomeModel");
-        echo $teo->GetSV();
+        $this->productModel = $this->model('ProductModel');
+        $productList = $this->productModel->getProductList();
+        $this->view('HomeView', [
+            'productList' => $productList,
+        ]);
     }
 }
 ?>

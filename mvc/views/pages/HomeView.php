@@ -16,7 +16,7 @@ ob_start();
                         <h5 class="slider__content--sale--info">Sale up to <span>30% OFF</span></h5>
                         <p class="slider__content--sale--detail">Free shipping on all your order. we deliver, you enjoy</p>
                     </div>
-                    <a href=<?php echo PUBLIC_URL . "product"?> class="btn-primary">
+                    <a href=<?php echo PUBLIC_URL . "product" ?> class="btn-primary">
                         Shop now
                         <i class="icon-arrow-right"></i>
                     </a>
@@ -89,11 +89,15 @@ ob_start();
             </div>
 
             <div class="featured__products--carousel">
-                <?php for ($j = 0; $j < 4; $j++) : ?>
+                <?php
+                foreach ($data['productList'] as $product) :
+                    $pathUrl = "D:Projectsfood_storepublicimgs";
+                    $imageFileName = substr($product['img'], strlen($pathUrl));
+                ?>
                     <div class="slick-slide">
                         <?php include "./mvc/views/partials/product-card.php" ?>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -104,7 +108,7 @@ ob_start();
     <div class="container-xl">
         <div class="featured__products--title d-flex justify-content-between align-items-center">
             <h3>Shop by Top Categories</h3>
-            <a href=<?php echo PUBLIC_URL . "product"?> class="featured__products--title--link d-flex align-items-center gap-2">View All
+            <a href=<?php echo PUBLIC_URL . "product" ?> class="featured__products--title--link d-flex align-items-center gap-2">View All
                 <i class="icon-arrow-right"></i>
             </a>
         </div>
@@ -209,7 +213,7 @@ ob_start();
                             <i class="icon-check"></i>
                             Every day fresh and quality products for you.
                         </p>
-                        <a href=<?php echo PUBLIC_URL . "product"?> class="slider__content--link d-flex align-items-center gap-2">Shop now
+                        <a href=<?php echo PUBLIC_URL . "product" ?> class="slider__content--link d-flex align-items-center gap-2">Shop now
                             <i class="icon-arrow-right"></i>
                         </a>
                     </div>
@@ -266,7 +270,7 @@ ob_start();
                             <p class="d-flex align-items-center gap-2">Starting at:<span>$11.99</span></p>
                         </div>
 
-                        <a href=<?php echo PUBLIC_URL . "product"?> class="best-seller__banner--item--link">Shop now
+                        <a href=<?php echo PUBLIC_URL . "product" ?> class="best-seller__banner--item--link">Shop now
                             <i class="icon-arrow-right"></i>
                         </a>
                     </div>
@@ -300,7 +304,7 @@ ob_start();
                             </div>
                         </div>
 
-                        <a href=<?php echo PUBLIC_URL . "product"?> class="best-seller__banner--item--link">Shop now
+                        <a href=<?php echo PUBLIC_URL . "product" ?> class="best-seller__banner--item--link">Shop now
                             <i class="icon-arrow-right"></i>
                         </a>
                     </div>
@@ -311,17 +315,21 @@ ob_start();
         <div class="featured__products">
             <div class="featured__products--title d-flex justify-content-between align-items-center">
                 <h3>Best Seller Products</h3>
-                <a href=<?php echo PUBLIC_URL . "product"?> class="featured__products--title--link d-flex align-items-center gap-2">View All
+                <a href=<?php echo PUBLIC_URL . "product" ?> class="featured__products--title--link d-flex align-items-center gap-2">View All
                     <i class="icon-arrow-right"></i>
                 </a>
             </div>
 
             <div class="best-seller__products">
-                <?php for ($j = 0; $j < 10; $j++) : ?>
+                <?php
+                    foreach ($data['productList'] as $product) :
+                    $pathUrl = "D:Projectsfood_storepublicimgs";
+                    $imageFileName = substr($product['img'], strlen($pathUrl));
+                ?>
                     <div class="slick-slide">
                         <?php include "./mvc/views/partials/product-card.php" ?>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
         </div>
 
@@ -364,7 +372,7 @@ ob_start();
                     <p>HOt Sale</p>
                     <h5><span class="fw-bold">Save 37%</span> on Every Order</h5>
                     <div class="d-flex justify-content-center">
-                        <a href=<?php echo PUBLIC_URL . "product"?> class="">Shop now
+                        <a href=<?php echo PUBLIC_URL . "product" ?> class="">Shop now
                             <i class="icon-arrow-right"></i>
                         </a>
                     </div>
@@ -399,7 +407,7 @@ ob_start();
     </div>
 </section>
 
-<?php include "./mvc/views/partials/product-quick-view.php"?>
+<?php include "./mvc/views/partials/product-quick-view.php" ?>
 <?php include "./mvc/views/partials/feedbacks.php" ?>
 <?php include "./mvc/views/partials/company.php" ?>
 
