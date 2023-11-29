@@ -31,7 +31,8 @@
         }
 
         public function getProductList() {
-            $sql = "SELECT *, product.name as product_name, category.name as category_name, brand.name as brand_name, DATE_FORMAT(product.create_date, '%d/%m/%y') AS formatted_date
+            $sql = "SELECT *, product.name as product_name, category.name as category_name, 
+            brand.name as brand_name, DATE_FORMAT(product.create_date, '%d/%m/%y') AS formatted_date
             FROM product
             JOIN product_detail ON product.id_product = product_detail.id_product
             JOIN category ON product.id_category = category.id_category

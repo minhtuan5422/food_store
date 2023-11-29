@@ -141,6 +141,7 @@
             p {
                 color: $gray-scale-gray-900;
                 font-size: 14px;
+                @include webkit-box(4);
             }
 
             &--label {

@@ -2957,6 +2957,12 @@ nav[aria-label=pagination] .pagination .page-link .rotate-90:before {
 .product-detail__right--body p {
   color: #1A1A1A;
   font-size: 14px;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 .product-detail__right--body--label {
   display: flex;

@@ -47,6 +47,7 @@ class Admin extends Controller
                 ];
             }
 
+            /* Thêm thông tin sản phẩm vào bảng product */
             $productAdded = $this->productModel->insert('product', $productData);
 
             if ($productAdded) {

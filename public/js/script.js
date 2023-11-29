@@ -366,11 +366,13 @@ $(document).ready(function () {
   $selector += ',#lightSliderVertical li:not(".clone") a';
 
   /* AJAX HANDLER */
+  /* Lấy ra id sản phẩm cần xóa */
   $(".delete-product-btn").on("click", function () {
     const productId = $(this).data("id");
     $("#hiddenProductId").val(productId);
   });
 
+  /* Ajax id sản phẩm cần xóa đến file xử lý php */
   $(".js-delete-product").click(function (e) {
     e.preventDefault();
     var productId = $("#hiddenProductId").val();

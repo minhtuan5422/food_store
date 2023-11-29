@@ -29,6 +29,7 @@ class Register extends Controller
             $sql = "SELECT email FROM user WHERE email = '$email'";
             $alreadyEmail = $this->registerModel->select($sql);
 
+            // Kiểm tra email đã tồn tại hay chưa
             if ($alreadyEmail) {
                 echo "
                         <script>
@@ -36,12 +37,14 @@ class Register extends Controller
                         </script>
                     ";
             } else if ($password !== $rePassword) {
+                // Trường hợp mật khẩu nhập lại không trùng khớp
                 echo "
                         <script>
                             alert('Password does not match');
                         </script>
                     ";
             } else {
+                //Thêm dữ liệu và bảng user
                 $createdUser = $this->registerModel->insert('user', $userData);
 
                 if ($createdUser) {
@@ -54,6 +57,8 @@ class Register extends Controller
                         'id_user' => $userId,
                         'id_role' => '4'
                     ];
+
+                    //Thêm dữ liệu và bảng account
                     $this->registerModel->insert('account', $accountData);
                     echo "
                             <script>
