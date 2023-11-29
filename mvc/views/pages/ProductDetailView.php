@@ -2,7 +2,7 @@
 $pageTitle = "About";
 ob_start();
 $pathUrl = "D:Projectsfood_storepublicimgs";
-$imageFileName = substr($data['productDetailInfo'][0]['img'], strlen($pathUrl)); 
+$imageFileName = substr($data['productDetailInfo'][0]['img'], strlen($pathUrl));
 ?>
 
 <?php require_once "./mvc/views/partials/breadcrumb.php" ?>
@@ -87,16 +87,20 @@ $imageFileName = substr($data['productDetailInfo'][0]['img'], strlen($pathUrl));
 
                     <div class="product-detail__right--action">
                         <div class="product-detail__right--action--flex align-items-center">
-                            <div class="product-detail__right--action--dispatch d-flex align-items-center">
-                                <button class="product-detail__right--action--btn">-</button>
-                                <input type="text" class="product-detail__right--action--quantity" value="5" readonly>
-                                <button class="product-detail__right--action--btn">+</button>
-                            </div>
+                            <form method="POST" class="d-flex w-100">
+                                <input type="hidden" class="js-cart-user-id" name="cartUserEmail" value="<?php echo $_SESSION['email'] ?>">
+                                <input type="hidden" class="js-cart-product-id" name="cartProductId" value="<?php echo $data['productDetailInfo'][0]['id_product'] ?>">
+                                <div class="product-detail__right--action--dispatch d-flex align-items-center">
+                                    <button class="product-detail__right--action--btn js-decrement-quantity">-</button>
+                                    <input type="text" class="product-detail__right--action--quantity" name="cartProductQuantity" value="1" readonly>
+                                    <button class="product-detail__right--action--btn js-increment-quantity">+</button>
+                                </div>
 
-                            <button class="btn-primary border-0">
-                                <span>Add to Cart</span>
-                                <i class="icon-shopping-cart"></i>
-                            </button>
+                                <button type="submit" class="btn-primary border-0 js-add-to-cart" name="addToCart">
+                                    <span>Add to Cart</span>
+                                    <i class="icon-shopping-cart"></i>
+                                </button>
+                            </form>
 
                             <button class="product-detail__right--action--wish icon-heart"></button>
                         </div>

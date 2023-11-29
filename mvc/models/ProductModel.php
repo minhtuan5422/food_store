@@ -4,6 +4,10 @@
             parent::__construct();
         }
 
+        public function selectSingleItem($sql) {
+            return parent::selectSingleItem($sql);
+        }
+
         public function select($sql) {
             return parent::select($sql);
         }

@@ -23,7 +23,7 @@ require_once "./mvc/views/partials/breadcrumb.php";
                         <ul class="product__sidebar--category--list">
                             <li class="product__sidebar--category--item">
                                 <input type="radio" id="freshFruit" />
-                                <label for="freshFruit">Fresh Fruit<span>(100)</span></label>
+                                <label for="freshFruit">Fresh Fruit<span></span></label>
                             </li>
                             <li class="product__sidebar--category--item">
                                 <input type="radio" id="vegetables" />

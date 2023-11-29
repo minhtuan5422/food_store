@@ -365,6 +365,19 @@ $(document).ready(function () {
   $selector = '#lightSlider li:not(".clone") a';
   $selector += ',#lightSliderVertical li:not(".clone") a';
 
+  $(".js-product-detail").click(function (e) {
+    var productId = $(".idProductDetail").val();
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl + "?product_id=" + productId;
+    window.location.href = newUrl;
+    e.preventDefault();
+  });
+
+  $(".js-decrement-quantity").css({
+    opacity: "0.2",
+    cursor: "no-drop",
+  });
+
   /* AJAX HANDLER */
   /* Lấy ra id sản phẩm cần xóa */
   $(".delete-product-btn").on("click", function () {
@@ -422,13 +435,13 @@ $(document).ready(function () {
       data: { email: email, password: password },
       dataType: "json",
       success: function (response) {
-        if (response.status === 'admin') {
+        if (response.status === "admin") {
           alert("Nhân viên đăng nhập thành công!");
           window.location.href = "/admin";
-        } else if (response.status === 'staff') {
+        } else if (response.status === "staff") {
           alert("Khách hàng đăng nhập thành công!");
           window.location.href = "/";
-        } else if (response.status === 'error') {
+        } else if (response.status === "error") {
           alert("Tài khoản hoặc mật khẩu không chính xác!");
           window.location.href = "/login";
         }
@@ -528,3 +541,39 @@ function openTabs(e) {
   $("#" + section).addClass("active");
   btnTarget.addClass("active");
 }
+
+//Hanlde button increase/decrease number product
+$(".js-increment-quantity").click(function (event) {
+  event.preventDefault();
+  let numberProduct = $(".product-detail__right--action--quantity");
+  let currentNumber = parseInt(numberProduct.val());
+  let increment = currentNumber + 1;
+  numberProduct.val(increment);
+
+  $(".js-decrement-quantity").css({
+    opacity: "1",
+    cursor: "pointer",
+  });
+});
+
+$(".js-decrement-quantity").click(function (event) {
+  event.preventDefault();
+  let numberProduct = $(".product-detail__right--action--quantity");
+  let currentNumber = parseInt(numberProduct.val());
+  let increment;
+
+  if (currentNumber > 1) {
+    $(this).css({
+      opacity: "1",
+      cursor: "pointer",
+    });
+    increment = currentNumber - 1;
+  } else {
+    increment = 1;
+    $(".js-decrement-quantity").css({
+      opacity: "0.2",
+      cursor: "no-drop",
+    });
+  }
+  numberProduct.val(increment);
+});
