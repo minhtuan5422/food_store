@@ -39,7 +39,7 @@ class ProductDetail extends Controller
 
    public function addToCart()
    {
-      if (isset($_POST['addToCart'])) {
+      if (isset($_POST['addToCart']) && isset($_SERVER['email']) ) {
          $email = $_POST['cartUserEmail'];
          $productId = $_POST['cartProductId'];
          $quantity = $_POST['cartProductQuantity'];
@@ -84,6 +84,8 @@ class ProductDetail extends Controller
          } else {
             echo "<script>alert('The number of products left is only " . $userId[0]['quantity'] . "!')</script>";
          }
+      } else {
+         echo "<script>alert('Please log in to add products to cart!')</script>";
       }
    }
 }
