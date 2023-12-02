@@ -1,7 +1,20 @@
 <?php
 class Contact extends Controller {
+    private $cartModel;
+
     function show() {
-        $this->view("ContactView", []);
+        $this->cartModel = $this->model('CartModel');
+        $getProductsInCart = []; // Initialize the variable
+
+        if (isset($_SESSION['email'])) {
+            $email = $_SESSION['email'];
+            $userId = $this->cartModel->getUsrIdByEmail($email);
+            $getProductsInCart = $this->cartModel->getProductsInCart($userId[0]);
+        }
+
+        $this->view("ContactView", [
+            'productsInCart' => $getProductsInCart
+        ]);
     }
 }
 ?>

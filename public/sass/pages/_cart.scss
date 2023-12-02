@@ -38,25 +38,28 @@
             font-weight: 400;
             padding: 0 20px;
 
-            .cart__table--body--action {
-                width: 24px;
-                height: 24px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: none;
-                text-align: center;
-                color: #666666;
-                border: 1px solid #cccccc;
-                border-radius: 50%;
+            .cart__table--body {
 
-                &:hover {
-                    color: $red;
-                    border-color: $red;
-                }
+                &--action {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: none;
+                    text-align: center;
+                    color: #666666;
+                    border: 1px solid #cccccc;
+                    border-radius: 50%;
 
-                & > i {
-                    transform: rotate(45deg);
+                    &:hover {
+                        color: $red;
+                        border-color: $red;
+                    }
+
+                    & > i {
+                        transform: rotate(45deg);
+                    }
                 }
             }
 

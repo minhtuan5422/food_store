@@ -1,12 +1,11 @@
 .header {
-
     &__top {
-        background: #EDF2EE;
+        background: #edf2ee;
 
         &--flex {
             padding-top: 12px;
             padding-bottom: 12px;
-            
+
             &--maps {
                 display: flex;
                 align-items: center;
@@ -18,15 +17,15 @@
                     color: $primary-color;
                 }
 
-                &>i {
+                & > i {
                     width: 15px;
                     height: 18px;
                 }
 
-                &>span {
+                & > span {
                     font-size: 12px;
                     font-weight: 400;
-                    line-height: 130%; 
+                    line-height: 130%;
                 }
             }
 
@@ -35,14 +34,14 @@
                 align-items: center;
                 gap: 20px;
 
-                &>select {
-                    background: #EDF2EE;
+                & > select {
+                    background: #edf2ee;
                     color: $green-gray-scale-700;
                     text-align: center;
                     font-size: 12px;
                     font-weight: 400;
                     line-height: 130%;
-                    
+
                     &:focus {
                         outline: none;
                     }
@@ -50,7 +49,6 @@
                     option {
                         &:active {
                             background: none;
-
                         }
                     }
                 }
@@ -60,18 +58,18 @@
 
     .navbar {
         height: 78px;
-        box-shadow: 0px 1px 0px 0px #E5E5E5;
-        
+        box-shadow: 0px 1px 0px 0px #e5e5e5;
+
         &-collapse {
             max-width: fit-content;
             animation: fromLeft 0.6s ease;
             transition: all;
-            
+
             @include max-width-1200 {
                 height: 100vh;
                 position: absolute;
                 transform: translateX(-5%);
-                background-color: #EDF2EE;
+                background-color: #edf2ee;
                 margin-top: 35%;
                 z-index: 100;
             }
@@ -88,7 +86,6 @@
                 i {
                     color: $text;
                 }
-
             }
         }
 
@@ -102,7 +99,7 @@
                 gap: 1rem;
                 padding-left: 5%;
             }
-            
+
             .nav-item {
                 @include max-width-1200 {
                     width: 100%;
@@ -111,7 +108,7 @@
 
                 &:hover {
                     color: $primary-color;
-                }    
+                }
 
                 .nav-link {
                     display: flex;
@@ -123,7 +120,7 @@
 
                     &:hover {
                         color: $primary-color;
-                    }   
+                    }
                 }
 
                 .icon-chevron-right {
@@ -151,11 +148,11 @@
                         @include max-width-1200 {
                             padding: 12px;
                         }
-    
+
                         &:hover {
                             color: $primary-color;
                         }
-    
+
                         &:active {
                             background: $primary-color;
                             color: $white;
@@ -166,7 +163,7 @@
         }
 
         &-brand {
-            &>img {
+            & > img {
                 aspect-ratio: 183/38;
 
                 @include max-width-360 {
@@ -197,9 +194,8 @@
                 color: $primary-color;
             }
 
-            &>i {
-                font-size: 20px;  
-
+            & > i {
+                font-size: 20px;
             }
         }
 
@@ -209,36 +205,34 @@
             a {
                 color: $green-gray-scale-700;
                 text-decoration: none;
-                
-                &>i {
-                  font-size: 20px;  
 
-                  &:hover {
-                    color: $primary-color;
-                  }
+                & > i {
+                    font-size: 20px;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
                 }
             }
-            
+
             &--expands {
-                
                 &--btn {
                     background-color: inherit;
 
-                    &>i {
+                    & > i {
                         color: $green-gray-scale-700;
-                        font-size: 20px;  
+                        font-size: 20px;
 
                         &:hover {
                             color: $primary-color;
-                          }
+                        }
                     }
                 }
                 .modal {
-
                     &-dialog {
                         max-width: 500px;
                     }
-                    
+
                     &-offcanvas {
                         position: absolute;
                         width: 100%;
@@ -253,22 +247,31 @@
                             padding: 1rem;
 
                             &--header {
-                                &>h4 {
-                                    font-size:20px;
+                                & > h4 {
+                                    font-size: 20px;
                                     font-weight: 500;
                                     color: $gray-scale-gray-900;
 
-                                    &>span {
+                                    & > span {
                                         color: $primary-color;
                                     }
                                 }
                             }
 
                             &--body {
+                                max-height: 348px;
+                                overflow-y: scroll;
+
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+
                                 .modal-offcanvas__content--item {
                                     gap: 8px;
 
-                                    &--img {
+                                    &--img > img {
+                                        width: 120px;
+                                        height: 100px;
                                         aspect-ratio: 120/100;
                                     }
 
@@ -295,7 +298,7 @@
                                     &--action {
                                         transform: rotate(45deg);
 
-                                        &>i {
+                                        & > i {
                                             font-size: 24px;
                                             border: 1px solid $text;
                                             border-radius: 50%;
@@ -310,7 +313,7 @@
                                 }
 
                                 &--divider {
-                                    background: #E6E6E6;
+                                    background: #e6e6e6;
                                     width: 100%;
                                     height: 1px;
                                     margin: 12px 0;
@@ -318,7 +321,6 @@
                             }
 
                             &--footer {
-
                                 &--wrap {
                                     padding: 24px 0;
                                 }
@@ -326,7 +328,7 @@
                                 &--info {
                                     color: $gray-scale-gray-900;
                                     font-weight: 400;
-                                } 
+                                }
 
                                 &--link {
                                     a:first-child {
@@ -335,13 +337,13 @@
                                         margin-bottom: 12px;
 
                                         &:hover {
-                                            background: rgba(86, 172, 89, 0.10);
+                                            background: rgba(86, 172, 89, 0.1);
                                             color: $primary-color;
                                         }
                                     }
-    
+
                                     a {
-                                        background: rgba(86, 172, 89, 0.10);
+                                        background: rgba(86, 172, 89, 0.1);
                                         display: flex;
                                         padding: 16px 40px;
                                         justify-content: center;
@@ -368,7 +370,7 @@
                                 box-shadow: none;
                             }
                         }
-    
+
                         .modal__form {
                             &--inp {
                                 background: $white;
@@ -376,31 +378,30 @@
                                 padding: 10px 24px;
                                 border-top-left-radius: 46px;
                                 border-bottom-left-radius: 46px;
-                                border: 1px solid #E6E6E6;
+                                border: 1px solid #e6e6e6;
                                 font-family: Poppins;
                                 font-size: 14px;
                                 font-weight: 400;
-    
+
                                 &:focus {
                                     outline: none;
                                     border: 1px solid $primary-color;
                                 }
                             }
-    
+
                             &--submit {
                                 background-color: $primary-color;
                                 color: $white;
                                 width: 15%;
                                 border-top-right-radius: 46px;
                                 border-bottom-right-radius: 46px;
-    
+
                                 &:hover {
-                                    opacity: .8;
+                                    opacity: 0.8;
                                 }
                             }
                         }
                     }
-
                 }
             }
         }

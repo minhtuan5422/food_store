@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "About";
+$pageTitle = "Product Detail";
 ob_start();
 $pathUrl = "D:Projectsfood_storepublicimgs";
 $imageFileName = substr($data['productDetailInfo'][0]['img'], strlen($pathUrl));

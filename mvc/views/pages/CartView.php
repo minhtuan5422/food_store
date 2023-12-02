@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Cart";
 ob_start();
-$currentPage="Cart";
+$currentPage = "Cart";
 require_once "./mvc/views/partials/breadcrumb.php"
 ?>
 
@@ -21,53 +21,41 @@ require_once "./mvc/views/partials/breadcrumb.php"
                                 <th class="cart__table--head"></th>
                             </tr>
                         </thead>
-    
+
                         <tbody>
-                            <tr class="cart__table--body">
-                                <td class="d-flex align-items-center gap-3">
-                                    <img src=<?php echo IMG_PATH . "product-img.png" ?> alt="product">
-                                    <p>Green Capsicum</p>
-                                </td>
-                                <td>$14.00</td>
-                                <td>
-                                    <div class="product-detail__right--action--dispatch d-flex align-items-center">
-                                        <button class="product-detail__right--action--btn">-</button>
-                                        <input type="text" class="product-detail__right--action--quantity" value="5" readonly>
-                                        <button class="product-detail__right--action--btn">+</button>
-                                    </div>
-                                </td>
-                                <td>$70.00</td>
-                                <td>
-                                    <button class="cart__table--body--action bg-white">
-                                        <i class="icon-plus text-center"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class="cart__table--body">
-                                <td>
-                                    <img src=<?php echo IMG_PATH . "product-img.png" ?> alt="product">
-                                </td>
-                                <td>$14.00</td>
-                                <td>
-                                    <div class="product-detail__right--action--dispatch d-flex align-items-center">
-                                        <button class="product-detail__right--action--btn">-</button>
-                                        <input type="text" class="product-detail__right--action--quantity" value="5" readonly>
-                                        <button class="product-detail__right--action--btn">+</button>
-                                    </div>
-                                </td>
-                                <td>$70.00</td>
-                                <td>
-                                    <button class="cart__table--body--action bg-white">
-                                        <i class="icon-plus"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                            <?php
+                            $total = 0;
+                            foreach ($data['productsInCart'] as $product) :
+                                $pathUrl = "D:Projectsfood_storepublicimgs";
+                                $imageFileName = substr($product['img'], strlen($pathUrl));
+                                $subTotal = $product['price'] * $product['total_quantity'];
+                                $total += $subTotal;
+                            ?>
+                                <tr class="cart__table--body">
+                                    <td class="d-flex align-items-center gap-3">
+                                        <img src=<?php echo IMG_PATH . $imageFileName ?> class="p-3 rounded-5" alt="product">
+                                        <p class="cart__table--body--name"><?php echo $product['name'] ?></p>
+                                    </td>
+                                    <td><?php echo number_format($product['price'], 0, ',', '.') . "đ" ?></td>
+                                    <td>
+                                        <div class="product-detail__right--action--dispatch d-flex align-items-center">
+                                            <button class="product-detail__right--action--btn">-</button>
+                                            <input type="text" class="product-detail__right--action--quantity" value="<?php echo $product['total_quantity'] ?>" readonly>
+                                            <button class="product-detail__right--action--btn">+</button>
+                                        </div>
+                                    </td>
+                                    <td><?php echo number_format($subTotal, 0, ',', '.') . "đ" ?></td>
+                                    <td>
+                                        <button class="cart__table--body--action bg-white">
+                                            <i class="icon-plus text-center"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
                             <tr>
                                 <td colspan="2" class="d-flex">
-                                    <a href=<?php echo PUBLIC_URL . "product"?> class="cart__table--body--btn">Return to shop</a>
-                                </td>
-                                <td colspan="4">
-                                    <button class="cart__table--body--btn btn-more">Update Cart</button>
+                                    <a href=<?php echo PUBLIC_URL . "product" ?> class="cart__table--body--btn">Return to shop</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -88,7 +76,7 @@ require_once "./mvc/views/partials/breadcrumb.php"
                     <p class="cart__checkout--title">Cart Total</p>
                     <div class="cart__checkout--flex d-flex align-items-center justify-content-between">
                         <p class="cart__checkout--info">Subtotal:</p>
-                        <p class="cart__checkout--price">$84.00</p>
+                        <p class="cart__checkout--price"><?php echo $total ?></p>
                     </div>
                     <div class="cart__checkout--flex d-flex align-items-center justify-content-between">
                         <p class="cart__checkout--info">Shipping:</p>
@@ -96,9 +84,9 @@ require_once "./mvc/views/partials/breadcrumb.php"
                     </div>
                     <div class="cart__checkout--flex d-flex align-items-center justify-content-between">
                         <p class="cart__checkout--info">Total:</p>
-                        <p class="cart__checkout--price">$84.00</p>
+                        <p class="cart__checkout--price"><?php echo $total ?></p>
                     </div>
-                    <a href=<?php echo PUBLIC_URL . "checkout"?> class="cart__checkout--link">Proceed to checkout</a>
+                    <a href=<?php echo PUBLIC_URL . "checkout" ?> class="cart__checkout--link">Proceed to checkout</a>
                 </div>
             </div>
         </div>
