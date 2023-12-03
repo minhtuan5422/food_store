@@ -44,4 +44,34 @@ class CartModel extends DB
         $userId = $this->select($sql);
         return $userId;
     }
+
+    public function increaseQuantity()
+    {
+        if (isset($_POST['increaseCart'])) {
+            $productId = $_POST['productIdCart'];
+            $sql = "UPDATE carts
+            JOIN product ON product.id_product = carts.id_product
+            SET carts.quantity = carts.quantity + 1, product.quantity = product.quantity - 1
+            WHERE carts.id_product = '$productId'
+            ORDER BY carts.added_date ASC
+            LIMIT 1";
+            $result = $this->query($sql);
+            return $result;
+        }
+    }
+
+    public function decreaseQuantity()
+    {
+        if (isset($_POST['decreaseCart'])) {
+            $productId = $_POST['productIdCart'];
+            $sql = "UPDATE carts
+            JOIN product ON product.id_product = carts.id_product
+            SET carts.quantity = carts.quantity - 1, product.quantity = product.quantity + 1
+            WHERE carts.id_product = '$productId'
+            ORDER BY carts.added_date ASC
+            LIMIT 1";
+            $result = $this->query($sql);
+            return $result;
+        }
+    }
 }

@@ -38,11 +38,14 @@ require_once "./mvc/views/partials/breadcrumb.php"
                                     </td>
                                     <td><?php echo number_format($product['price'], 0, ',', '.') . "đ" ?></td>
                                     <td>
-                                        <div class="product-detail__right--action--dispatch d-flex align-items-center">
-                                            <button class="product-detail__right--action--btn">-</button>
-                                            <input type="text" class="product-detail__right--action--quantity" value="<?php echo $product['total_quantity'] ?>" readonly>
-                                            <button class="product-detail__right--action--btn">+</button>
-                                        </div>
+                                        <form method="POST">
+                                            <input type="hidden" name="productIdCart" value="<?php echo $product['id_product'] ?>" />
+                                            <div class="product-detail__right--action--dispatch d-flex align-items-center">
+                                                <button type="submit" class="product-detail__right--action--btn" name="decreaseCart">-</button>
+                                                <input type="text" class="product-detail__right--action--quantity quantity-cart" name="productQuantity" value="<?php echo $product['total_quantity'] ?>" readonly>
+                                                <button type="submit" class="product-detail__right--action--btn js-increase-cart" name="increaseCart">+</button>
+                                            </div>
+                                        </form>
                                     </td>
                                     <td><?php echo number_format($subTotal, 0, ',', '.') . "đ" ?></td>
                                     <td>

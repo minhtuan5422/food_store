@@ -8,10 +8,12 @@ class Cart extends Controller {
             $email = $_SESSION['email'];
             $userId = $this->cartModel->getUsrIdByEmail($email);
             $getProductsInCart = $this->cartModel->getProductsInCart($userId[0]);
+            $this->cartModel->increaseQuantity();
+            $this->cartModel->decreaseQuantity();
         } 
 
         $this->view('CartView', [
-            'productsInCart'=> $getProductsInCart
+            'productsInCart'=> $getProductsInCart,
         ]);
     }
 }
