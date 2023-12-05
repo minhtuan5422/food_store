@@ -21,6 +21,11 @@ class CheckoutModel extends DB
         return parent::insert($table, $data);
     }
 
+    public function delete($table, $where)
+    {
+        return parent::delete($table, $where);
+    }
+
     public function getUserInfo($userId)
     {
         $sql = "SELECT * FROM user WHERE id_user = '$userId'";
@@ -43,6 +48,7 @@ class CheckoutModel extends DB
                 'shipping' => 0,
                 'total' => $data['total'],/*  */
                 'description_bill' => $_POST['noteOrder'],
+                'id_voucher' => 1,
                 'id_user' => $data['userId'],/*  */
                 'status_bill' => 1,
                 'date' => $date,
@@ -50,28 +56,47 @@ class CheckoutModel extends DB
             ];
 
             $billAdded = $this->insert('bill', $bill);
+            $getProductsInCart = $data['products'];
 
-            if ($billAdded) {
+            if ($billAdded && is_array($getProductsInCart)) {
                 $billId = mysqli_insert_id($this->conn);
 
-                foreach ($data['products'] as $product) {
-                    $productId = $product['id'];
+                for ($i = 0; $i < count($getProductsInCart); $i++) {
+                    $product = $getProductsInCart[$i];
+                    $productId = $product['id_product'];
                     $unitPrice = $product['price'];
                     $quantity = $product['quantity'];
                     $subTotal = $unitPrice * $quantity;
 
-                    $sql = "INSERT INTO bill_detail (id_bill, id_product, unit_price, quantity, sum) 
-                    VALUES ('$billId', '$productId', '$unitPrice', '$quantity', '$subTotal')";
-                    $result = $this->query($sql);
+                    $billDetail = [
+                        'id_bill' => $billId,
+                        'id_product' => $productId,
+                        'unit_price' => $unitPrice,
+                        'quantity' => $quantity,
+                        'sum' => $subTotal
+                    ];
 
-                    if($result) {
-                        /* Delete data in table carts */
+                    $billDetailAdded = $this->insert('bill_detail', $billDetail);
+
+                    if ($billDetailAdded) {
+                        $result = $this->delete("carts", "id_user =" . $data['userId']);
+                        if ($result) {
+                            echo "
+                                <script>
+                                alert('Order successfully'); 
+                                window.location.href='" . PUBLIC_URL . "product';
+                                </script>
+                            ";
+                        } else {
+                            echo "<script>alert('Order failed!')</script>";
+                        }
+                    } else {
+                        echo "<script>alert('Add bill detail failed!')</script>";
+                        break; // Ngừng vòng lặp nếu không thêm được chi tiết hóa đơn
                     }
                 }
-
-                echo "<script>alert('Order successfully')</script>";
             } else {
-                echo "<script>alert('Order failed!')</script>";
+                echo "<script>alert('Add bill failed!')</script>";
             }
         }
     }
