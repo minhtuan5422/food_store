@@ -1,7 +1,9 @@
 <?php
 class Register extends Controller
 {
+    private $productModel;
     private $registerModel;
+    
     function __construct()
     {
         $this->registerModel = $this->model('RegisterModel');
@@ -10,7 +12,12 @@ class Register extends Controller
 
     public function Show()
     {
-        $this->view('RegisterView', []);
+        $this->productModel = $this->model('ProductModel');
+        $productCategory = $this->productModel->getProductCategory();
+        $this->view('RegisterView', [
+            'productCategory' => $productCategory
+
+        ]);
     }
 
     public function createAccount()

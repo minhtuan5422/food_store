@@ -2,6 +2,7 @@
 class ProductDetail extends Controller
 {
    private $productModel;
+   private $cartModel;
 
    function show()
    {
@@ -9,9 +10,21 @@ class ProductDetail extends Controller
       $this->addToCart();
       $productList = $this->productModel->getProductList();
       $getProductById = $this->getProductDetailInfo();
+
+      $this->cartModel = $this->model('CartModel');
+      $getProductsInCart = []; // Initialize the variable
+
+      
+      if (isset($_SESSION['email'])) {
+         $email = $_SESSION['email'];
+         $userId = $this->cartModel->getUsrIdByEmail($email);
+         $getProductsInCart = $this->cartModel->getProductsInCart($userId[0]);
+     }
+
       $this->view('ProductDetailView', [
          'productList' => $productList,
-         'productDetailInfo' => $getProductById
+         'productDetailInfo' => $getProductById,
+         'productsInCart' => $getProductsInCart
       ]);
    }
 

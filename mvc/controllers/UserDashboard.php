@@ -1,8 +1,13 @@
-<?php 
-class UserDashboard extends Controller {
+<?php
+class UserDashboard extends Controller
+{
+    private $productModel;
     private $cartModel;
 
-    function Show() {
+    function Show()
+    {
+        $this->productModel = $this->model('ProductModel');
+        $productCategory = $this->productModel->getProductCategory();
         $this->cartModel = $this->model('CartModel');
         $getProductsInCart = []; // Initialize the variable
 
@@ -13,8 +18,8 @@ class UserDashboard extends Controller {
         }
 
         $this->view('UserDashboardView', [
-            'productsInCart' => $getProductsInCart
+            'productsInCart' => $getProductsInCart,
+            'productCategory' => $productCategory
         ]);
     }
 }
-?>

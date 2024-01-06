@@ -2,8 +2,12 @@
 class Cart extends Controller
 {
     private $cartModel;
+    private $productModel;
+
     public function Show()
     {
+        $this->productModel = $this->model('ProductModel');
+        $productCategory = $this->productModel->getProductCategory();
         $this->cartModel = $this->model("CartModel");
         $getProductsInCart = []; // Initialize the variable
         if (isset($_SESSION['email'])) {
@@ -16,6 +20,8 @@ class Cart extends Controller
 
         $this->view('CartView', [
             'productsInCart' => $getProductsInCart,
+            'productCategory' => $productCategory
+
         ]);
     }
 }

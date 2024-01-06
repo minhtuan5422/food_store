@@ -43,9 +43,17 @@
                         <button class="icon-chevron-right border-0 bg-transparent" data-bs-toggle="collapse" data-bs-target="#shopDropdown"></button>
                      </div>
                      <ul id="shopDropdown" class="dropdown-menu border-0 collapse">
-                        <li><a class="dropdown-item" href="#">Link 1</a></li>
-                        <li><a class="dropdown-item" href="#">Link 2</a></li>
-                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                        <?php
+                        foreach ($data['productCategory'] as $category) :
+                           $pattern = '/[^a-zA-Z0-9 ]/';
+                           $categoryStr = preg_replace($pattern, '', $category['name']);
+                        ?>
+                           <li>
+                              <a class="dropdown-item" href="<?php echo PUBLIC_URL . $categoryStr ?>">
+                                 <?php echo $category['name'] ?>
+                              </a>
+                           </li>
+                        <?php endforeach ?>
                      </ul>
                   </li>
 

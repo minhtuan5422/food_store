@@ -7,6 +7,7 @@ class Home extends Controller {
         $this->productModel = $this->model('ProductModel');
         $this->cartModel = $this->model('CartModel');
         $productList = $this->productModel->getProductList();
+        $productCategory = $this->productModel->getProductCategory();
         $getProductsInCart = []; // Initialize the variable
 
         if (isset($_SESSION['email'])) {
@@ -17,7 +18,8 @@ class Home extends Controller {
         
         $this->view('HomeView', [
             'productList' => $productList,
-            'productsInCart' => $getProductsInCart
+            'productsInCart' => $getProductsInCart,
+            'productCategory' => $productCategory
         ]);
     }
 }

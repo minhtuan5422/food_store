@@ -12,7 +12,7 @@ require_once "./mvc/views/partials/breadcrumb.php";
             <form method="POST" id="registerAccountForm">
                 <input type="email" class="register-email" name="emailRegister" placeholder="Email" required>
                 <div class="w-100 mt-3 login__dialog--password position-relative">
-                    <input type="password" class="register-password" name="passwordRegister" placeholder="Password" required>
+                    <input type="password" class="register-password" name="passwordRegister" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$" required>
                     <button class="border-0 p-0 bg-white position-absolute">
                         <i class="icon-eye"></i>
                     </button>

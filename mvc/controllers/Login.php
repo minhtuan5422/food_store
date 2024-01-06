@@ -2,7 +2,8 @@
 class Login extends Controller
 {
     private $loginModel;
-
+    private $productModel;
+    
     function __construct()
     {
         $this->loginModel = $this->model("LoginModel");
@@ -11,7 +12,12 @@ class Login extends Controller
 
     public function Show()
     {
-        $this->view('LoginView', []);
+        $this->productModel = $this->model('ProductModel');
+        $productCategory = $this->productModel->getProductCategory();
+        $this->view('LoginView', [
+            'productCategory' => $productCategory
+
+        ]);
     }
 
     public function handleLogin()

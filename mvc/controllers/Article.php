@@ -1,8 +1,15 @@
 <?php
-class Article extends Controller {
+class Article extends Controller
+{
+    private $productModel;
     private $cartModel;
 
-    function show() {
+
+    function show()
+    {
+        $this->productModel = $this->model('ProductModel');
+        $productCategory = $this->productModel->getProductCategory();
+
         $this->cartModel = $this->model('CartModel');
         $getProductsInCart = []; // Initialize the variable
 
@@ -13,7 +20,8 @@ class Article extends Controller {
         }
 
         $this->view("ArticleView", [
-            'productsInCart' => $getProductsInCart
+            'productsInCart' => $getProductsInCart,
+            'productCategory' => $productCategory
         ]);
     }
 }

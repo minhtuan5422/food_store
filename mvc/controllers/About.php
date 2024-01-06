@@ -1,10 +1,13 @@
 <?php 
 class About extends Controller {
+    private $productModel;
     private $cartModel;
     
     function Show() {
+        $this->productModel = $this->model('ProductModel');
         $this->cartModel = $this->model('CartModel');
         $getProductsInCart = []; // Initialize the variable
+        $productCategory = $this->productModel->getProductCategory();
 
         if (isset($_SESSION['email'])) {
             $email = $_SESSION['email'];
@@ -13,7 +16,8 @@ class About extends Controller {
         }
 
         $this->view('AboutView', [
-            'productsInCart' => $getProductsInCart
+            'productsInCart' => $getProductsInCart,
+            'productCategory' => $productCategory
         ]);
     }
 }
